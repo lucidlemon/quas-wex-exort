@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * include Vue and Vue Resource. This gives a great starting point for
@@ -14,6 +13,7 @@ require('./bootstrap');
  */
 
 Vue.component('countdown', require('./components/Countdown.vue'));
+Vue.component('items', require('./components/Items.vue'));
 
 const app = new Vue({
     el: '#app'

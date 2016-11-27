@@ -7,8 +7,8 @@ window._ = require('lodash');
  * code may be modified to fit the specific needs of your application.
  */
 
-window.$ = window.jQuery = require('jquery');
-require('bootstrap-sass');
+//window.$ = window.jQuery = require('jquery');
+//require('bootstrap-sass');
 
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
@@ -26,8 +26,7 @@ require('vue-resource');
  */
 
 Vue.http.interceptors.push((request, next) => {
-    request.headers.set('X-CSRF-TOKEN', Laravel.csrfToken);
-
+    request.headers.set('X-CSRF-TOKEN', window.Laravel.csrfToken);
     next();
 });
 
@@ -43,3 +42,13 @@ Vue.http.interceptors.push((request, next) => {
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
+
+import VueMaterial from 'vue-material'
+//import 'vue-material/dist/vue-material.css'
+
+Vue.use(VueMaterial)
+
+Vue.material.theme.register('default', {
+    primary: 'cyan',
+    accent: 'green'
+})

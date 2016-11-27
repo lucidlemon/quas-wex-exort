@@ -1,12 +1,18 @@
 
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+//@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 
 // Variables
 @import "variables";
+@import "mixins";
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "material";
+
+*{
+  font-family: 'Ubuntu', sans-serif;
+}
 
 
 html, body{
@@ -14,10 +20,32 @@ html, body{
   padding: 0;
 }
 
+nav.main{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(#000, 0.2);
+  ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    li{
+      padding: 5px 20px;
+      a{
+        color: #fff;
+        @include fp(font-size, 14, 24);
+      }
+    }
+  }
+}
+
 .counter{
   text-align: center;
   background: #1f2022;
-  font-family: sans-serif;
   font-weight: 100;
   display: flex;
   flex-direction: column;
@@ -29,17 +57,16 @@ html, body{
   h1{
     color: #c24d2e;
     font-weight: 100;
-    font-size: 3vw;
+    @include fp(font-size, 24, 54);
     margin: 40px 0px 20px;
   }
 
   #clockdiv{
-    font-family: sans-serif;
     color: #fff;
     display: inline-block;
-    font-weight: 100;
+    font-weight: 400;
     text-align: center;
-    font-size: 6vw;
+    @include fp(font-size, 30, 100);
   }
 
   #clockdiv > div{
@@ -53,18 +80,23 @@ html, body{
     padding: 1vw;
     border-radius: 3px;
     background: #c24d2e;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include fp(min-width, 30, 130);
+    @include fp(min-height, 30, 130);
   }
 
   .smalltext{
     padding-top: 5px;
-    font-size: 2vw;
+    @include fp(font-size, 14, 28);
   }
 
   .legend{
-    font-size: 10px;
+    @include fp(font-size, 12, 16);
     color: rgba(255,255,255,0.5);
     margin-top: 5vh;
+    font-weight: 400;
   }
 
   .legend a, .legend p{
@@ -72,4 +104,8 @@ html, body{
     line-height: 1.4;
     text-decoration: none;
   }
+}
+
+.md-card .md-title{
+  @include fp(font-size, 12, 20);
 }

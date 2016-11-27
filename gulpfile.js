@@ -15,9 +15,18 @@ require('laravel-elixir-vue-2');
 
 elixir((mix) => {
     mix.sass('app.scss')
-       .webpack('app.js');
+        .webpack('app.js')
+        .version(['css/app.css', 'js/app.js']);
+        //.browserSync({
+        //    proxy: 'quas-wex-exort-api.dev'
+        //});
+});
 
-    mix.browserSync({
-        proxy: 'quas-wex-exort-api.dev'
-    });
+Elixir.webpack.mergeConfig({
+    module: {
+        loaders: [{
+            test: /\.css$/,
+            loader: 'css-loader'
+        }]
+    }
 });
