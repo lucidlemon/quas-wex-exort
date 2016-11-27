@@ -15,9 +15,12 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
+            $table->bigInteger('steamid')->unique();
             $table->string('username');
-            $table->string('steamid')->unique();
             $table->string('avatar');
+            $table->string('reddit')->nullable();
+            $table->string('twitter')->nullable();
+            $table->boolean('mod')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

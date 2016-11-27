@@ -27,6 +27,9 @@
                     <a href="{{ url('/') }}">Home</a>
                 </li>
                 <li>
+                    <a href="{{ url('oneliner') }}">Oneliner</a>
+                </li>
+                <li>
                     <a href="{{ url('overview/items') }}">Items</a>
                 </li>
             </ul>

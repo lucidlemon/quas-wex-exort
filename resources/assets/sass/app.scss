@@ -18,6 +18,7 @@
 html, body{
   margin: 0;
   padding: 0;
+  background: #1f2022;
 }
 
 nav.main{
@@ -45,7 +46,6 @@ nav.main{
 
 .counter{
   text-align: center;
-  background: #1f2022;
   font-weight: 100;
   display: flex;
   flex-direction: column;

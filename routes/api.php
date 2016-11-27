@@ -42,3 +42,6 @@ Route::get('/items', function (Request $request) {
 
     return $itemsJson;
 });
+
+Route::resource('/oneliner', 'OneLinerController');
+
