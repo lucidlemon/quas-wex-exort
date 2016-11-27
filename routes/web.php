@@ -18,3 +18,10 @@ Route::get('/', function () {
 Route::get('/overview/items', function () {
     return view('overview/items');
 });
+
+Route::get('/login', 'Auth\AuthController@login');
+
+Route::get('/logout', function () {
+    \Illuminate\Support\Facades\Auth::logout();
+    return redirect('/');
+});

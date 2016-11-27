@@ -30,6 +30,15 @@
                     <a href="{{ url('overview/items') }}">Items</a>
                 </li>
             </ul>
+            <ul>
+                <li>
+                    @if(\Illuminate\Support\Facades\Auth::check())
+                        <a href="/logout">logged in as {{\Illuminate\Support\Facades\Auth::user()->username}}</a>
+                    @else
+                        <a href="{{url('/login')}}">Login with Steam</a>
+                    @endif
+                </li>
+            </ul>
         </nav>
         <div id="app" v-md-theme="'default'">
             @yield('content')
