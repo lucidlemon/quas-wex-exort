@@ -1,0 +1,10 @@
+.oneliner-container{
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h1{
+    color: $brand-primary;
+    @include fp(font-size, 14, 36);
+  }
+}

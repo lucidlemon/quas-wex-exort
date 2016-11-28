@@ -26,4 +26,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function oneliners()
+    {
+        return $this->hasMany('App\OneLiner', 'user_id', 'id');
+    }
+
+    public function onelinersAuthorized()
+    {
+        return $this->hasMany('App\OneLiner', 'mod_id', 'id');
+    }
 }

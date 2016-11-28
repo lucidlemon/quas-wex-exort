@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\OneLiner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OneLinerController extends Controller
 {
@@ -25,7 +26,10 @@ class OneLinerController extends Controller
      */
     public function store(Request $request)
     {
-        return OneLiner::create($request->input());
+        $oneliner = OneLiner::create($request->input());
+        $oneliner->user()->associate(Auth::user());
+        $oneliner->save();
+        return $oneliner;
     }
 
     /**

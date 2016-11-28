@@ -12,6 +12,16 @@ class OneLiner extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'text'
+        'text'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'user_id');
+    }
+
+    public function mod()
+    {
+        return $this->belongsTo('App\User', 'mod_id');
+    }
 }

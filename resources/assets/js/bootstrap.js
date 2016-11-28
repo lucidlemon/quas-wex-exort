@@ -49,6 +49,6 @@ import VueMaterial from 'vue-material'
 Vue.use(VueMaterial)
 
 Vue.material.theme.register('default', {
-    primary: 'cyan',
-    accent: 'green'
+    primary: 'deep-orange',
+    accent: 'cyan'
 })

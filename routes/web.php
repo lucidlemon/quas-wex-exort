@@ -19,6 +19,10 @@ Route::get('/overview/items', function () {
     return view('overview/items');
 });
 
+Route::get('/oneliner', function () {
+    return view('overview/oneliner');
+});
+
 Route::get('/login', 'Auth\AuthController@login');
 
 Route::get('/logout', function () {

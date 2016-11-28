@@ -48,10 +48,13 @@
         </div>
         <script>
             window.Laravel = <?php echo json_encode([
-                    'csrfToken' => csrf_token(),
-                    'apiUrl' => url('/api'),
+                'csrfToken' => csrf_token(),
+                'apiUrl' => url('/api'),
+                'user' => \Illuminate\Support\Facades\Auth::user(),
             ]); ?>
         </script>
+
+        <script>@yield('serverdata')</script>
 
         @if(env('APP_DEBUG', false))
             <script src="{{ asset('js/app.js') }}"></script>

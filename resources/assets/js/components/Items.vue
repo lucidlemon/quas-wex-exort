@@ -1,6 +1,10 @@
 <template>
     <div class="container">
-        <h1>Items!</h1>
+        <h1>Items</h1>
+
+        <p>
+            All I'm doing here is fetching all Items from Valves servers in order to test the implemenation of a future mini game
+        </p>
 
         <div class="row">
             <div class="col-sm-4 col-md-2" v-for="item in items">

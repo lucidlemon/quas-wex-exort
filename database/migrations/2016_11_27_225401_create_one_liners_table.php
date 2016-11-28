@@ -20,8 +20,7 @@ class CreateOneLinersTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('mod_id')->unsigned()->nullable();
             $table->foreign('mod_id')->references('id')->on('users');
-            $table->string('title');
-            $table->text('text')->nullable();
+            $table->text('text');
             $table->timestamps();
         });
     }

@@ -14,7 +14,8 @@ require('./bootstrap');
 
 Vue.component('countdown', require('./components/Countdown.vue'));
 Vue.component('items', require('./components/Items.vue'));
+Vue.component('oneliners', require('./components/Oneliners.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
 });
