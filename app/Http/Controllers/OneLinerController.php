@@ -26,8 +26,10 @@ class OneLinerController extends Controller
      */
     public function store(Request $request)
     {
-        $oneliner = OneLiner::create($request->input());
-        $oneliner->user()->associate(Auth::user());
+        $oneliner = new OneLiner();
+        $oneliner->fill($request->input())->save();
+//        $oneliner = OneLiner::create($request->input());
+        $oneliner->user_id = Auth::id();
         $oneliner->save();
         return $oneliner;
     }
