@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cce67dd5b178cf78d96aff8f644930b4",
-    "content-hash": "5ac5746c1a0f399e9e317723e5937c18",
+    "hash": "58b2c5815e7290d124c03f85185adb03",
+    "content-hash": "b0ff401b7122299295ac213e593095d8",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -422,6 +422,68 @@
             "time": "2016-11-07 19:26:26"
         },
         {
+            "name": "irazasyed/telegram-bot-sdk",
+            "version": "v2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/irazasyed/telegram-bot-sdk.git",
+                "reference": "cf885c61d36ffe5d79e1d0fec696e6ad32d9cfc9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/irazasyed/telegram-bot-sdk/zipball/cf885c61d36ffe5d79e1d0fec696e6ad32d9cfc9",
+                "reference": "cf885c61d36ffe5d79e1d0fec696e6ad32d9cfc9",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpspec/prophecy": "^1.5",
+                "phpunit/phpunit": "^4.8 || ^5.0"
+            },
+            "suggest": {
+                "illuminate/container": "Hold dependencies to be injected in commands constructors",
+                "irazasyed/larasupport": "Allows you to use any Laravel Package in Lumen by adding support!"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Telegram\\Bot\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Syed Irfaq R.",
+                    "email": "syed+gh@lukonet.com",
+                    "homepage": "https://github.com/irazasyed"
+                }
+            ],
+            "description": "The Unofficial Telegram Bot API PHP SDK",
+            "homepage": "https://github.com/irazasyed/telegram-bot-sdk",
+            "keywords": [
+                "laravel",
+                "laravel telegram",
+                "telegram",
+                "telegram bot",
+                "telegram bot api",
+                "telegram php",
+                "telegram sdk"
+            ],
+            "time": "2016-11-01 20:09:05"
+        },
+        {
             "name": "jakub-onderka/php-console-color",
             "version": "0.1",
             "source": {
@@ -616,6 +678,60 @@
                 "wrapper"
             ],
             "time": "2016-06-30 09:33:53"
+        },
+        {
+            "name": "laravel-notification-channels/telegram",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-notification-channels/telegram.git",
+                "reference": "667b493fb32829138db2cb4949b5b70f0e6b6145"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-notification-channels/telegram/zipball/667b493fb32829138db2cb4949b5b70f0e6b6145",
+                "reference": "667b493fb32829138db2cb4949b5b70f0e6b6145",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.2",
+                "illuminate/events": "^5.3@dev",
+                "illuminate/notifications": "^5.3@dev",
+                "illuminate/support": "^5.3@dev",
+                "php": ">=5.6.4"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.5",
+                "phpunit/phpunit": "5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "NotificationChannels\\Telegram\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Syed Irfaq R.",
+                    "email": "syed@lukonet.com",
+                    "homepage": "https://lukonet.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Telegram Notifications Driver",
+            "homepage": "https://github.com/laravel-notification-channels/telegram",
+            "keywords": [
+                "laravel",
+                "notification",
+                "telegram",
+                "telegram notification",
+                "telegram notifications channel"
+            ],
+            "time": "2016-08-13 19:46:23"
         },
         {
             "name": "laravel/framework",

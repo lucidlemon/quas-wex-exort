@@ -47,7 +47,7 @@ Route::get('/items', function (Request $request) {
     return $itemsJson;
 });
 
-Route::get('oneliner/single', 'OneLinerController@showRandom');
+Route::get('oneliner/single/{id}', 'OneLinerController@showRandom');
 Route::get('oneliner', 'OneLinerController@index')->middleware('auth:api');
 Route::post('oneliner', 'OneLinerController@store')->middleware('auth:api');
 //Route::put($uri, $callback);
@@ -57,4 +57,8 @@ Route::post('oneliner', 'OneLinerController@store')->middleware('auth:api');
 
 
 //Route::resource('/oneliner', 'OneLinerController');
+
+if(env('APP_DEBUG', false)){
+    Route::get('telegram/status', 'TelegramController@getUpdates');
+}
 

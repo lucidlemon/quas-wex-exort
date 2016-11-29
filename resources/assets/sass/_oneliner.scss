@@ -1,10 +1,20 @@
 .oneliner-container{
-  height: 80vh;
+  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   h1{
     color: $brand-primary;
     @include fp(font-size, 14, 36);
+    margin-bottom: 50px;
   }
+}
+
+.oneliner-success-message{
+  position: fixed;
+  top: 60px;
+  left: 20px;
+  right: 20px;
+  @include bounceInDown();
 }

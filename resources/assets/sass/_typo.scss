@@ -1,0 +1,28 @@
+p{
+    color: #fff;
+    &.subtle{
+        color: rgba(#fff, .6);
+        font-size: .8em;
+    }
+}
+
+h1, h2, h3, h4, h5{
+    color: $brand-primary;
+    &.secondary{
+        color: $brand-secondary;
+    }
+}
+
+label, .md-input-container label{
+  color: #fff;
+}
+
+.md-input-container.md-has-value input, .md-input-container.md-has-value textarea{
+    color: rgba(#fff, .87);
+}
+
+.md-theme-default .md-input-container.md-input-focused input, .md-theme-default .md-input-container.md-input-focused textarea, .md-theme-default.md-input-container.md-input-focused input, .md-theme-default.md-input-container.md-input-focused textarea{
+    color: #ff5722;
+    text-shadow: 0 0 0 rgba(#fff, .87) !important; // TODO: fix this shit
+    -webkit-text-fill-color: transparent;
+}

@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', ['manual' => 'false']);
+});
+
+Route::get('/manual-timer', function () {
+    return view('welcome', ['manual' => 'true']);
 });
 
 Route::get('/overview/items', function () {

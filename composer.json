@@ -9,7 +9,9 @@
         "laravel/framework": "5.3.*",
         "kronusme/dota2-api": "2.2.1",
         "invisnik/laravel-steam-auth": "2.*",
-        "laravel/passport": "^1.0"
+        "laravel/passport": "^1.0",
+        "laravel-notification-channels/telegram": "^0.0.1",
+        "irazasyed/telegram-bot-sdk": "^2.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
