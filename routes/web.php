@@ -23,9 +23,10 @@ Route::get('/oneliner', function () {
     return view('overview/oneliner');
 });
 
-Route::get('/login', 'Auth\AuthController@login');
+Route::get('/login', 'Auth\SteamController@login');
 
-Route::get('/logout', function () {
+Route::get('/logout', function (\Symfony\Component\HttpFoundation\Request $request) {
     \Illuminate\Support\Facades\Auth::logout();
+    $request->session()->flush();
     return redirect('/');
 });

@@ -17,11 +17,11 @@ class OneLiner extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\User', 'user_id');
+        return $this->hasOne('App\User', 'id', 'user_id');
     }
 
     public function mod()
     {
-        return $this->belongsTo('App\User', 'mod_id');
+        return $this->hasOne('App\User', 'id', 'mod_id');
     }
 }

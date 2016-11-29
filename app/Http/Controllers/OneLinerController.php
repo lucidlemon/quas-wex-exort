@@ -29,6 +29,7 @@ class OneLinerController extends Controller
         $oneliner = new OneLiner();
         $oneliner->fill($request->input())->save();
 //        $oneliner = OneLiner::create($request->input());
+        dd(Auth::user());
         $oneliner->user_id = Auth::id();
         $oneliner->save();
         return $oneliner;

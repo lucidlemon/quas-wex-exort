@@ -18,6 +18,10 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
+Route::get('/user-yolo', function (Request $request) {
+    return $request->user();
+})->middleware('auth:api');
+
 
 Route::get('/items', function (Request $request) {
 
@@ -42,6 +46,7 @@ Route::get('/items', function (Request $request) {
 
     return $itemsJson;
 });
+
 
 Route::resource('/oneliner', 'OneLinerController');
 

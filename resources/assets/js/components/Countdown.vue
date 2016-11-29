@@ -43,6 +43,11 @@
             console.log('Component ready.');
             var deadline = moment('20161212 22:00+07:00', 'YYYYMMDD hh:mm+Z').toDate();
             this.initializeClock('clockdiv', deadline);
+
+            this.$http.get('/api/user')
+                    .then(response => {
+                console.log(response.data);
+            });
         },
         methods: {
             getTimeRemaining: function (endtime) {
