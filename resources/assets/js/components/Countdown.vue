@@ -20,7 +20,6 @@
             </div>
         </div>
         <div class="legend">
-            <p>Manual: {{manual}}</p>
             <p>
                 Counting towards 2016·12·12 22:00 UTC<br><br>
                 Sources:<br>
@@ -28,7 +27,6 @@
                 <a target="_blank" href="https://www.youtube.com/watch?v=guGFT27SavM">Monkey King Teaser</a><br>
                 <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">UI Preview provided by purge</a>
                 <br><br>
-
 
                 <a v-if="manual === 'true'" href="/">if you don't wanna hit F5 all the time, go here</a>
                 <a v-else href="/manual-timer">if you wanna hit F5 all the time, go here</a>

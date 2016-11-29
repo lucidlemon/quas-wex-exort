@@ -16,11 +16,13 @@ nav.main{
     flex-direction: row;
     list-style: none;
     margin: 0;
+    padding: 0;
+    text-align: center;
     li{
       padding: 5px 20px;
       a{
         color: #fff;
-        @include fp(font-size, 14, 24);
+        @include fp(font-size, 10, 18);
       }
     }
   }
