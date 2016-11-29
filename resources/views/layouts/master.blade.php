@@ -24,10 +24,10 @@
         <nav class="main">
             <ul>
                 <li>
-                    <a href="{{ url('/') }}">Home</a>
+                    <a href="{{ url('/') }}">6.89 Countdown</a>
                 </li>
                 <li>
-                    <a href="{{ url('oneliner') }}">Oneliner</a>
+                    <a href="{{ url('oneliner') }}">Dota Oneliners - Cyka</a>
                 </li>
                 @if(env('APP_DEBUG', false))
                     <li>
