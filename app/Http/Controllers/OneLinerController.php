@@ -31,6 +31,13 @@ class OneLinerController extends Controller
         $oneliner = new OneLiner();
         $oneliner->fill($request->input())->save();
         $oneliner->user_id = Auth::id();
+
+        $user = Auth::user();
+        if($user->mod){
+            $oneliner->granted = 1;
+            $oneliner->mod_id = Auth::id();
+        }
+
         $oneliner->save();
 
         if(!env('APP_DEBUG', false)) {
