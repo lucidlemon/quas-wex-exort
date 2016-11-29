@@ -20,6 +20,9 @@
 
 <script>
     export default {
+        mounted() {
+            this.getOneLiner();
+        },
         data() {
             return {
                 line: window.serverData,
@@ -28,6 +31,16 @@
             }
         },
         methods: {
+            getOneLiner() {
+                console.log('getOneLiner');
+                this.$http.get(`${window.Laravel.apiUrl}/oneliner/single`).then((response) => {
+                    // success callback
+                    this.line = response.body;
+                }, (response) => {
+                    // error callback
+                    console.log(response)
+                });
+            },
             submitNew() {
                 console.log('submitting', this.newOneLiner);
                 this.$http.post(`${window.Laravel.apiUrl}/oneliner`, {'text': this.newOneLiner}).then((response) => {

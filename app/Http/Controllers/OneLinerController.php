@@ -29,7 +29,7 @@ class OneLinerController extends Controller
         $oneliner = new OneLiner();
         $oneliner->fill($request->input())->save();
 //        $oneliner = OneLiner::create($request->input());
-        dd(Auth::user());
+//        dd(Auth::user());
         $oneliner->user_id = Auth::id();
         $oneliner->save();
         return $oneliner;
@@ -44,6 +44,17 @@ class OneLinerController extends Controller
     public function show($id)
     {
         return OneLiner::find($id)->get();
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showRandom()
+    {
+        return \App\OneLiner::inRandomOrder()->whereGranted(1)->get()->first();
     }
 
     /**

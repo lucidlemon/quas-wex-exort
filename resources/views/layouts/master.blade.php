@@ -13,11 +13,11 @@
         <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
 
         <!-- Styles -->
-        @if(env('APP_DEBUG', false))
+{{--        @if(env('APP_DEBUG', false))--}}
             <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        @else
-            <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
-        @endif
+        {{--@else--}}
+            {{--<link rel="stylesheet" href="{{ elixir('css/app.css') }}">--}}
+        {{--@endif--}}
 
     </head>
     <body class="@yield('bodyclass')">
@@ -29,9 +29,11 @@
                 <li>
                     <a href="{{ url('oneliner') }}">Oneliner</a>
                 </li>
-                <li>
-                    <a href="{{ url('overview/items') }}">Items</a>
-                </li>
+                @if(env('APP_DEBUG', false))
+                    <li>
+                        <a href="{{ url('overview/items') }}">Items</a>
+                    </li>
+                @endif
             </ul>
             <ul>
                 <li>

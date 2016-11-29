@@ -47,6 +47,14 @@ Route::get('/items', function (Request $request) {
     return $itemsJson;
 });
 
+Route::get('oneliner/single', 'OneLinerController@showRandom');
+Route::get('oneliner', 'OneLinerController@index')->middleware('auth:api');
+Route::post('oneliner', 'OneLinerController@store')->middleware('auth:api');
+//Route::put($uri, $callback);
+//Route::patch($uri, $callback);
+//Route::delete($uri, $callback);
+//Route::options($uri, $callback);
 
-Route::resource('/oneliner', 'OneLinerController');
+
+//Route::resource('/oneliner', 'OneLinerController');
 
