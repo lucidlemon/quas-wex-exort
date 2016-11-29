@@ -13,8 +13,13 @@
 
 .oneliner-success-message{
   position: fixed;
-  top: 60px;
+  bottom: 60px;
   left: 20px;
   right: 20px;
-  @include bounceInDown();
+  @include bounceInUp();
+}
+
+.oneliner-form{
+  max-width: 450px;
+  margin: 0 auto;
 }

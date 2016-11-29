@@ -33,10 +33,12 @@ class OneLinerController extends Controller
         $oneliner->user_id = Auth::id();
         $oneliner->save();
 
-        Telegram::sendMessage([
-            'chat_id' => env('TELEGRAM_GROUP_ID'),
-            'text' => 'New Oneliner Message posted: ' . $request->input('text')
-        ]);
+        if(!env('APP_DEBUG', false)) {
+            Telegram::sendMessage([
+                'chat_id' => env('TELEGRAM_GROUP_ID'),
+                'text' => 'New Oneliner: ' . $request->input('text')
+            ]);
+        }
 
         return $oneliner;
     }

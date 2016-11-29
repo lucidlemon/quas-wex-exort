@@ -16,10 +16,10 @@ require('laravel-elixir-vue-2');
 elixir((mix) => {
     mix.sass('app.scss')
         .webpack('app.js')
-        .version(['css/app.css', 'js/app.js']);
-        //.browserSync({
-        //    proxy: 'quas-wex-exort-api.dev'
-        //});
+        .version(['css/app.css', 'js/app.js'])
+        .browserSync({
+           proxy: 'quas-wex-exort.dev'
+        });
 });
 
 Elixir.webpack.mergeConfig({
