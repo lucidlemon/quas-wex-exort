@@ -103,20 +103,20 @@
                                 Social Media
                             </a>
                         </li>
-                        <li class="hidden-md-up">
-                            @if(\Illuminate\Support\Facades\Auth::check())
-                                <a href="/logout">
-                                    <img src="{{asset('assets/ic_social.svg')}}" />
-                                    {{\Illuminate\Support\Facades\Auth::user()->username}}
-                                </a>
-                            @else
-                                <a href="{{url('/login')}}">
-                                    <img src="{{asset('assets/ic_social.svg')}}" />
-                                    Login with Steam
-                                </a>
-                            @endif
-                        </li>
                     @endif
+                    <li class="hidden-md-up">
+                        @if(\Illuminate\Support\Facades\Auth::check())
+                            <a href="/logout">
+                                <img src="{{asset('assets/ic_social.svg')}}" />
+                                {{\Illuminate\Support\Facades\Auth::user()->username}}
+                            </a>
+                        @else
+                            <a href="{{url('/login')}}">
+                                <img src="{{asset('assets/ic_social.svg')}}" />
+                                Login with Steam
+                            </a>
+                        @endif
+                    </li>
                 </ul>
             </nav>
             <nav class="user hidden-sm-down">
