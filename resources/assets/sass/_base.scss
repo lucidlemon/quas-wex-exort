@@ -34,3 +34,21 @@ body {
 .container{
     max-width: 100%;
 }
+
+.hidden-phone{
+    @media(max-width: $phone){
+        display: none !important;
+    }
+}
+
+.hidden-tablet{
+    @media(min-width: $phone) and (max-width: $tablet){
+        display: none !important;
+    }
+}
+
+.hidden-desktop{
+    @media(min-width: $tablet){
+        display: none !important;
+    }
+}

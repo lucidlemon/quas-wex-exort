@@ -104,7 +104,7 @@
                             </a>
                         </li>
                     @endif
-                    <li class="">
+                    <li class="hidden-desktop hidden-tablet">
                         @if(\Illuminate\Support\Facades\Auth::check())
                             <a href="/logout">
                                 <img src="{{asset('assets/ic_steam.svg')}}" />
@@ -119,17 +119,23 @@
                     </li>
                 </ul>
             </nav>
-            <!--<nav class="user hidden-sm-down">
+            <nav class="user hidden-phone">
                  <ul>
                     <li>
                         @if(\Illuminate\Support\Facades\Auth::check())
-                            <a href="/logout">{{\Illuminate\Support\Facades\Auth::user()->username}}</a>
+                            <a href="/logout">
+                                <img src="{{asset('assets/ic_steam.svg')}}" />
+                                {{\Illuminate\Support\Facades\Auth::user()->username}}
+                            </a>
                         @else
-                            <a href="{{url('/login')}}">Login with Steam</a>
+                            <a href="{{url('/login')}}">
+                                <img src="{{asset('assets/ic_steam.svg')}}" />
+                                Login with Steam
+                            </a>
                         @endif
                     </li>
                 </ul>
-            </nav>-->
+            </nav>
         </aside>
         <div id="app" v-md-theme="'default'">
             {{--<passport-clients></passport-clients>--}}
