@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\NewOneliner;
 use App\OneLiner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Telegram\Bot\Laravel\Facades\Telegram;
 
 class OneLinerController extends Controller
 {
@@ -28,10 +30,23 @@ class OneLinerController extends Controller
     {
         $oneliner = new OneLiner();
         $oneliner->fill($request->input())->save();
-//        $oneliner = OneLiner::create($request->input());
-        dd(Auth::user());
         $oneliner->user_id = Auth::id();
+
+        $user = Auth::user();
+        if($user->mod){
+            $oneliner->granted = 1;
+            $oneliner->mod_id = Auth::id();
+        }
+
         $oneliner->save();
+
+        if(!env('APP_DEBUG', false)) {
+            Telegram::sendMessage([
+                'chat_id' => env('TELEGRAM_GROUP_ID'),
+                'text' => 'New Oneliner: ' . $request->input('text')
+            ]);
+        }
+
         return $oneliner;
     }
 
@@ -44,6 +59,17 @@ class OneLinerController extends Controller
     public function show($id)
     {
         return OneLiner::find($id)->get();
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showRandom($id)
+    {
+        return \App\OneLiner::inRandomOrder()->where('id', '<>', $id)->whereGranted(1)->get()->first();
     }
 
     /**

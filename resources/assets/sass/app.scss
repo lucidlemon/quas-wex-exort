@@ -2,13 +2,40 @@
 // Fonts
 //@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/animatewithsass/animate.scss";
+@import "material";
+
 // Variables
 @import "variables";
 @import "mixins";
+@import "typo";
+@import "nav";
 
-// Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-@import "material";
+
+// @import "node_modules/vue-material/src/core/stylesheets/core";
+// @import "node_modules/vue-material/src/components/mdAvatar/mdAvatar.scss";
+// @import "node_modules/vue-material/src/components/mdBottomBar/mdBottomBar.scss";
+// @import "node_modules/vue-material/src/components/mdButton/mdButton.scss";
+// @import "node_modules/vue-material/src/components/mdButtonToggle/mdButtonToggle.scss";
+// @import "node_modules/vue-material/src/components/mdCheckbox/mdCheckbox.scss";
+// @import "node_modules/vue-material/src/components/mdCard/mdCard.scss";
+// @import "node_modules/vue-material/src/components/mdDivider/mdDivider.scss";
+// @import "node_modules/vue-material/src/components/mdIcon/mdIcon.scss";
+// @import "node_modules/vue-material/src/components/mdInputContainer/mdInputContainer.scss";
+// @import "node_modules/vue-material/src/components/mdList/mdList.scss";
+// @import "node_modules/vue-material/src/components/mdMenu/mdMenu.scss";
+// @import "node_modules/vue-material/src/components/mdRadio/mdRadio.scss";
+// @import "node_modules/vue-material/src/components/mdSelect/mdSelect.scss";
+// @import "node_modules/vue-material/src/components/mdSidenav/mdSidenav.scss";
+// @import "node_modules/vue-material/src/components/mdSubheader/mdSubheader.scss";
+// @import "node_modules/vue-material/src/components/mdSwitch/mdSwitch.scss";
+// @import "node_modules/vue-material/src/components/mdTable/mdTable.scss";
+// @import "node_modules/vue-material/src/components/mdTabs/mdTabs.scss";
+// @import "node_modules/vue-material/src/components/mdToolbar/mdToolbar.scss";
+// @import "node_modules/vue-material/src/components/mdTooltip/mdTooltip.scss";
+// @import "node_modules/vue-material/src/components/mdWhiteframe/mdWhiteframe.scss";
 
 *{
   font-family: 'Ubuntu', sans-serif;
@@ -22,28 +49,16 @@ html, body{
   color: #fff;
 }
 
-nav.main{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(#000, 0.2);
-  ul{
-    display: flex;
-    list-style: none;
-    margin: 0;
-    li{
-      padding: 5px 20px;
-      a{
-        color: #fff;
-        @include fp(font-size, 14, 24);
-      }
-    }
-  }
+body{
+  padding-top: 80px;
 }
+
+.md-input-container:after{
+  background-color: rgba(#fff, .12);
+}
+
+
+
 
 .counter{
   text-align: center;

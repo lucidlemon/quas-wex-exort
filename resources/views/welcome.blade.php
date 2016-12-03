@@ -6,5 +6,5 @@
 
 
 @section('content')
-    <countdown></countdown>
+    <countdown manual="{{ $manual }}"></countdown>
 @endsection

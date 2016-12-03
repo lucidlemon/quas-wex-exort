@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+
+<!--
+
+##,                                   ,##
+'##,                                 ,##'
+ '##                                 ##'
+  ##               __,               ##
+  ##          __.-'   \              ##
+  ##    ___.-'__.--'\ |              ##,
+  ## .-' .-, (      | |        _     '##
+  ##/ / /""=\ \     | |       / \     ##,
+  '#| |_\   / /     | |      /   \    '##
+  / `-` 0 0 '-'`\   | |      | |  \   ,##
+  \_,   (__)  ,_/  / /       |  \  \  ##'
+   / /    \   \\  / /        |  |\  \ ## __
+  | /`.__.-'-._)|/ /         |  | \  \##`__)
+  \        ^    / /          |  |  | v## '--.
+   '._    '-'_.' / _.----.   |  |  l ,##  (_,'
+    '##'-,  ` `"""/       `'/|  | / ,##--,  )
+     '#/`        `         '    |'  ##'   `"
+      |                         /\_/#'
+      |              __.  .-,_.;###`
+     _|___/_..---'''`   _/  (###'
+ .-'`   ____,...---""```     `._
+(   --''        __,.,---.    ',_)
+ `.,___,..---'``  / /    \     '._
+      |  |       ( (      `.  '-._)
+      |  /        \ \      \'-._)
+      | |          \ \      `"`
+      | |           \ \
+      | |    .-,     ) |
+      | |   ( (     / /
+      | |    \ '---' /
+      /  \    `-----`
+     | , /
+     |(_/\-,
+     \  ,_`)
+      `-._)
+
+      PLS VOLVO BE ON TIME
+      --
+      /u/karreerose did this. bitches.
+
+-->
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>@yield('title') - Quas-Wex-Exort.com Dota 6.89 / 7.00 Countdown</title>
+        <title>@yield('title') - Quas-Wex-Exort.com</title>
+        <!-- Sorry /u/wykrhm. Didn't want to cause any trouble. -->
+
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,700" rel="stylesheet">
@@ -24,14 +71,16 @@
         <nav class="main">
             <ul>
                 <li>
-                    <a href="{{ url('/') }}">Home</a>
+                    <a href="{{ url('/') }}">6.89 Countdown</a>
                 </li>
                 <li>
-                    <a href="{{ url('oneliner') }}">Oneliner</a>
+                    <a href="{{ url('oneliner') }}">Dota Oneliners - Cyka</a>
                 </li>
-                <li>
-                    <a href="{{ url('overview/items') }}">Items</a>
-                </li>
+                @if(env('APP_DEBUG', false))
+                    <li>
+                        <a href="{{ url('overview/items') }}">Items</a>
+                    </li>
+                @endif
             </ul>
             <ul>
                 <li>
@@ -64,5 +113,16 @@
         @else
             <script src="{{ elixir('js/app.js') }}"></script>
         @endif
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-17828347-11', 'auto');
+            ga('send', 'pageview');
+
+        </script>
     </body>
 </html>

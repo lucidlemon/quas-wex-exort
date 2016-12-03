@@ -27,7 +27,11 @@
                 <a target="_blank" href="https://www.youtube.com/watch?v=guGFT27SavM">Monkey King Teaser</a><br>
                 <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">UI Preview provided by purge</a>
                 <br><br>
-                <a href="index_reload.html">if you wanna hit F5 all the time, go here</a>
+
+                <a v-if="manual === 'true'" href="/">if you don't wanna hit F5 all the time, go here</a>
+                <a v-else href="/manual-timer">if you wanna hit F5 all the time, go here</a>
+
+                
                 <br><br>
                 created by <a target="_blank" href="https://www.reddit.com/user/karreerose/">/u/karreerose</a>
             </p>
@@ -39,6 +43,7 @@
     var moment = require('moment');
 
     export default {
+        props: ['manual'],
         mounted() {
             console.log('Component ready.');
             var deadline = moment('20161212 22:00+07:00', 'YYYYMMDD hh:mm+Z').toDate();
@@ -86,7 +91,9 @@
                 }
 
                 updateClock();
-                var timeinterval = setInterval(updateClock, 1000);
+                if(this.manual === 'false'){
+                    var timeinterval = setInterval(updateClock, 1000);
+                }
             }
         }
     }

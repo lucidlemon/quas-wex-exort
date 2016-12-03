@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('reddit')->nullable();
             $table->string('twitter')->nullable();
             $table->boolean('mod')->default(0);
+            $table->boolean('banned')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
