@@ -87,5 +87,12 @@ aside{
       }
     }
   }
-  
+  nav.user{
+    @media(max-width: $phone){
+      a{
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+    }
+  }
 }
