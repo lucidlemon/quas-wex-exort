@@ -1,7 +1,9 @@
 <template>
-    <div class="container">
-        <h1>Time to 6.89 / 7.00 / the new journey / Monkey King</h1>
-        <div id="clockdiv">
+    <div class="container text-center">
+        <h1>Time to 6.89 / 7.00 / Monkey King</h1>
+        <h4 class="sub">Counts down to 2016·12·12 22:00 UTC. The date was <a target="_blank" href="http://blog.dota2.com/2016/10/the-fall-2016-battle-pass/">confirmed by valve</a>.</h4>
+
+        <div id="clockdiv" class="countdown-timers">
             <div>
                 <span class="days"></span>
                 <div class="smalltext">Days</div>
@@ -19,22 +21,22 @@
                 <div class="smalltext">Seconds</div>
             </div>
         </div>
-        <div class="legend">
-            <p>
-                Counting towards 2016·12·12 22:00 UTC<br><br>
-                Sources:<br>
-                <a target="_blank" href="http://blog.dota2.com/2016/10/the-fall-2016-battle-pass/">Confirmation of the date</a><br>
-                <a target="_blank" href="https://www.youtube.com/watch?v=guGFT27SavM">Monkey King Teaser</a><br>
-                <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">UI Preview provided by purge</a>
-                <br><br>
-
-                <a v-if="manual === 'true'" href="/">if you don't wanna hit F5 all the time, go here</a>
-                <a v-else href="/manual-timer">if you wanna hit F5 all the time, go here</a>
-
-                
-                <br><br>
-                created by <a target="_blank" href="https://www.reddit.com/user/karreerose/">/u/karreerose</a>
-            </p>
+        <div class="legend row">
+            <div class="col-md-2 col-md-offset-3">
+                <a class="button button-fullwidth button-link" v-if="manual === 'true'" href="/">Want it live?</a>
+                <a class="button button-fullwidth button-link" v-else href="/manual-timer">Want to hit F5?</a>
+            </div>
+            <div class="col-md-2">
+                <a class="button button-fullwidth button-link" target="_blank" href="https://www.youtube.com/watch?v=guGFT27SavM">Monkey King Teaser</a>
+            </div>
+            <div class="col-md-2">
+                <a class="button button-fullwidth button-link" target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">UI Preview by purge</a>
+            </div>
+            <!--<div class="col-sm-12 text-center">
+                <p>
+                    created by <a target="_blank" href="https://www.reddit.com/user/karreerose/">/u/karreerose</a>
+                </p>
+            </div>-->
         </div>
     </div>
 </template>

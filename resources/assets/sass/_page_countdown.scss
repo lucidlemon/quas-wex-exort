@@ -1,0 +1,18 @@
+.countdown-timers{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    // @include fp(margin-top, 20, 100);
+    // @include fp(margin-bottom, 20, 100);
+    margin-top: 15vh;
+    margin-bottom: 15vh;
+    > div{
+        width: 125px;
+        color: #fff;
+        > span{
+            @include fp(font-size, 20, 80);
+            font-weight: 300;
+        }
+    }
+}

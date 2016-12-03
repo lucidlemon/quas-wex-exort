@@ -43,12 +43,12 @@ Vue.http.interceptors.push((request, next) => {
 //     key: 'your-pusher-key'
 // });
 
-import VueMaterial from 'vue-material'
+// import VueMaterial from 'vue-material'
 // import 'vue-material/dist/vue-material.css'
 
-Vue.use(VueMaterial)
+// Vue.use(VueMaterial)
 
-Vue.material.theme.register('default', {
-    primary: 'deep-orange',
-    accent: 'cyan'
-})
+// Vue.material.theme.register('default', {
+//     primary: 'deep-orange',
+//     accent: 'cyan'
+// })

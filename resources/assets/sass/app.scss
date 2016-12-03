@@ -1,129 +1,17 @@
-
 // Fonts
 //@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
-
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "node_modules/animatewithsass/animate.scss";
-@import "material";
+// @import "material";
 
-// Variables
 @import "variables";
 @import "mixins";
+
+@import "base";
 @import "typo";
 @import "nav";
+@import "buttons";
 
-
-// @import "node_modules/vue-material/src/core/stylesheets/core";
-// @import "node_modules/vue-material/src/components/mdAvatar/mdAvatar.scss";
-// @import "node_modules/vue-material/src/components/mdBottomBar/mdBottomBar.scss";
-// @import "node_modules/vue-material/src/components/mdButton/mdButton.scss";
-// @import "node_modules/vue-material/src/components/mdButtonToggle/mdButtonToggle.scss";
-// @import "node_modules/vue-material/src/components/mdCheckbox/mdCheckbox.scss";
-// @import "node_modules/vue-material/src/components/mdCard/mdCard.scss";
-// @import "node_modules/vue-material/src/components/mdDivider/mdDivider.scss";
-// @import "node_modules/vue-material/src/components/mdIcon/mdIcon.scss";
-// @import "node_modules/vue-material/src/components/mdInputContainer/mdInputContainer.scss";
-// @import "node_modules/vue-material/src/components/mdList/mdList.scss";
-// @import "node_modules/vue-material/src/components/mdMenu/mdMenu.scss";
-// @import "node_modules/vue-material/src/components/mdRadio/mdRadio.scss";
-// @import "node_modules/vue-material/src/components/mdSelect/mdSelect.scss";
-// @import "node_modules/vue-material/src/components/mdSidenav/mdSidenav.scss";
-// @import "node_modules/vue-material/src/components/mdSubheader/mdSubheader.scss";
-// @import "node_modules/vue-material/src/components/mdSwitch/mdSwitch.scss";
-// @import "node_modules/vue-material/src/components/mdTable/mdTable.scss";
-// @import "node_modules/vue-material/src/components/mdTabs/mdTabs.scss";
-// @import "node_modules/vue-material/src/components/mdToolbar/mdToolbar.scss";
-// @import "node_modules/vue-material/src/components/mdTooltip/mdTooltip.scss";
-// @import "node_modules/vue-material/src/components/mdWhiteframe/mdWhiteframe.scss";
-
-*{
-  font-family: 'Ubuntu', sans-serif;
-}
-
-
-html, body{
-  margin: 0;
-  padding: 0;
-  background: #1f2022;
-  color: #fff;
-}
-
-body{
-  padding-top: 80px;
-}
-
-.md-input-container:after{
-  background-color: rgba(#fff, .12);
-}
-
-
-
-
-.counter{
-  text-align: center;
-  font-weight: 100;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width:  100vw;
-  height:  100vh;
-
-  h1{
-    color: #c24d2e;
-    font-weight: 100;
-    @include fp(font-size, 24, 54);
-    margin: 40px 0px 20px;
-  }
-
-  #clockdiv{
-    color: #fff;
-    display: inline-block;
-    font-weight: 400;
-    text-align: center;
-    @include fp(font-size, 30, 100);
-  }
-
-  #clockdiv > div{
-    padding: 1vw;
-    border-radius: 3px;
-    background: #24252a;
-    display: inline-block;
-  }
-
-  #clockdiv div > span{
-    padding: 1vw;
-    border-radius: 3px;
-    background: #c24d2e;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    @include fp(min-width, 30, 130);
-    @include fp(min-height, 30, 130);
-  }
-
-  .smalltext{
-    padding-top: 5px;
-    @include fp(font-size, 14, 28);
-  }
-
-  .legend{
-    @include fp(font-size, 12, 16);
-    color: rgba(255,255,255,0.5);
-    margin-top: 5vh;
-    font-weight: 400;
-  }
-
-  .legend a, .legend p{
-    color: rgba(255,255,255,0.5);
-    line-height: 1.4;
-    text-decoration: none;
-  }
-}
-
-.md-card .md-title{
-  @include fp(font-size, 12, 20);
-}
-
-@import "oneliner";
+@import "page_countdown";
+@import "page_oneliner";

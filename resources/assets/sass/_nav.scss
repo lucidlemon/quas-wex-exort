@@ -1,28 +1,58 @@
-nav.main{
+body{
+  padding-left: 160px;
+}
+
+aside{
   position: fixed;
   top: 0;
+  bottom: 0;
   left: 0;
-  right: 0;
+  width: 160px;
+  background: rgba(0,0,0,0.20);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  background: rgba(#000, 0.2);
-  @media(max-width: $phone){
-      flex-direction: column;
-  }
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
   ul{
-    display: flex;
-    flex-direction: row;
     list-style: none;
-    margin: 0;
     padding: 0;
-    text-align: center;
+    margin: 0;
+  }
+  a{
+    color: #fff;
+    text-decoration: none;
+    &:hover{
+      color: #fff;
+      text-decoration: none !important;
+    }
+  }
+  nav.main{
     li{
-      padding: 5px 20px;
+      height: 70px;
+      margin-top: 10px;
+      margin-bottom: 10px;
       a{
-        color: #fff;
-        @include fp(font-size, 10, 18);
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        &:hover, &.active, .active &{
+          background: rgba(#FFFFFF, 0.1);
+          &:after{
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 7px;
+            background: #fff;
+          }
+        }
+        img{
+          margin-bottom: 10px;
+        }
       }
     }
   }

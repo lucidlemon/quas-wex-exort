@@ -1,22 +1,33 @@
 <template>
-    <div class="container">
-        <h3 class="text-center secondary">A collection of the finest dota2 oneliners</h3>
-        <div v-if="user === null">
-            <p class="text-center">Got a good one? <a href="/login">Log In</a> to post your own</p>
-        </div>
-        <div v-else class="oneliner-form">
-            <form v-on:submit.prevent="submitNew">
-                <md-input-container>
-                    <label>Got a good one to share? Type here</label>
-                    <md-input v-model="newOneLiner" v-on:keyup.13="submitNew"></md-input>
-                </md-input-container>
-                <p class="subtle text-center">Press Enter to submit. Oneliners require validation from a mod to be displayed. Please allow a few hours for that to happen.</p>
-            </form>
+    <div class="container container-oneliner">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="text-center secondary">A collection of the finest dota2 oneliners</h2>
+                <div v-if="user === null">
+                    <p class="text-center">Got a good one? <a href="/login">Log In</a> to post your own</p>
+                </div>
+                <div v-else class="oneliner-form">
+                    <form v-on:submit.prevent="submitNew">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-4 col-md-offset-3">
+                                <input v-model="newOneLiner" v-on:keyup.13="submitNew" placeholder="Want to add your own?" />
+                            </div>
+                            <div class="col-sm-12 col-md-2">
+                                <input type="submit" class="button" value="post your own">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
 
-        <div class="oneliner-container text-center">
-            <h1>{{ line.text }}</h1>
-            <md-button v-on:click="getOneLiner" class="md-raised md-primary">Boring, next!</md-button>
+        <div class="oneliner-line text-center row">
+            <div class="col-sm-12">
+                <h1>{{ line.text }}</h1>
+            </div>
+            <div class="col-sm-12 col-md-2 col-md-offset-5">
+                <a v-on:click="getOneLiner" class="button button-link button-full-width">Another One</a>
+            </div>
         </div>
 
         <div class="text-center oneliner-success-message" v-if="thanksMessageVisible === true">

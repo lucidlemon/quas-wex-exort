@@ -68,30 +68,56 @@
 
     </head>
     <body class="@yield('bodyclass')">
-        <nav class="main">
-            <ul>
-                <li>
-                    <a href="{{ url('/') }}">6.89 Countdown</a>
-                </li>
-                <li>
-                    <a href="{{ url('oneliner') }}">Dota Oneliners - Cyka</a>
-                </li>
-                @if(env('APP_DEBUG', false))
+        <aside class="sidebar">
+            <a href="{{url('/')}}" class="logo"></a>
+            <nav class="main">
+                <ul>
                     <li>
-                        <a href="{{ url('overview/items') }}">Items</a>
+                        <a href="{{ url('/') }}">
+                            <img src="{{asset('assets/ic_countdown.svg')}}" />
+                            Countdown
+                        </a>
                     </li>
-                @endif
-            </ul>
-            <ul>
-                <li>
-                    @if(\Illuminate\Support\Facades\Auth::check())
-                        <a href="/logout">logged in as {{\Illuminate\Support\Facades\Auth::user()->username}}</a>
-                    @else
-                        <a href="{{url('/login')}}">Login with Steam</a>
+                    <li>
+                        <a href="{{ url('oneliner') }}">
+                            <img src="{{asset('assets/ic_trashtalk.svg')}}" />
+                            Trashtalk
+                        </a>
+                    </li>
+                    @if(env('APP_DEBUG', false))
+                        <li>
+                            <a href="{{ url('oneliner') }}">
+                                <img src="{{asset('assets/ic_guides.svg')}}" />
+                                Guides
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('oneliner') }}">
+                                <img src="{{asset('assets/ic_games.svg')}}" />
+                                Mini Games
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('oneliner') }}">
+                                <img src="{{asset('assets/ic_social.svg')}}" />
+                                Social Media
+                            </a>
+                        </li>
                     @endif
-                </li>
-            </ul>
-        </nav>
+                </ul>
+            </nav>
+            <nav class="user">
+                 <ul>
+                    <li>
+                        @if(\Illuminate\Support\Facades\Auth::check())
+                            <a href="/logout">{{\Illuminate\Support\Facades\Auth::user()->username}}</a>
+                        @else
+                            <a href="{{url('/login')}}">Login with Steam</a>
+                        @endif
+                    </li>
+                </ul>
+            </nav>
+        </aside>
         <div id="app" v-md-theme="'default'">
             {{--<passport-clients></passport-clients>--}}
             {{--<passport-authorized-clients></passport-authorized-clients>--}}

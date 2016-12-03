@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="20px" viewBox="0 0 24 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_guides</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="10_GameGuides_Overview" transform="translate(-68.000000, -242.000000)">
+            <g id="Group-2" transform="translate(59.000000, 240.000000)">
+                <g id="ic_guides" transform="translate(9.000000, 0.000000)">
+                    <g id="Group">
+                        <g id="Frames-24px">
+                            <rect id="Rectangle-path" x="0" y="0" width="24" height="24"></rect>
+                        </g>
+                        <g id="Solid" transform="translate(0.000000, 2.000000)" fill="#FFFFFF">
+                            <g id="Group">
+                                <path d="M21,0 L12,0 C10.346,0 9,1.346 9,3 L9,13 L5,13 C1.224,13 0.067,18.567 0.02,18.804 C-0.039,19.098 0.037,19.403 0.227,19.634 C0.417,19.866 0.7,20 1,20 L9,20 C9.552,20 10,19.552 10,19 L17,19 C18.654,19 20,17.654 20,16 L20,7 L23,7 C23.552,7 24,6.552 24,6 L24,3 C24,1.346 22.654,0 21,0 Z M8.071,18 L2.326,18 C2.799,16.678 3.7,15 5,15 L9.164,15 C8.534,15.931 8.203,17.04 8.071,18 Z M13,15 C13.449,15 14,15.552 14,16 C14,16.348 14.077,16.683 14.197,17 L10.366,17 C10.738,16 11.486,15 13,15 Z M18,16 C18,16.552 17.551,17 17,17 C16.446,17 16,16.453 16,16 C16,14.458 14.542,13 13,13 L11,13 L11,3 C11,2.448 11.449,2 12,2 L18.184,2 C18.072,2.314 18,2.648 18,3 L18,16 Z M22,5 L20,5 L20,3 C20,2.448 20.449,2 21,2 C21.551,2 22,2.448 22,3 L22,5 Z" id="Shape"></path>
+                                <rect id="Rectangle-path" x="12" y="4" width="5" height="2"></rect>
+                                <rect id="Rectangle-path" x="12" y="7" width="5" height="2"></rect>
+                                <rect id="Rectangle-path" x="12" y="10" width="5" height="2"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

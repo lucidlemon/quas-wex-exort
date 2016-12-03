@@ -7,22 +7,33 @@ p{
 }
 
 h1, h2, h3, h4, h5{
-    color: $brand-primary;
+    // color: $brand-primary;
+    color: #fff;
     &.secondary{
-        color: $brand-secondary;
+        // color: $brand-secondary;
     }
 }
 
-label, .md-input-container label{
-  color: #fff;
+a{
+    cursor: pointer;
+    &:hover{
+        color: #fff;
+    }
 }
 
-.md-input-container.md-has-value input, .md-input-container.md-has-value textarea{
-    color: rgba(#fff, .87);
-}
-
-.md-theme-default .md-input-container.md-input-focused input, .md-theme-default .md-input-container.md-input-focused textarea, .md-theme-default.md-input-container.md-input-focused input, .md-theme-default.md-input-container.md-input-focused textarea{
-    color: #ff5722;
-    text-shadow: 0 0 0 rgba(#fff, .87) !important; // TODO: fix this shit
-    -webkit-text-fill-color: transparent;
+input{
+    background: rgba(255,255,255,0.10);
+    border: 1px solid #FFFFFF;
+    border-radius: 2px;
+    @include fp(font-size, 10, 16);
+    @include fp(line-height, 12, 20);
+    padding: 12px;
+    width: 100%;
+    color: #fff;
+    &[type="submit"]{
+        @include fp(font-size, 14, 20);
+    }
+    &:focus{
+        outline: none;
+    }
 }

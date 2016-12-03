@@ -1,0 +1,12 @@
+.container-oneliner{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    .oneliner-line{
+        margin-top: 30vh;
+        h1{
+            margin-bottom: 32px;
+            font-weight: 300;
+        }
+    }
+}

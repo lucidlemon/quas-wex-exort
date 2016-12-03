@@ -1,0 +1,21 @@
+.button{
+    background: rgba(#FFFFFF, 0.2);
+    border-radius: 2px;
+    display: block;
+    font-weight: 300;
+    color: #FFFFFF;
+    padding: 12px;
+    user-select: none;
+    @include fp(font-size, 10, 14);
+    &:hover{
+        color: #fff;
+        text-decoration: none;
+        background: rgba(#FFFFFF, 0.4);
+    }
+    &.button-fullwidth{
+        width: 100%;
+    }
+    &.button-link{
+
+    }
+}

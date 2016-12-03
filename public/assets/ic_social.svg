@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="20px" viewBox="0 0 18 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_social</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="10_GameGuides_Overview" transform="translate(-71.000000, -613.000000)">
+            <g id="Group-6" transform="translate(41.000000, 611.000000)">
+                <g id="ic_social" transform="translate(27.000000, 0.000000)">
+                    <g id="Group">
+                        <g id="Frames-24px">
+                            <rect id="Rectangle-path" x="0" y="0" width="24" height="24"></rect>
+                        </g>
+                        <g id="Outline" transform="translate(2.000000, 2.000000)" fill="#FFFFFF">
+                            <g id="Group">
+                                <path d="M14.999,3 C14.558,3 14.168,3.29 14.041,3.713 L13.055,7 L8.999,7 L8.999,1 C8.999,0.448 8.551,0 7.999,0 L6.999,0 C3.69,0 0.999,2.691 0.999,6 C0.999,6.315 0.997,7.712 1.004,8.027 C1.006,8.125 1.018,8.222 1.05,8.317 L3.05,14.317 C3.187,14.725 3.568,15 3.999,15 L11.999,15 C12.44,15 12.83,14.71 12.957,14.287 L15.743,5 L18.999,5 L18.999,3 L14.999,3 Z M2.999,6 C2.999,5.528 3.096,5.082 3.247,4.662 L5.585,7 L2.999,7 L2.999,6 Z M6.999,5.586 L4.399,2.985 C5.1,2.38 6.002,2 6.999,2 L6.999,5.586 Z M11.255,13 L4.72,13 L3.387,9 L12.456,9 L11.255,13 Z" id="Shape"></path>
+                                <circle id="Oval" cx="4.999" cy="18" r="2"></circle>
+                                <circle id="Oval" cx="10.999" cy="18" r="2"></circle>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
