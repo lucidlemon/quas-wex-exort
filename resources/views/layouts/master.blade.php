@@ -107,12 +107,12 @@
                     <li class="hidden-md-up">
                         @if(\Illuminate\Support\Facades\Auth::check())
                             <a href="/logout">
-                                <img src="{{asset('assets/ic_social.svg')}}" />
+                                <img src="{{asset('assets/ic_steam.svg')}}" />
                                 {{\Illuminate\Support\Facades\Auth::user()->username}}
                             </a>
                         @else
                             <a href="{{url('/login')}}">
-                                <img src="{{asset('assets/ic_social.svg')}}" />
+                                <img src="{{asset('assets/ic_steam.svg')}}" />
                                 Login with Steam
                             </a>
                         @endif
