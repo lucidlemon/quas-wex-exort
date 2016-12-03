@@ -1,18 +1,31 @@
 body{
-  padding-left: 160px;
+  @media(min-width: $phone){
+    padding-left: $sidebar-width;
+  }
 }
 
 aside{
   position: fixed;
-  top: 0;
   bottom: 0;
   left: 0;
-  width: 160px;
   background: rgba(0,0,0,0.20);
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   text-align: center;
+  flex-direction: column;
+
+  @media(min-width: $phone){
+    top: 0;
+    width: $sidebar-width;
+  }
+  @media(max-width: $phone){
+    right: 0;
+    flex-direction: column;
+    .logo{
+      display: none;
+    }
+  }
+
   ul{
     list-style: none;
     padding: 0;
@@ -21,33 +34,51 @@ aside{
   a{
     color: #fff;
     text-decoration: none;
+    @include fp(font-size, 8, 14);
     &:hover{
       color: #fff;
       text-decoration: none !important;
     }
   }
+  nav{
+    width: 100%;
+  }
   nav.main{
+    @media(max-width: $phone){
+      ul{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-end;
+      }
+    }
     li{
-      height: 70px;
       margin-top: 10px;
       margin-bottom: 10px;
       a{
-        height: 70px;
+        height: $sidebar-items-height;
         display: flex;
         justify-content: center;
         flex-direction: column;
         position: relative;
-        &:hover, &.active, .active &{
-          background: rgba(#FFFFFF, 0.1);
-          &:after{
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            width: 7px;
-            background: #fff;
+        @media(max-width: $phone){
+          justify-content: flex-end;
+          height: auto;
+        }
+        @media(min-width: $phone){
+          &:hover, &.active, .active &{
+            background: rgba(#FFFFFF, 0.1);
+            &:after{
+              content: "";
+              display: block;
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              width: 7px;
+              background: #fff;
+            }
           }
         }
         img{
@@ -56,4 +87,5 @@ aside{
       }
     }
   }
+  
 }

@@ -2,11 +2,36 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    @media(max-width: $phone){
+        padding-bottom: 80px;
+    }
     .oneliner-line{
-        margin-top: 30vh;
+        @media(min-width: $phone){
+            margin-top: 30vh;
+        }
+        @media(max-width: $phone){
+            flex-grow: 1;
+            display: flex;
+            // flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
         h1{
             margin-bottom: 32px;
             font-weight: 300;
+            @include fp(font-size, 18, 46);
         }
     }
+}
+
+.oneliner-success-message{
+  position: fixed;
+  bottom: 60px;
+  left: 20px;
+  right: 20px;
+  color: #fff;
+  @media(min-width: $phone){
+      left: ($sidebar-width + 20px);
+  }
+  @include bounceInUp();
 }

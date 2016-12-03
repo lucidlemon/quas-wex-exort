@@ -21,17 +21,19 @@
             </div>
         </div>
 
-        <div class="oneliner-line text-center row">
-            <div class="col-sm-12">
-                <h1>{{ line.text }}</h1>
-            </div>
-            <div class="col-sm-12 col-md-2 col-md-offset-5">
-                <a v-on:click="getOneLiner" class="button button-link button-full-width">Another One</a>
+        <div class="oneliner-line text-center">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1>{{ line.text }}</h1>
+                </div>
+                <div class="col-sm-12 col-md-2 col-md-offset-5">
+                    <a v-on:click="getOneLiner" class="button button-link button-full-width">Another One</a>
+                </div>
             </div>
         </div>
 
-        <div class="text-center oneliner-success-message" v-if="thanksMessageVisible === true">
-            <md-button v-on:click="removeSuccessMessage" class="md-raised md-accent">ty bro. our mods will accept your message if they find it appropiate. cyka.</md-button>
+        <div class="text-center oneliner-success-message" v-on:click="removeSuccessMessage" v-if="thanksMessageVisible === true">
+            ty bro. our mods will accept your message if they find it appropiate. cyka.
         </div>
     </div>
 </template>
