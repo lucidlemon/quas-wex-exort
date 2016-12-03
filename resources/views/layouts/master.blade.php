@@ -104,7 +104,7 @@
                             </a>
                         </li>
                     @endif
-                    <li class="hidden-md-up">
+                    <li class="">
                         @if(\Illuminate\Support\Facades\Auth::check())
                             <a href="/logout">
                                 <img src="{{asset('assets/ic_steam.svg')}}" />
@@ -119,7 +119,7 @@
                     </li>
                 </ul>
             </nav>
-            <nav class="user hidden-sm-down">
+            <!--<nav class="user hidden-sm-down">
                  <ul>
                     <li>
                         @if(\Illuminate\Support\Facades\Auth::check())
@@ -129,7 +129,7 @@
                         @endif
                     </li>
                 </ul>
-            </nav>
+            </nav>-->
         </aside>
         <div id="app" v-md-theme="'default'">
             {{--<passport-clients></passport-clients>--}}
