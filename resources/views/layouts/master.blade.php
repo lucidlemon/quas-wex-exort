@@ -79,14 +79,14 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('oneliner') }}">
+                        <a href="{{ url('/oneliner') }}">
                             <img src="{{asset('assets/ic_trashtalk.svg')}}" />
                             Trashtalk
                         </a>
                     </li>
                     @if(env('APP_DEBUG', false))
                         <li>
-                            <a href="{{ url('oneliner') }}">
+                            <a href="{{ url('/guides') }}">
                                 <img src="{{asset('assets/ic_guides.svg')}}" />
                                 Guides
                             </a>
@@ -137,7 +137,7 @@
                 </ul>
             </nav>
         </aside>
-        <div id="app" v-md-theme="'default'">
+        <div id="app">
             {{--<passport-clients></passport-clients>--}}
             {{--<passport-authorized-clients></passport-authorized-clients>--}}
             {{--<passport-personal-access-tokens></passport-personal-access-tokens>--}}

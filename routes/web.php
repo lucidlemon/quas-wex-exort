@@ -31,6 +31,10 @@ Route::get('/oneliner', function () {
     return view('overview/oneliner');
 });
 
+Route::get('/guides', function () {
+    return view('guides/overview');
+});
+
 Route::get('/login', 'Auth\SteamController@login');
 
 Route::get('/logout', function (\Symfony\Component\HttpFoundation\Request $request) {
