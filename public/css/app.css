@@ -10267,10 +10267,12 @@ body {
 
 .form-success-message {
   position: fixed;
-  bottom: 60px;
-  left: 20px;
-  right: 20px;
-  color: #fff;
+  bottom: 30px;
+  left: 0px;
+  right: 0px;
+  background: rgba(255, 255, 255, 0.5);
+  color: #363354;
+  padding: 20px;
   -webkit-animation-name: bounceInUp;
   animation-name: bounceInUp;
   -webkit-animation-iteration-count: 1s;
@@ -10289,7 +10291,7 @@ body {
 
 @media (min-width: 767px) {
   .form-success-message {
-    left: 180px;
+    left: 160px;
   }
 }
 
@@ -10713,6 +10715,17 @@ aside nav li a img {
   .container-oneliner .oneliner-line h1 {
     font-size: 46px;
   }
+}
+
+.guides .guide-image {
+  width: 100%;
+  -webkit-clip-path: circle(50% at center);
+  clip-path: circle(50% at center);
+}
+
+.guides h3 {
+  margin-top: 0;
+  font-weight: 300;
 }
 
 /*# sourceMappingURL=app.css.map */

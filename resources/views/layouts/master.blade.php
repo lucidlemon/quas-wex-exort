@@ -55,8 +55,7 @@
 
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,700" rel="stylesheet">
-        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:100,300,400,700" rel="stylesheet">
         <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
 
         <!-- Styles -->
@@ -84,13 +83,13 @@
                             Trashtalk
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ url('/guides') }}">
+                            <img src="{{asset('assets/ic_guides.svg')}}" />
+                            Guides
+                        </a>
+                    </li>
                     @if(env('APP_DEBUG', false))
-                        <li>
-                            <a href="{{ url('/guides') }}">
-                                <img src="{{asset('assets/ic_guides.svg')}}" />
-                                Guides
-                            </a>
-                        </li>
                         <li>
                             <a href="{{ url('oneliner') }}">
                                 <img src="{{asset('assets/ic_games.svg')}}" />

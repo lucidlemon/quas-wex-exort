@@ -31,6 +31,11 @@ Route::get('/oneliner', function () {
     return view('overview/oneliner');
 });
 
+
+
+
+
+
 Route::get('/guides', function () {
     return view('guides/overview');
 });
@@ -59,6 +64,30 @@ Route::get('/guides/post', function () {
 
     return view('guides/create', ['morphs' => $morphs]);
 });
+
+Route::get('/guides/{category}', function ($category) {
+    if($category === 'heroes'){
+        $guides = \App\Hero::orderBy('localized_name')
+            ->with(['guides' => function($query){
+                $query->where('granted', 'is', 1);
+            }])
+            ->get();
+    } else if($category === 'items'){
+        $guides = \App\Item::orderBy('localized_name')
+            ->with(['guides' => function($query){
+                $query->where('granted', 'is', 1);
+            }])
+            ->where('recipe', 0)
+            ->where('id', '<', 1000)
+            ->get();
+    }
+
+    return view('guides/category', ['category' => $category, 'guides' => $guides]);
+});
+
+
+
+
 
 Route::get('/login', 'Auth\SteamController@login');
 

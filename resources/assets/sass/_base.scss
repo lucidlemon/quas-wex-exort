@@ -60,12 +60,14 @@ body {
 
 .form-success-message{
   position: fixed;
-  bottom: 60px;
-  left: 20px;
-  right: 20px;
-  color: #fff;
+  bottom: 30px;
+  left: 0px;
+  right: 0px;
+  background: rgba(#fff, .5);
+  color: $brand-primary;
+  padding: 20px;
   @media(min-width: $phone){
-      left: ($sidebar-width + 20px);
+      left: ($sidebar-width + 0px);
   }
   @include bounceInUp();
 }

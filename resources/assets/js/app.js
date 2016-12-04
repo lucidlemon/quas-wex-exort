@@ -33,6 +33,7 @@ Vue.component('oneliners', require('./components/Oneliners.vue'));
 
 Vue.component('gameguidesoverview', require('./components/GameGuidesOverview.vue'));
 Vue.component('gameguidescreate', require('./components/GameGuidesCreate.vue'));
+Vue.component('gameguideslist', require('./components/GameGuidesList.vue'));
 
 const app = new Vue({
     el: '#app',

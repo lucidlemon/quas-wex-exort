@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Oneliners')
+@section('title', 'Post a new Guide')
 
 @section('serverdata')
     window.serverData = {
