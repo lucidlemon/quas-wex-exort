@@ -45,13 +45,9 @@ class apiHeroes extends Command
         $heroesMapper = new HeroesMapper();
         $heroes = $heroesMapper->load();
 
-//        dd($heroes);
-
         foreach($heroes as $hero){
             $dbhero = Hero::firstOrCreate($hero);
             $dbhero->save();
         }
-
-        dd($heroes);
     }
 }
