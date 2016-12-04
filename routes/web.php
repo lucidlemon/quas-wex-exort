@@ -11,6 +11,10 @@
 |
 */
 
+use Dota2Api\Api;
+use Dota2Api\Mappers\ItemsMapperDb;
+use Dota2Api\Mappers\ItemsMapperWeb;
+
 Route::get('/', function () {
     return view('welcome', ['manual' => 'false']);
 });
@@ -33,4 +37,10 @@ Route::get('/logout', function (\Symfony\Component\HttpFoundation\Request $reque
     \Illuminate\Support\Facades\Auth::logout();
     $request->session()->flush();
     return redirect('/');
+});
+
+
+Route::get('/test', function () {
+    Api::init(env('DOTA_API', 'apikey'), ['localhost', env('DB_USERNAME', 'username'), env('DB_PASSWORD', 'username'), env('DB_DATABASE', 'dbname'), '']);
+
 });

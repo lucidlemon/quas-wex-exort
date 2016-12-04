@@ -4,15 +4,22 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/lucidlemon/dota2-api/"
+        }
+    ],
     "require": {
         "php": ">=5.6.4",
         "laravel/framework": "5.3.*",
-        "kronusme/dota2-api": "2.2.1",
+        "kronusme/dota2-api": "dev-patch-1#ec59f12",
         "invisnik/laravel-steam-auth": "2.*",
         "laravel/passport": "^1.0",
         "laravel-notification-channels/telegram": "^0.0.1",
         "irazasyed/telegram-bot-sdk": "^2.1"
     },
+    "minimum-stability": "dev",
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
@@ -50,6 +57,7 @@
         ]
     },
     "config": {
-        "preferred-install": "dist"
+        "preferred-install": "dist",
+        "minimum-stability": "dev"
     }
 }

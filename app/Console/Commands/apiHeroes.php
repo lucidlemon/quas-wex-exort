@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Hero;
 use Dota2Api\Api;
 use Dota2Api\Mappers\HeroesMapper;
 use Illuminate\Console\Command;
@@ -20,7 +21,7 @@ class apiHeroes extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Fetches current heroes from Valves Database';
 
     /**
      * Create a new command instance.
@@ -43,6 +44,14 @@ class apiHeroes extends Command
 
         $heroesMapper = new HeroesMapper();
         $heroes = $heroesMapper->load();
+
+//        dd($heroes);
+
+        foreach($heroes as $hero){
+            $dbhero = Hero::firstOrCreate($hero);
+            $dbhero->save();
+        }
+
         dd($heroes);
     }
 }
