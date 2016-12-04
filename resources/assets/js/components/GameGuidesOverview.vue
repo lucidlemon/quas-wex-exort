@@ -1,0 +1,86 @@
+<template>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-md-offset-3 text-center">
+                <h1>Game Guides</h1>
+                <p>
+                    Whether you are 2k or 6k, all of us want to improve and raise their MMR. Reddit and a few wikis and coached deliver good material, but you might lose overview, especially since reddits search is not quite usable.
+                </p>
+                <p>
+                    In order to make your gameplay better we want to offer a list of links to guides which may help you. We don’t want to become just another Wiki where you post your complete guide. Instead use existing sites such as Medium, Reddit or Liquidpedia to create them, and just post a link here.
+                </p>
+            </div>
+            <div class="col-sm-4 col-md-4 col-md-offset-4 text-center">
+                <a href="/guides/post" class="button button-fullwidth button-link">
+                    Post a new Guide
+                </a>
+            </div>
+        </div>
+
+        <div class="row text-center">
+            <div class="col-sm-4 col-md-3 col-md-offset-3">
+                <a href="/guides/heroes" class="button button-fullwidth button-link">
+                    Heroes
+                </a>
+            </div>
+            <!--
+            <div class="col-sm-4 col-md-2">
+                <a href="#" class="button button-fullwidth button-link">
+                    General Knowledge
+                </a>
+            </div>
+            -->
+            <div class="col-sm-4 col-md-3">
+                <a href="/guides/items" class="button button-fullwidth button-link">
+                    Items
+                </a>
+            </div>
+        </div>
+        
+
+
+        <!--<div class="row">
+            <div class="col-sm-4 col-md-2" v-for="item in items">
+                <md-card>
+                    <md-card-header>
+                        <md-card-header-text>
+                            <div class="md-title">{{ item.localized_name }}</div>
+                            <div class="md-subhead">{{ item.cost }}g</div>
+                        </md-card-header-text>
+                    </md-card-header>
+
+                    <md-card-media>
+                        <img :src="'http://cdn.dota2.com/apps/dota2/images/items/' + item.name + '_lg.png'" alt="People">
+                    </md-card-media>
+                </md-card>
+            </div>
+        </div>-->
+    </div>
+</template>
+
+<script>
+    export default {
+        mounted() {
+            // this.getItems();
+        },
+        data() {
+            return {
+                items: [],
+            }
+        },
+        methods: {
+            getItems() {
+                // console.log('attempting to get items');
+
+                // this.$http.get(`${window.Laravel.apiUrl}/items`).then((response) => {
+                //     // success callback
+                //     console.log(response);
+                //     this.items = response.body;
+                // }, (response) => {
+                //     // error callback
+                //     console.log(response)
+                // });
+            }
+        }
+    }
+</script>

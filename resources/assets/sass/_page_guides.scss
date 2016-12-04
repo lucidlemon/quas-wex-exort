@@ -1,0 +1,11 @@
+.guides{
+    .guide-image{
+        width: 100%;
+        // height: 64px;
+        clip-path: circle(50% at center);
+    }
+    h3{
+        margin-top: 0;
+        font-weight: 300;
+    }
+}
