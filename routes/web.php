@@ -69,13 +69,13 @@ Route::get('/guides/{category}', function ($category) {
     if($category === 'heroes'){
         $guides = \App\Hero::orderBy('localized_name')
             ->with(['guides' => function($query){
-                $query->where('granted', 'is', 1);
+                $query->whereGranted(1);
             }])
             ->get();
     } else if($category === 'items'){
         $guides = \App\Item::orderBy('localized_name')
             ->with(['guides' => function($query){
-                $query->where('granted', 'is', 1);
+                $query->whereGranted(1);
             }])
             ->where('recipe', 0)
             ->where('id', '<', 1000)
