@@ -11,7 +11,8 @@
                 </p>
             </div>
             <div class="col-sm-4 col-md-4 col-md-offset-4 text-center">
-                <a href="/guides/post" class="button button-fullwidth button-link">
+                <a href="/login" v-if="user === null">Login to Post a Guide</a>
+                <a href="/guides/post" v-else class="button button-fullwidth button-link">
                     Post a new Guide
                 </a>
             </div>
@@ -60,26 +61,9 @@
 
 <script>
     export default {
-        mounted() {
-            // this.getItems();
-        },
         data() {
             return {
-                items: [],
-            }
-        },
-        methods: {
-            getItems() {
-                // console.log('attempting to get items');
-
-                // this.$http.get(`${window.Laravel.apiUrl}/items`).then((response) => {
-                //     // success callback
-                //     console.log(response);
-                //     this.items = response.body;
-                // }, (response) => {
-                //     // error callback
-                //     console.log(response)
-                // });
+                user: window.Laravel.user,
             }
         }
     }
