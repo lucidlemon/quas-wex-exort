@@ -1,4 +1,7 @@
 .guides{
+    a{
+        color: #fff;
+    }
     .guide-image{
         width: 100%;
         // height: 64px;
@@ -13,5 +16,16 @@
     }
     .guide-link{
         margin-top: 10px;
+        a{
+            &:hover{
+                text-decoration: none;
+            }
+        }
+        h4{
+            margin-bottom: 0;
+        }
+        h5{
+            margin-top: 0;
+        }
     }
 }

@@ -6,7 +6,8 @@
                 <h1 v-else>Game Guides - Items</h1>
             </div>
             <div class="col-sm-4 col-md-4 col-md-offset-4 text-center">
-                <a href="/guides/post" class="button button-fullwidth button-link">
+                <a href="/login" v-if="user === null">Login to Post a Guide</a>
+                <a href="/guides/post" v-else class="button button-fullwidth button-link">
                     Post a new Guide
                 </a>
             </div>
@@ -16,10 +17,10 @@
 
         <div v-for="parent in parents">
             <div class="row guide-link-row" v-if="parent.guides.length">
-                <div class="col-sm-2 col-md-1 col-md-offset-2">
+                <div class="col-xs-3 col-sm-2 col-md-1 col-md-offset-2">
                     <img class="guide-image" :src="parent.image" />
                 </div>
-                <div class="col-sm-10 col-md-8" >
+                <div class="col-xs-9 col-sm-10 col-md-8" >
                     <h3>{{ parent.localized_name }}</h3>
                     <div class="guide-links">
                         <div class="guide-link" v-for="guide in parent.guides">
