@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Guide;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Telegram\Bot\Laravel\Facades\Telegram;
 
 class GuideController extends Controller
 {
