@@ -55,6 +55,9 @@ Route::post('oneliner', 'OneLinerController@store')->middleware('auth:api');
 //Route::delete($uri, $callback);
 //Route::options($uri, $callback);
 
+Route::get('guide/{category}', 'GuideController@index');
+Route::post('guide', 'GuideController@store')->middleware('auth:api');
+
 
 //Route::resource('/oneliner', 'OneLinerController');
 

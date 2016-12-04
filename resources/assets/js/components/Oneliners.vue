@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        <div class="text-center oneliner-success-message" v-on:click="removeSuccessMessage" v-if="thanksMessageVisible === true">
+        <div class="text-center form-success-message" v-on:click="removeSuccessMessage" v-if="thanksMessageVisible === true">
             ty bro. our mods will accept your message if they find it appropiate. cyka.
         </div>
     </div>

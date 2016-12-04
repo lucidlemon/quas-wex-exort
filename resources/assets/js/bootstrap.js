@@ -36,19 +36,11 @@ Vue.http.interceptors.push((request, next) => {
  * allows your team to easily build robust real-time web applications.
  */
 
+// import vSelect from "vue-select"
+
 // import Echo from "laravel-echo"
 
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
-
-// import VueMaterial from 'vue-material'
-// import 'vue-material/dist/vue-material.css'
-
-// Vue.use(VueMaterial)
-
-// Vue.material.theme.register('default', {
-//     primary: 'deep-orange',
-//     accent: 'cyan'
-// })

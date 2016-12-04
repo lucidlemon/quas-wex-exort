@@ -35,6 +35,31 @@ Route::get('/guides', function () {
     return view('guides/overview');
 });
 
+Route::get('/guides/post', function () {
+    $heroes = \App\Hero::orderBy('localized_name')->get(['id', 'localized_name']);
+    $items = \App\Item::orderBy('localized_name')->get(['id', 'localized_name', 'recipe']);
+
+    $morphs = [];
+
+    foreach($heroes as $hero){
+        $morphs[] = (object)[
+            'value' => 'App\Hero\\' . $hero->id,
+            'text' => $hero->localized_name
+        ];
+    }
+
+    foreach($items as $item){
+        if($item->id < 1000 && $item->recipe == 0){
+            $morphs[] = (object)[
+                'value' => 'App\Item\\' . $item->id,
+                'text' => $item->localized_name
+            ];
+        }
+    }
+
+    return view('guides/create', ['morphs' => $morphs]);
+});
+
 Route::get('/login', 'Auth\SteamController@login');
 
 Route::get('/logout', function (\Symfony\Component\HttpFoundation\Request $request) {

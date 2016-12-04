@@ -20,6 +20,8 @@
     "animatewithsass": "^3.2.1",
     "laravel-elixir-browsersync-official": "^1.0.0",
     "moment": "^2.17.0",
-    "vue-material": "^0.3.3"
+    "vue-material": "^0.3.3",
+    "vue-search-select": "^2.3.0",
+    "vue-select": "sagalbot/vue-select"
   }
 }

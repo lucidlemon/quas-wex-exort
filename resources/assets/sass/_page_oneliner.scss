@@ -24,14 +24,3 @@
     }
 }
 
-.oneliner-success-message{
-  position: fixed;
-  bottom: 60px;
-  left: 20px;
-  right: 20px;
-  color: #fff;
-  @media(min-width: $phone){
-      left: ($sidebar-width + 20px);
-  }
-  @include bounceInUp();
-}

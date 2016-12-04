@@ -30,7 +30,9 @@ Vue.component(
 Vue.component('countdown', require('./components/Countdown.vue'));
 Vue.component('items', require('./components/Items.vue'));
 Vue.component('oneliners', require('./components/Oneliners.vue'));
+
 Vue.component('gameguidesoverview', require('./components/GameGuidesOverview.vue'));
+Vue.component('gameguidescreate', require('./components/GameGuidesCreate.vue'));
 
 const app = new Vue({
     el: '#app',

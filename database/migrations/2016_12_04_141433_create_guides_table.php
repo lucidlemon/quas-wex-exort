@@ -19,10 +19,6 @@ class CreateGuidesTable extends Migration
             $table->string('url', 1024);
             $table->string('title', 1024);
             $table->string('desc', 1024);
-            $table->boolean('granted')->default(0);
-
-            $table->integer('guide_type_id')->unsigned()->nullable();
-            $table->foreign('guide_type_id')->references('id')->on('guide_types');
 
             $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
@@ -30,8 +26,19 @@ class CreateGuidesTable extends Migration
             $table->integer('mod_id')->unsigned()->nullable();
             $table->foreign('mod_id')->references('id')->on('users');
 
+            $table->boolean('granted')->default(0);
+
+            $table->integer('guide_type_id')->unsigned()->nullable();
+            $table->foreign('guide_type_id')->references('id')->on('guide_types');
+
             $table->integer('patch_id')->unsigned()->nullable();
             $table->foreign('patch_id')->references('id')->on('patches');
+
+            $table->integer('morphable_id')->unsigned()->nullable();
+            $table->string('morphable_type')->nullable();
+
+            $table->index('morphable_id');
+            $table->index('morphable_type');
 
             $table->timestamps();
         });
