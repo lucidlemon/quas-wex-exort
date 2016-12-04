@@ -168,9 +168,9 @@
 
                 var timeinterval = setInterval(this.removeSuccessMessage, 10000);
 
-                // this.title = '';
-                // this.desc = '';
-                // this.url = '';
+                this.title = '';
+                this.desc = '';
+                this.url = '';
             }
         }
     }
