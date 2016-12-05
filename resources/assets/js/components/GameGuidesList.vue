@@ -26,7 +26,11 @@
                         <div class="guide-link" v-for="guide in parent.guides">
                             <a :href="guide.url" target="_blank">
                                 <h4>{{guide.title}}</h4>
-                                <h5>{{patches[guide.patch_id].version}} · {{guide.desc}}</h5>
+                                <h5>
+                                    <span>{{patches[guide.patch_id].version}} · </span>
+                                    <span>patch start: {{patches[guide.patch_id].start}}</span>
+                                    <span v-if="guide.desc.length"> · {{guide.desc}}</span>
+                                </h5>
                             </a>
                         </div>
                     </div>
@@ -37,6 +41,8 @@
 </template>
 
 <script>
+    const moment = require('moment');
+
     export default {
         props: ['category'],
         mounted() {
@@ -48,6 +54,8 @@
 
             const patches = {};
             window.serverData.patches.forEach(patch => {
+                patch['start'] = moment(patch.started_at).format('YYYY/MM');
+                patch['end'] = moment(patch.ended_at).format('YYYY/MM');
                 patches[patch.id] = patch;
             });
             this.patches = patches;
