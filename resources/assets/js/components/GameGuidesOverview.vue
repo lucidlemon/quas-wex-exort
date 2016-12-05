@@ -9,7 +9,7 @@
                 <p>
                     In order to make your gameplay better we want to offer a list of links to guides which may help you. We don’t want to become just another Wiki where you post your complete guide. Instead use existing sites such as Medium, Reddit or Liquidpedia to create them, and
                     <a href="/login" v-if="user === null">Login to post a guide</a>
-                    <a href="/guides/post" v-else class="button button-fullwidth button-link">
+                    <a href="/guides/post" v-else>
                         post a new guide
                     </a>
                     here.
