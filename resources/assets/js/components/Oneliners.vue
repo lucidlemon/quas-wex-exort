@@ -45,7 +45,7 @@
         },
         data() {
             return {
-                line: window.serverData,
+                line: '',
                 user: window.Laravel.user,
                 newOneLiner: '',
                 thanksMessageVisible: false,
