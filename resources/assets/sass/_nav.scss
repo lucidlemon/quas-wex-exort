@@ -21,6 +21,8 @@ aside{
   @media(max-width: $phone){
     right: 0;
     flex-direction: column;
+    background: rgba(0,0,0,0.60);
+    backdrop-filter: blur(3px);
     .logo{
       display: none;
     }
@@ -42,15 +44,6 @@ aside{
   }
   nav{
     width: 100%;
-    @media(max-width: $phone){
-      ul{
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: flex-end;
-      }
-    }
     li{
       margin-top: 10px;
       margin-bottom: 10px;
@@ -64,9 +57,10 @@ aside{
           justify-content: flex-end;
           height: auto;
         }
-        @media(min-width: $phone){
-          &:hover, &.active, .active &{
-            background: rgba(#FFFFFF, 0.1);
+        
+        &:hover, &.active, .active &{
+          background: rgba(#FFFFFF, 0.1);
+          @media(min-width: $phone){
             &:after{
               content: "";
               display: block;
@@ -79,8 +73,29 @@ aside{
             }
           }
         }
+        
         img{
           margin-bottom: 10px;
+        }
+      }
+    }
+    @media(max-width: $phone){
+      ul{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        // justify-content: space-around;
+        align-items: flex-end;
+        li{
+          flex-grow: 1;
+          margin: 0;
+          img{
+            height: 16px;
+            margin-bottom: 5px;
+          }
+          a{
+            padding: 10px;
+          }
         }
       }
     }

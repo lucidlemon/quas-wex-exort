@@ -21,6 +21,9 @@ body {
 
 body {
   background: transparent;
+  @media(max-width: $phone){
+      padding-bottom: 80px;
+  }
 }
 
 #app{

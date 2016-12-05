@@ -72,36 +72,36 @@
             <nav class="main">
                 <ul>
                     <li>
-                        <a href="{{ url('/') }}">
+                        <a href="{{ url('/') }}" class="{{ active('/') }}">
                             <img src="{{asset('assets/ic_countdown.svg')}}" />
                             Countdown
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('/oneliner') }}">
+                        <a href="{{ url('/oneliner') }}" class="{{ active('oneliner') }}">
                             <img src="{{asset('assets/ic_trashtalk.svg')}}" />
                             Trashtalk
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('/guides') }}">
+                        <a href="{{ url('/guides') }}" class="{{ active('guides') }}">
                             <img src="{{asset('assets/ic_guides.svg')}}" />
                             Guides
                         </a>
                     </li>
                     @if(env('APP_DEBUG', false))
-                        <li>
-                            <a href="{{ url('oneliner') }}">
-                                <img src="{{asset('assets/ic_games.svg')}}" />
-                                Mini Games
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ url('oneliner') }}">
-                                <img src="{{asset('assets/ic_social.svg')}}" />
-                                Social Media
-                            </a>
-                        </li>
+                        {{--<li>--}}
+                            {{--<a href="{{ url('oneliner') }}">--}}
+                                {{--<img src="{{asset('assets/ic_games.svg')}}" />--}}
+                                {{--Mini Games--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li>--}}
+                            {{--<a href="{{ url('oneliner') }}">--}}
+                                {{--<img src="{{asset('assets/ic_social.svg')}}" />--}}
+                                {{--Social Media--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
                     @endif
                     <li class="hidden-desktop hidden-tablet">
                         @if(\Illuminate\Support\Facades\Auth::check())
