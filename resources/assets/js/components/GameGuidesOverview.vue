@@ -20,7 +20,7 @@
         <div class="row text-center">
             <div class="col-sm-4 col-md-3 col-md-offset-3">
                 <a href="/guides/heroes" class="button button-fullwidth button-link">
-                    Browse Heroe Guides
+                    Browse Hero Guides
                 </a>
             </div>
             <!--
