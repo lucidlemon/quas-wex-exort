@@ -13,6 +13,7 @@ aside{
   justify-content: space-between;
   text-align: center;
   flex-direction: column;
+  z-index: 9999;
 
   @media(min-width: $phone){
     top: 0;
