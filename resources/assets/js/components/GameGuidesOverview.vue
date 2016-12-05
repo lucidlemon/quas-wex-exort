@@ -7,21 +7,20 @@
                     Whether you are 2k or 6k, all of us want to improve and raise their MMR. Reddit and a few wikis and coached deliver good material, but you might lose overview, especially since reddits search is not quite usable.
                 </p>
                 <p>
-                    In order to make your gameplay better we want to offer a list of links to guides which may help you. We don’t want to become just another Wiki where you post your complete guide. Instead use existing sites such as Medium, Reddit or Liquidpedia to create them, and just post a link here.
+                    In order to make your gameplay better we want to offer a list of links to guides which may help you. We don’t want to become just another Wiki where you post your complete guide. Instead use existing sites such as Medium, Reddit or Liquidpedia to create them, and
+                    <a href="/login" v-if="user === null">Login to post a guide</a>
+                    <a href="/guides/post" v-else class="button button-fullwidth button-link">
+                        post a new guide
+                    </a>
+                    here.
                 </p>
-            </div>
-            <div class="col-sm-4 col-md-4 col-md-offset-4 text-center">
-                <a href="/login" v-if="user === null">Login to Post a Guide</a>
-                <a href="/guides/post" v-else class="button button-fullwidth button-link">
-                    Post a new Guide
-                </a>
             </div>
         </div>
 
         <div class="row text-center">
             <div class="col-sm-4 col-md-3 col-md-offset-3">
                 <a href="/guides/heroes" class="button button-fullwidth button-link">
-                    Heroes
+                    Browse Heroe Guides
                 </a>
             </div>
             <!--
@@ -33,7 +32,7 @@
             -->
             <div class="col-sm-4 col-md-3">
                 <a href="/guides/items" class="button button-fullwidth button-link">
-                    Items
+                    Browse Item Guides
                 </a>
             </div>
         </div>
