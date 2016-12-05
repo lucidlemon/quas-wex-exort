@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6e269e589b1fb103f0293ec8676044ec",
-    "content-hash": "d671640ec5b5081244a34becd60bfda7",
+    "hash": "c3fe5b73fe9e864cb5cfd5bfa09e72b5",
+    "content-hash": "c5c3dcdb913ae3bebee6020a78cec0dd",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -2760,6 +2760,57 @@
                 "environment"
             ],
             "time": "2016-11-28 23:08:37"
+        },
+        {
+            "name": "watson/active",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dwightwatson/active.git",
+                "reference": "51f7dc592271d6f06c58a389005e3c504b200f1f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dwightwatson/active/zipball/51f7dc592271d6f06c58a389005e3c504b200f1f",
+                "reference": "51f7dc592271d6f06c58a389005e3c504b200f1f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "~5.0",
+                "illuminate/routing": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Watson\\Active\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dwight Watson",
+                    "email": "dwight@studiousapp.com"
+                }
+            ],
+            "description": "Laravel helper for recognising the current route, controller and action",
+            "keywords": [
+                "active",
+                "laravel",
+                "routing"
+            ],
+            "time": "2015-11-20 06:01:23"
         },
         {
             "name": "zendframework/zend-diactoros",
