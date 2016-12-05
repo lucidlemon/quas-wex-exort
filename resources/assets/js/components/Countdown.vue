@@ -1,7 +1,7 @@
 <template>
     <div class="container container-countdown text-center">
         <h2>Time to 6.89 / 7.00 / Monkey King</h2>
-        <h4 class="sub">Counts down to 2016·12·12 22:00 UTC. The date was <a target="_blank" href="http://blog.dota2.com/2016/10/the-fall-2016-battle-pass/">confirmed by valve</a>.</h4>
+        <h4 class="sub">Counts down to 2016·12·12 22:00 UTC.<br>The date was <a target="_blank" href="http://blog.dota2.com/2016/10/the-fall-2016-battle-pass/">confirmed by valve</a>.</h4>
 
         <div id="clockdiv" class="countdown-timers">
             <div>

@@ -45,6 +45,16 @@
                             />
                         </div>
                         <div class="col-sm-12 col-md-4">
+                            <label for="type">Type</label>
+                            <basic-select
+                                :options="guide_types"
+                                :selected-option="guide_type"
+                                @select="onSelectType"
+                            />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-8">
                             <label for="patch">Game Patch</label>
 
                             <basic-select
@@ -52,16 +62,7 @@
                                 :selected-option="patch"
                                 @select="onSelectPatch"
                             />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-8">
-                            <label for="type">Type</label>
-                            <basic-select
-                                :options="guide_types"
-                                :selected-option="guide_type"
-                                @select="onSelectType"
-                            />
+                            
                         </div>
                         <div class="col-sm-12 col-md-4">
                             <label for="">done?</label>
@@ -78,7 +79,8 @@
 </template>
 
 <script>
-    import { BasicSelect } from 'vue-search-select'
+    import { BasicSelect } from 'vue-search-select';
+    var moment = require('moment');
 
     export default {
         mounted() {
@@ -90,7 +92,7 @@
 
             this.patches = this.patches.map(patch => {
                 patch.value = patch.id;
-                patch.text = patch.version;
+                patch.text = patch.version + ' (' + moment(patch.started_at).format('YYYY/MM/DD') + ' - ' + moment(patch.ended_at).format('YYYY/MM/DD') + ')';
                 return patch;
             });
         },
