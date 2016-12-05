@@ -27,7 +27,8 @@
                             <a :href="guide.url" target="_blank">
                                 <h4>{{guide.title}}</h4>
                                 <h5>
-                                    <span>{{patches[guide.patch_id].version}} (started {{patches[guide.patch_id].start}})</span>
+                                    <span>{{guide_types[guide.guide_type_id].title}}</span>
+                                    <span>· {{patches[guide.patch_id].version}} (started {{patches[guide.patch_id].start}})</span>
                                     <span v-if="guide.desc.length"> · {{guide.desc}}</span>
                                 </h5>
                             </a>
