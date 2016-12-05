@@ -84,7 +84,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('/guides') }}" class="{{ active('guides') }}">
+                        <a href="{{ url('/guides') }}" class="{{ active(['guides', 'guides/heroes', 'guides/items', 'guides/post']) }}">
                             <img src="{{asset('assets/ic_guides.svg')}}" />
                             Guides
                         </a>
