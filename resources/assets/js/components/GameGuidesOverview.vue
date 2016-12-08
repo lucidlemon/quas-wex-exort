@@ -18,19 +18,17 @@
         </div>
 
         <div class="row text-center">
-            <div class="col-sm-4 col-md-3 col-md-offset-3">
+            <div class="col-sm-4 col-md-2 col-md-offset-3">
                 <a href="/guides/heroes" class="button button-fullwidth button-link">
                     Browse Hero Guides
                 </a>
             </div>
-            <!--
             <div class="col-sm-4 col-md-2">
-                <a href="#" class="button button-fullwidth button-link">
+                <a href="/guides/tactics" class="button button-fullwidth button-link">
                     General Knowledge
                 </a>
             </div>
-            -->
-            <div class="col-sm-4 col-md-3">
+            <div class="col-sm-4 col-md-2">
                 <a href="/guides/items" class="button button-fullwidth button-link">
                     Browse Item Guides
                 </a>

@@ -3,7 +3,8 @@
         <div class="row">
             <div class="col-sm-12 col-md-6 col-md-offset-3 text-center">
                 <h1 v-if="category === 'heroes'">Game Guides - Heroes</h1>
-                <h1 v-else>Game Guides - Items</h1>
+                <h1 v-else-if="category === 'items'">Game Guides - Items</h1>
+                <h1 v-else>Game Guides - General</h1>
             </div>
             <div class="col-sm-4 col-md-4 col-md-offset-4 text-center">
                 <a href="/login" v-if="user === null">Login to Post a Guide</a>
@@ -21,7 +22,7 @@
                     <img class="guide-image" :src="parent.image" />
                 </div>
                 <div class="col-xs-9 col-sm-10 col-md-8" >
-                    <h3>{{ parent.localized_name }}</h3>
+                    <h3>{{ parent.localized_name || parent.title }}</h3>
                     <div class="guide-links">
                         <div class="guide-link" v-for="guide in parent.guides">
                             <a :href="guide.url" target="_blank">

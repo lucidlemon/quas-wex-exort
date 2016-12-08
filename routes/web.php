@@ -43,6 +43,7 @@ Route::get('/guides', function () {
 Route::get('/guides/post', function () {
     $heroes = \App\Hero::orderBy('localized_name')->get(['id', 'localized_name']);
     $items = \App\Item::orderBy('localized_name')->get(['id', 'localized_name', 'recipe']);
+    $tactics = \App\Tactic::orderBy('title')->get(['id', 'title']);
 
     $morphs = [];
 
@@ -62,6 +63,13 @@ Route::get('/guides/post', function () {
         }
     }
 
+    foreach($tactics as $tactic){
+        $morphs[] = (object)[
+            'value' => 'App\Tactic\\' . $tactic->id,
+            'text' => $tactic->title
+        ];
+    }
+
     return view('guides/create', ['morphs' => $morphs]);
 });
 
@@ -79,6 +87,12 @@ Route::get('/guides/{category}', function ($category) {
             }])
             ->where('recipe', 0)
             ->where('id', '<', 1000)
+            ->get();
+    } else if($category === 'tactics'){
+        $guides = \App\Tactic::orderBy('title')
+            ->with(['guides' => function($query){
+                $query->whereGranted(1);
+            }])
             ->get();
     }
 

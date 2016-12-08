@@ -32,6 +32,11 @@ class SteamController extends Controller
                             'avatar'   => $info->avatarfull,
                             'steamid'  => $info->steamID64
                         ]);
+                    } else {
+                        $user->update([
+                            'username' => $info->personaname,
+                            'avatar'   => $info->avatarfull,
+                        ]);
                     }
                     Auth::login($user, true);
                     return redirect('/'); // redirect to site

@@ -34,5 +34,9 @@ class GuideTypeSeeder extends Seeder
         \App\GuideType::create([
             'title' => 'Video Guide (Premium / Non-Free)'
         ]);
+
+        \App\GuideType::create([
+            'title' => 'Tips n Tricks'
+        ]);
     }
 }

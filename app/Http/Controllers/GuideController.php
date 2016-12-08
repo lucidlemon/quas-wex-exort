@@ -50,6 +50,9 @@ class GuideController extends Controller
             } else if(strpos($morph['value'], 'App\Item') !== false){
                 $guide->morphable_type = 'App\Item';
                 $guide->morphable_id = intval(str_replace('App\Item\\', '', $morph['value']));
+            } else if(strpos($morph['value'], 'App\Tactic') !== false){
+                $guide->morphable_type = 'App\Tactic';
+                $guide->morphable_id = intval(str_replace('App\Tactic\\', '', $morph['value']));
             }
 
         }
