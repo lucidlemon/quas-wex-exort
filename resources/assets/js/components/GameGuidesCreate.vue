@@ -92,7 +92,14 @@
 
             this.patches = this.patches.map(patch => {
                 patch.value = patch.id;
-                patch.text = patch.version + ' (' + moment(patch.started_at).format('YYYY/MM/DD') + ' - ' + moment(patch.ended_at).format('YYYY/MM/DD') + ')';
+                let text = patch.version + ' ( since ' + moment(patch.started_at).format('YYYY/MM/DD') + ')';
+
+                if (patch.ended_at !== null) {
+                    text = patch.version + ' (' + moment(patch.started_at).format('YYYY/MM/DD') + ' - ' + moment(patch.ended_at).format('YYYY/MM/DD') + ')';
+                }
+
+                patch.text = text;
+
                 return patch;
             });
         },
