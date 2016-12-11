@@ -66,6 +66,7 @@
                 parents: window.serverData.guides,
                 guide_types: {},
                 patches: {},
+                user: window.Laravel.user,
             }
         },
         methods: {
