@@ -1,9 +1,9 @@
 <template>
     <div class="container container-countdown text-center">
-        <h2>Time to 7.00 / Monkey King</h2>
+        <h2>Kiev Major starts in</h2>
         <!-- Fucking Called It. /u/karreerose -->
 
-        <h4 class="sub">Counts down to 2016·12·12 9AM Sunday, Seattle Time.<br>The date was <a target="_blank" href="view-source:http://www.dota2.com/700">confirmed by valve</a>.</h4>
+        <!--<h4 class="sub">Counts down to 2016·12·12 9AM Sunday, Seattle Time.<br>The date was <a target="_blank" href="view-source:http://www.dota2.com/700">confirmed by valve</a>.</h4>-->
 
         <div id="clockdiv" class="countdown-timers">
             <div>
@@ -24,16 +24,16 @@
             </div>
         </div>
         <div class="legend row">
-            <div class="col-md-2 col-md-offset-3">
+            <div class="col-md-4 col-md-offset-4">
                 <a class="button button-fullwidth button-link" v-if="manual === 'true'" href="/">Want it live?</a>
                 <a class="button button-fullwidth button-link" v-else href="/manual-timer">Want to hit F5?</a>
             </div>
-            <div class="col-md-2">
-                <a class="button button-fullwidth button-link" target="_blank" href="https://www.youtube.com/watch?v=guGFT27SavM">Monkey King Teaser</a>
-            </div>
-            <div class="col-md-2">
-                <a class="button button-fullwidth button-link" target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">UI Preview by purge</a>
-            </div>
+            <!--<div class="col-md-2">-->
+                <!--<a class="button button-fullwidth button-link" target="_blank" href="https://www.youtube.com/watch?v=guGFT27SavM">Monkey King Teaser</a>-->
+            <!--</div>-->
+            <!--<div class="col-md-2">-->
+                <!--<a class="button button-fullwidth button-link" target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">UI Preview by purge</a>-->
+            <!--</div>-->
             <!--<div class="col-sm-12 text-center">
                 <p>
                     created by <a target="_blank" href="https://www.reddit.com/user/karreerose/">/u/karreerose</a>
@@ -50,8 +50,8 @@
         props: ['manual'],
         mounted() {
             console.log('Component ready.');
-            var deadline = moment('20161212 22:00+07:00', 'YYYYMMDD hh:mm+Z').toDate();
-            deadline = moment(1481475600000).toDate();
+            var deadline = moment('20160420 16:00+01:00', 'YYYYMMDD hh:mm+Z').toDate();
+//            deadline = moment(1481475600000).toDate();
             this.initializeClock('clockdiv', deadline);
 
             this.$http.get('/api/user')
