@@ -50,7 +50,7 @@
         props: ['manual'],
         mounted() {
             console.log('Component ready.');
-            var deadline = moment('20160420 16:00+01:00', 'YYYYMMDD hh:mm+Z').toDate();
+            var deadline = moment('20170420 16:00+01:00', 'YYYYMMDD hh:mm+Z').toDate();
 //            deadline = moment(1481475600000).toDate();
             this.initializeClock('clockdiv', deadline);
 
