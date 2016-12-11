@@ -1,6 +1,8 @@
 <template>
     <div class="container container-countdown text-center">
-        <h2>Time to 6.89 / 7.00 / Monkey King</h2>
+        <h2>Time to 7.00 / Monkey King</h2>
+        <!-- Fucking Called It. /u/karreerose -->
+
         <h4 class="sub">Counts down to 2016·12·12 9AM Sunday, Seattle Time.<br>The date was <a target="_blank" href="view-source:http://www.dota2.com/700">confirmed by valve</a>.</h4>
 
         <div id="clockdiv" class="countdown-timers">
