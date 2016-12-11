@@ -49,6 +49,7 @@
         mounted() {
             console.log('Component ready.');
             var deadline = moment('20161212 22:00+07:00', 'YYYYMMDD hh:mm+Z').toDate();
+            deadline = moment(1481475600).toDate();
             this.initializeClock('clockdiv', deadline);
 
             this.$http.get('/api/user')
