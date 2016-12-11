@@ -2,6 +2,8 @@
 // Body
 $body-bg: #f5f8fa;
 
+$gutter: 40px;
+
 // Borders
 $laravel-border-color: darken($body-bg, 10%);
 $list-group-border: $laravel-border-color;
@@ -43,3 +45,5 @@ $tablet: 1025px;
 
 $sidebar-width: 160px;
 $sidebar-items-height: 70px;
+
+

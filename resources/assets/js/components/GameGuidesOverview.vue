@@ -1,6 +1,13 @@
 <template>
     <div class="container">
         <div class="row">
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="spacer"></div>
+                </div>
+            </div>
+
             <div class="col-sm-12 col-md-6 col-md-offset-3 text-center">
                 <h1>Game Guides</h1>
                 <p>
@@ -34,33 +41,59 @@
                 </a>
             </div>
         </div>
-        
 
-
-        <!--<div class="row">
-            <div class="col-sm-4 col-md-2" v-for="item in items">
-                <md-card>
-                    <md-card-header>
-                        <md-card-header-text>
-                            <div class="md-title">{{ item.localized_name }}</div>
-                            <div class="md-subhead">{{ item.cost }}g</div>
-                        </md-card-header-text>
-                    </md-card-header>
-
-                    <md-card-media>
-                        <img :src="'http://cdn.dota2.com/apps/dota2/images/items/' + item.name + '_lg.png'" alt="People">
-                    </md-card-media>
-                </md-card>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="spacer"></div>
             </div>
-        </div>-->
+        </div>
+
+
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-md-offset-3">
+                <h3>Latest Guides</h3>
+                <div class="row" v-for="guide in latest">
+                    <a :href="guide.url" class="col-xs-12" target="_blank">
+                        <h4>{{guide.title}}</h4>
+                        <h5>
+                            <span>{{guide_types[guide.guide_type_id].title}}</span>
+                            <span>· {{patches[guide.patch_id].version}} (started {{patches[guide.patch_id].start}})</span>
+                            <span v-if="guide.desc.length"> · {{guide.desc}}</span>
+                        </h5>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
+    const moment = require('moment');
+
     export default {
+        mounted() {
+            const guide_types = {};
+            window.serverData.guide_types.forEach(type => {
+                console.log('received');
+                guide_types[type.id] = type;
+            });
+            this.guide_types = guide_types;
+
+            const patches = {};
+            window.serverData.patches.forEach(patch => {
+                console.log('received');
+                patch['start'] = moment(patch.started_at).format('YYYY/MM');
+                patch['end'] = moment(patch.ended_at).format('YYYY/MM');
+                patches[patch.id] = patch;
+            });
+            this.patches = patches;
+        },
         data() {
             return {
                 user: window.Laravel.user,
+                latest: window.serverData.latestGuides,
+                guide_types: {},
+                patches: {},
             }
         }
     }

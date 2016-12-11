@@ -5,7 +5,11 @@
 @section('bodyclass', 'guides')
 
 @section('serverdata')
-    window.serverData = {!! \App\OneLiner::inRandomOrder()->whereGranted(1)->get()->first()->toJson() !!};
+    window.serverData = {
+        latestGuides: {!! \App\Guide::orderBy('created_at', 'desc')->limit(5)->get()->toJson() !!},
+        guide_types: {!! \App\GuideType::all()->toJson() !!},
+        patches: {!! \App\Patch::all()->toJson() !!},
+    };
 @endsection
 
 @section('content')

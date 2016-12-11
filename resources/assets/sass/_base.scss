@@ -74,3 +74,7 @@ body {
   }
   @include bounceInUp();
 }
+
+.spacer{
+  height: $gutter;
+}
