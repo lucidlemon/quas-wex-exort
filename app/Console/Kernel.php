@@ -26,10 +26,10 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('api:heroes')
-            ->daily();
+            ->everyFiveMinutes();
 
         $schedule->command('api:items')
-            ->daily();
+            ->everyFiveMinutes();
     }
 
     /**
