@@ -54,12 +54,12 @@
                 <h3>Latest Guides</h3>
                 <div class="row" v-for="guide in latest">
                     <a :href="guide.url" class="col-xs-12 guide-link" target="_blank">
-                        <h4>{{guide.title}}</h4>
+                        <h4 v-if="guide.title">{{guide.title}}</h4>
                         <h5>
-                            <span>{{guide.guide_type.title}}</span>
+                            <span v-if="guide.guide_type !== null">{{guide.guide_type.title}}</span>
                             <span v-if="guide.morphable.title">· {{guide.morphable.title}}</span>
                             <span v-if="guide.morphable.localized_name">· {{guide.morphable.localized_name}}</span>
-                            <span>· {{patches[guide.patch_id].version}}</span>
+                            <span v-if="patches[guide.patch_id].version">· {{patches[guide.patch_id].version}}</span>
                             <span v-if="guide.desc.length"> · {{guide.desc}}</span>
                         </h5>
                     </a>

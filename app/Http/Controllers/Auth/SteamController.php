@@ -39,7 +39,7 @@ class SteamController extends Controller
                         ]);
                     }
                     Auth::login($user, true);
-                    return redirect('/'); // redirect to site
+                    return redirect()->intended('/'); // redirect to site
                 }
             }
             return $this->steam->redirect(); // redirect to Steam login page

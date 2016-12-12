@@ -14,6 +14,7 @@
 use Dota2Api\Api;
 use Dota2Api\Mappers\ItemsMapperDb;
 use Dota2Api\Mappers\ItemsMapperWeb;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome', ['manual' => 'false']);
@@ -30,9 +31,6 @@ Route::get('/overview/items', function () {
 Route::get('/oneliner', function () {
     return view('overview/oneliner');
 });
-
-
-
 
 
 
