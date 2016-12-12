@@ -50,10 +50,10 @@
 
 
         <div class="row">
-            <div class="col-xs-12 col-md-6 col-md-offset-3">
+            <div class="col-xs-12 col-md-6 col-md-offset-3 guides">
                 <h3>Latest Guides</h3>
                 <div class="row" v-for="guide in latest">
-                    <a :href="guide.url" class="col-xs-12" target="_blank">
+                    <a :href="guide.url" class="col-xs-12 guide-link" target="_blank">
                         <h4>{{guide.title}}</h4>
                         <h5>
                             <span>{{guide.guide_type.title}}</span>
