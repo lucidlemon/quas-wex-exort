@@ -38,3 +38,6 @@ Vue.component('gameguideslist', require('./components/GameGuidesList.vue'));
 const app = new Vue({
     el: '#app',
 });
+
+var attachFastClick = require('fastclick');
+attachFastClick(document.body);

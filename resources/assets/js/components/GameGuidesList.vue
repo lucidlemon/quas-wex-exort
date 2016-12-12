@@ -22,7 +22,9 @@
                     <img class="guide-image" :src="parent.image" />
                 </div>
                 <div class="col-xs-9 col-sm-10 col-md-8" >
-                    <h3>{{ parent.localized_name || parent.title }}</h3>
+                    <h3 v-if="parent.localized_name">{{ parent.localized_name }}</h3>
+                    <h3 v-if="parent.title">{{ parent.title }}</h3>
+
                     <div class="guide-links">
                         <div class="guide-link" v-for="guide in parent.guides">
                             <a :href="guide.url" target="_blank">
