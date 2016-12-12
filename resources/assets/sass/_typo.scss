@@ -26,6 +26,7 @@ h4{
 
 h5{
     @include fp(font-size, 8, 12);
+    opacity: 0.5;
 }
 
 a{

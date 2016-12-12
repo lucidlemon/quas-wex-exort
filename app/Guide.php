@@ -16,4 +16,9 @@ class Guide extends Model
     {
         return $this->morphTo();
     }
+
+    public function guide_type()
+    {
+        return $this->hasOne('App\GuideType', 'id', 'guide_type_id');
+    }
 }

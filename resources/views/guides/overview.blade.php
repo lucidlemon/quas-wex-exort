@@ -6,7 +6,7 @@
 
 @section('serverdata')
     window.serverData = {
-        latestGuides: {!! \App\Guide::orderBy('created_at', 'desc')->limit(5)->get()->toJson() !!},
+        latestGuides: {!! \App\Guide::orderBy('created_at', 'desc')->limit(5)->with(['guide_type', 'morphable'])->get()->toJson() !!},
         guide_types: {!! \App\GuideType::all()->toJson() !!},
         patches: {!! \App\Patch::all()->toJson() !!},
     };

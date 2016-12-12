@@ -56,7 +56,9 @@
                     <a :href="guide.url" class="col-xs-12" target="_blank">
                         <h4>{{guide.title}}</h4>
                         <h5>
-                            <span>{{guide_types[guide.guide_type_id].title}}</span>
+                            <span>{{guide.guide_type.title}}</span>
+                            <span v-if="guide.morphable.title">· {{guide.morphable.title}}</span>
+                            <span v-if="guide.morphable.localized_name">· {{guide.morphable.localized_name}}</span>
                             <span>· {{patches[guide.patch_id].version}} (started {{patches[guide.patch_id].start}})</span>
                             <span v-if="guide.desc.length"> · {{guide.desc}}</span>
                         </h5>
