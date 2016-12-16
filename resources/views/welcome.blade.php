@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Time to Kiev Major')
+@section('title', 'Countdown')
 
 @section('bodyclass', 'counter')
 
