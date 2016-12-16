@@ -21,19 +21,19 @@
             </div>
         </div>
         <div class="legend row">
-            <div class="col-md-2 col-md-offset-1">
+            <div class="col-xs-6 col-md-2 col-md-offset-1">
                 <a class="button button-fullwidth button-link" target="_blank" href="https://www.twitch.tv/purgegamers">Purge Stream</a>
             </div>
-            <div class="col-md-2">
+            <div class="col-xs-6 col-md-2">
                 <a class="button button-fullwidth button-link" target="_blank" href="https://www.twitch.tv/day9tv">Day9 Stream</a>
             </div>
-            <div class="col-md-2">
+            <div class="col-xs-6 col-md-2">
                 <a class="button button-fullwidth button-link" target="_blank" href="https://www.reddit.com/r/DotA2/comments/5ioc9a/day9_learns_dota_with_purge_jan_18th_every/">Reddit Post</a>
             </div>
-            <div class="col-md-2">
+            <div class="col-xs-6 col-md-2">
                 <a class="button button-fullwidth button-link" target="_blank" href="/ical/Day9nPurge.ics">Calendar File</a>
             </div>
-            <div class="col-md-2">
+            <div class="col-xs-6 col-md-2">
                 <a class="button button-fullwidth button-link" v-if="manual === 'true'" href="/">Want it live?</a>
                 <a class="button button-fullwidth button-link" v-else href="/manual-timer">Want to hit F5?</a>
             </div>
