@@ -1,9 +1,6 @@
 <template>
     <div class="container container-countdown text-center">
-        <h2>Kiev Major starts in</h2>
-        <!-- Fucking Called It. /u/karreerose -->
-
-        <!--<h4 class="sub">Counts down to 2016·12·12 9AM Sunday, Seattle Time.<br>The date was <a target="_blank" href="view-source:http://www.dota2.com/700">confirmed by valve</a>.</h4>-->
+        <h2>Day9 & Purge Stream starts in</h2>
 
         <div id="clockdiv" class="countdown-timers">
             <div>
@@ -24,7 +21,19 @@
             </div>
         </div>
         <div class="legend row">
-            <div class="col-md-4 col-md-offset-4">
+            <div class="col-md-2 col-md-offset-1">
+                <a class="button button-fullwidth button-link" target="_blank" href="https://www.twitch.tv/purgegamers">Purge Stream</a>
+            </div>
+            <div class="col-md-2">
+                <a class="button button-fullwidth button-link" target="_blank" href="https://www.twitch.tv/day9tv">Day9 Stream</a>
+            </div>
+            <div class="col-md-2">
+                <a class="button button-fullwidth button-link" target="_blank" href="https://www.reddit.com/r/DotA2/comments/5ioc9a/day9_learns_dota_with_purge_jan_18th_every/">Reddit Post</a>
+            </div>
+            <div class="col-md-2">
+                <a class="button button-fullwidth button-link" target="_blank" href="/ical/Day9nPurge.ics">Calendar File</a>
+            </div>
+            <div class="col-md-2">
                 <a class="button button-fullwidth button-link" v-if="manual === 'true'" href="/">Want it live?</a>
                 <a class="button button-fullwidth button-link" v-else href="/manual-timer">Want to hit F5?</a>
             </div>
@@ -50,7 +59,7 @@
         props: ['manual'],
         mounted() {
             console.log('Component ready.');
-            var deadline = moment('20170420 16:00+01:00', 'YYYYMMDD hh:mm+Z').toDate();
+            var deadline = moment('20170118 13:00-08:00', 'YYYYMMDD hh:mm+Z').toDate();
 //            deadline = moment(1481475600000).toDate();
             this.initializeClock('clockdiv', deadline);
 
