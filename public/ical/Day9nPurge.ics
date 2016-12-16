@@ -1,0 +1,151 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//www.marudot.com//iCal Event Maker
+X-WR-CALNAME:Day9'n'Purge
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:America/Los_Angeles
+TZURL:http://tzurl.org/zoneinfo-outlook/America/Los_Angeles
+X-LIC-LOCATION:America/Los_Angeles
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0800
+TZOFFSETTO:-0700
+TZNAME:PDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0800
+TZNAME:PST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20161216T142107Z
+UID:20161216T142107Z-1865338307@marudot.com
+DTSTART;TZID="America/Los_Angeles":20170118T130000
+DTEND;TZID="America/Los_Angeles":20170118T190000
+SUMMARY:“Day[9] Learns Dota” with Purge
+URL:https%3A%2F%2Fwww.twitch.tv%2Fpurgegamers
+DESCRIPTION:Purge Twitch: https://www.twitch.tv/purgegamers\n\nDay9 Twitch: https://www.twitch.tv/day9tv
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20161216T142107Z
+UID:20161216T142107Z-1103605484@marudot.com
+DTSTART;TZID="America/Los_Angeles":20170125T130000
+DTEND;TZID="America/Los_Angeles":20170125T190000
+SUMMARY:“Day[9] Learns Dota” with Purge
+URL:https%3A%2F%2Fwww.twitch.tv%2Fpurgegamers
+DESCRIPTION:Purge Twitch: https://www.twitch.tv/purgegamers\n\nDay9 Twitch: https://www.twitch.tv/day9tv
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20161216T142107Z
+UID:20161216T142107Z-1640546698@marudot.com
+DTSTART;TZID="America/Los_Angeles":20170207T130000
+DTEND;TZID="America/Los_Angeles":20170207T190000
+SUMMARY:“Day[9] Learns Dota” with Purge
+URL:https%3A%2F%2Fwww.twitch.tv%2Fpurgegamers
+DESCRIPTION:Purge Twitch: https://www.twitch.tv/purgegamers\n\nDay9 Twitch: https://www.twitch.tv/day9tv
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20161216T142107Z
+UID:20161216T142107Z-733298412@marudot.com
+DTSTART;TZID="America/Los_Angeles":20170214T130000
+DTEND;TZID="America/Los_Angeles":20170214T190000
+SUMMARY:“Day[9] Learns Dota” with Purge
+URL:https%3A%2F%2Fwww.twitch.tv%2Fpurgegamers
+DESCRIPTION:Purge Twitch: https://www.twitch.tv/purgegamers\n\nDay9 Twitch: https://www.twitch.tv/day9tv
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20161216T142107Z
+UID:20161216T142107Z-1197481154@marudot.com
+DTSTART;TZID="America/Los_Angeles":20170221T130000
+DTEND;TZID="America/Los_Angeles":20170221T190000
+SUMMARY:“Day[9] Learns Dota” with Purge
+URL:https%3A%2F%2Fwww.twitch.tv%2Fpurgegamers
+DESCRIPTION:Purge Twitch: https://www.twitch.tv/purgegamers\n\nDay9 Twitch: https://www.twitch.tv/day9tv
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20161216T142107Z
+UID:20161216T142107Z-447346908@marudot.com
+DTSTART;TZID="America/Los_Angeles":20170228T130000
+DTEND;TZID="America/Los_Angeles":20170228T190000
+SUMMARY:“Day[9] Learns Dota” with Purge
+URL:https%3A%2F%2Fwww.twitch.tv%2Fpurgegamers
+DESCRIPTION:Purge Twitch: https://www.twitch.tv/purgegamers\n\nDay9 Twitch: https://www.twitch.tv/day9tv
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20161216T142107Z
+UID:20161216T142107Z-590381285@marudot.com
+DTSTART;TZID="America/Los_Angeles":20170307T130000
+DTEND;TZID="America/Los_Angeles":20170307T190000
+SUMMARY:“Day[9] Learns Dota” with Purge
+URL:https%3A%2F%2Fwww.twitch.tv%2Fpurgegamers
+DESCRIPTION:Purge Twitch: https://www.twitch.tv/purgegamers\n\nDay9 Twitch: https://www.twitch.tv/day9tv
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20161216T142107Z
+UID:20161216T142107Z-494914126@marudot.com
+DTSTART;TZID="America/Los_Angeles":20170314T130000
+DTEND;TZID="America/Los_Angeles":20170314T190000
+SUMMARY:“Day[9] Learns Dota” with Purge
+URL:https%3A%2F%2Fwww.twitch.tv%2Fpurgegamers
+DESCRIPTION:Purge Twitch: https://www.twitch.tv/purgegamers\n\nDay9 Twitch: https://www.twitch.tv/day9tv
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20161216T142107Z
+UID:20161216T142107Z-562783515@marudot.com
+DTSTART;TZID="America/Los_Angeles":20170321T130000
+DTEND;TZID="America/Los_Angeles":20170321T190000
+SUMMARY:“Day[9] Learns Dota” with Purge
+URL:https%3A%2F%2Fwww.twitch.tv%2Fpurgegamers
+DESCRIPTION:Purge Twitch: https://www.twitch.tv/purgegamers\n\nDay9 Twitch: https://www.twitch.tv/day9tv
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20161216T142107Z
+UID:20161216T142107Z-1666200942@marudot.com
+DTSTART;TZID="America/Los_Angeles":20170328T130000
+DTEND;TZID="America/Los_Angeles":20170328T190000
+SUMMARY:“Day[9] Learns Dota” with Purge
+URL:https%3A%2F%2Fwww.twitch.tv%2Fpurgegamers
+DESCRIPTION:Purge Twitch: https://www.twitch.tv/purgegamers\n\nDay9 Twitch: https://www.twitch.tv/day9tv
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20161216T142107Z
+UID:20161216T142107Z-376636228@marudot.com
+DTSTART;TZID="America/Los_Angeles":20170404T130000
+DTEND;TZID="America/Los_Angeles":20170404T190000
+SUMMARY:“Day[9] Learns Dota” with Purge
+URL:https%3A%2F%2Fwww.twitch.tv%2Fpurgegamers
+DESCRIPTION:Purge Twitch: https://www.twitch.tv/purgegamers\n\nDay9 Twitch: https://www.twitch.tv/day9tv
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20161216T142107Z
+UID:20161216T142107Z-623066562@marudot.com
+DTSTART;TZID="America/Los_Angeles":20170411T130000
+DTEND;TZID="America/Los_Angeles":20170411T190000
+SUMMARY:“Day[9] Learns Dota” with Purge
+URL:https%3A%2F%2Fwww.twitch.tv%2Fpurgegamers
+DESCRIPTION:Purge Twitch: https://www.twitch.tv/purgegamers\n\nDay9 Twitch: https://www.twitch.tv/day9tv
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20161216T142107Z
+UID:20161216T142107Z-973407542@marudot.com
+DTSTART;TZID="America/Los_Angeles":20170418T130000
+DTEND;TZID="America/Los_Angeles":20170418T190000
+SUMMARY:“Day[9] Learns Dota” with Purge
+URL:https%3A%2F%2Fwww.twitch.tv%2Fpurgegamers
+DESCRIPTION:Purge Twitch: https://www.twitch.tv/purgegamers\n\nDay9 Twitch: https://www.twitch.tv/day9tv
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20161216T142107Z
+UID:20161216T142107Z-773314212@marudot.com
+DTSTART;TZID="America/Los_Angeles":20170425T130000
+DTEND;TZID="America/Los_Angeles":20170425T190000
+SUMMARY:“Day[9] Learns Dota” with Purge
+URL:https%3A%2F%2Fwww.twitch.tv%2Fpurgegamers
+DESCRIPTION:Purge Twitch: https://www.twitch.tv/purgegamers\n\nDay9 Twitch: https://www.twitch.tv/day9tv
+END:VEVENT
+END:VCALENDAR
