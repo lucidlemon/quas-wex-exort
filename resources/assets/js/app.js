@@ -4,22 +4,24 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+import Vue from 'vue'
+
+require('./bootstrap')
 
 Vue.component(
     'passport-clients',
     require('./components/passport/Clients.vue')
-);
+)
 
 Vue.component(
     'passport-authorized-clients',
     require('./components/passport/AuthorizedClients.vue')
-);
+)
 
 Vue.component(
     'passport-personal-access-tokens',
     require('./components/passport/PersonalAccessTokens.vue')
-);
+)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -27,17 +29,17 @@ Vue.component(
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('countdown', require('./components/Countdown.vue'));
-Vue.component('items', require('./components/Items.vue'));
-Vue.component('oneliners', require('./components/Oneliners.vue'));
+Vue.component('countdown', require('./components/Countdown.vue'))
+Vue.component('items', require('./components/Items.vue'))
+Vue.component('oneliners', require('./components/Oneliners.vue'))
 
-Vue.component('gameguidesoverview', require('./components/GameGuidesOverview.vue'));
-Vue.component('gameguidescreate', require('./components/GameGuidesCreate.vue'));
-Vue.component('gameguideslist', require('./components/GameGuidesList.vue'));
+Vue.component('gameguidesoverview', require('./components/GameGuidesOverview.vue'))
+Vue.component('gameguidescreate', require('./components/GameGuidesCreate.vue'))
+Vue.component('gameguideslist', require('./components/GameGuidesList.vue'))
 
-const app = new Vue({
-    el: '#app',
-});
+export const app = new Vue({
+  el: '#app'
+})
 
-var attachFastClick = require('fastclick');
-attachFastClick(document.body);
+var attachFastClick = require('fastclick')
+attachFastClick(document.body)

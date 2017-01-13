@@ -1,0 +1,7 @@
+{
+  "extends": "vue",
+  "plugins": [
+    "import",
+    "html"
+  ]
+}

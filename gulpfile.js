@@ -1,6 +1,6 @@
-const elixir = require('laravel-elixir');
+const elixir = require('laravel-elixir')
 
-require('laravel-elixir-vue-2');
+require('laravel-elixir-vue-2')
 
 /*
  |--------------------------------------------------------------------------
@@ -14,19 +14,19 @@ require('laravel-elixir-vue-2');
  */
 
 elixir((mix) => {
-    mix.sass('app.scss')
+  mix.sass('app.scss')
         .webpack('app.js')
         .version(['css/app.css', 'js/app.js'])
         .browserSync({
-           proxy: 'quas-wex-exort.dev'
-        });
-});
+          proxy: 'quas-wex-exort.dev'
+        })
+})
 
-Elixir.webpack.mergeConfig({
-    module: {
-        loaders: [{
-            test: /\.css$/,
-            loader: 'css-loader'
-        }]
-    }
-});
+elixir.webpack.mergeConfig({
+  module: {
+    loaders: [{
+      test: /\.css$/,
+      loader: 'css-loader'
+    }]
+  }
+})
