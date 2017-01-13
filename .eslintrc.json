@@ -1,5 +1,8 @@
 {
-  "extends": "vue",
+  "extends": [
+    "vue",
+    "airbnb"
+  ],
   "plugins": [
     "import",
     "html"

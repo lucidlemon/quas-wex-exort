@@ -7,7 +7,7 @@
 @section('serverdata')
     window.serverData = {
         guides: {!! $guides->toJson() !!},
-        guide_types: {!! \App\GuideType::all()->toJson() !!},
+        guideTypes: {!! \App\GuideType::all()->toJson() !!},
         patches: {!! \App\Patch::all()->toJson() !!},
     }
 @endsection
