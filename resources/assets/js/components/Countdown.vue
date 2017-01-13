@@ -62,7 +62,7 @@
       this.initializeClock('clockdiv', deadline);
     },
     methods: {
-      getTimeRemaining: (endtime) => {
+      getTimeRemaining(endtime) {
         const total = Date.parse(endtime) - Date.parse(new Date());
         const seconds = Math.floor((total / 1000) % 60);
         const minutes = Math.floor((total / 1000 / 60) % 60);
@@ -78,7 +78,7 @@
         };
       },
 
-      initializeClock: (id, endtime) => {
+      initializeClock(id, endtime) {
         const clock = document.getElementById(id);
         const daysSpan = clock.querySelector('.days');
         const hoursSpan = clock.querySelector('.hours');
