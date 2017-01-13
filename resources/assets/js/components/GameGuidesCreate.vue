@@ -47,7 +47,7 @@
             <div class="col-sm-12 col-md-4">
               <label for="type">Type</label>
               <basic-select
-                :options="guide_types"
+                :options="guideTypes"
                 :selected-option="guide_type"
                 @select="onSelectType"
               />
@@ -84,7 +84,7 @@
 
   export default {
     mounted() {
-      this.guide_types = this.guide_types.map(item => ({
+      this.guideTypes = this.guideTypes.map(item => ({
         ...item,
         value: item.id,
         text: item.title,
@@ -124,7 +124,7 @@
           value: '',
           text: '',
         },
-        guide_types: window.serverData.guide_types,
+        guideTypes: window.serverData.guideTypes,
         patches: window.serverData.patches,
         morphs: window.serverData.morphs,
         thanksMessageVisible: false,

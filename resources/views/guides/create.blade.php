@@ -4,7 +4,7 @@
 
 @section('serverdata')
     window.serverData = {
-        guide_types: {!! \App\GuideType::all()->toJson() !!},
+        guideTypes: {!! \App\GuideType::all()->toJson() !!},
         patches: {!! \App\Patch::orderBy('started_at', 'desc')->get()->toJson() !!},
         morphs: {!! json_encode($morphs) !!},
     }
