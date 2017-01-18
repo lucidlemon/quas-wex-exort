@@ -79,6 +79,11 @@ aside{
           margin-bottom: 10px;
         }
       }
+      &.text-only{
+        a{
+          height: 40px;
+        }
+      }
     }
     @media(max-width: $phone){
       ul{

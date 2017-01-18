@@ -124,7 +124,7 @@
                         @if(\Illuminate\Support\Facades\Auth::check())
                             <a href="/logout">
                                 <img src="{{asset('assets/ic_steam.svg')}}" />
-                                {{\Illuminate\Support\Facades\Auth::user()->username}}
+                                {{\Illuminate\Support\Facades\Auth::user()->username}} - Log Out
                             </a>
                         @else
                             <a href="{{url('/login')}}">
@@ -133,6 +133,9 @@
                             </a>
                         @endif
                     </li>
+                   <li class="text-only">
+                     <a href="/about">About</a>
+                   </li>
                 </ul>
             </nav>
         </aside>

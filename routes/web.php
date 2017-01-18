@@ -24,6 +24,10 @@ Route::get('/manual-timer', function () {
     return view('welcome', ['manual' => 'true']);
 });
 
+Route::get('/about', function () {
+  return view('readonly.about');
+});
+
 Route::get('/overview/items', function () {
     return view('overview/items');
 });
