@@ -66,7 +66,7 @@
     },
     methods: {
       getTimeRemaining(endtime) {
-        const total = moment().diff(endtime);
+        const total = endtime.diff(moment());
         const seconds = Math.floor((total / 1000) % 60);
         const minutes = Math.floor((total / 1000 / 60) % 60);
         const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
@@ -82,10 +82,11 @@
       },
 
       getNextPurgeStream() {
-        const date = moment().hour(13).minute(0).second(0).utcOffset('+08:00').isoWeekday("Wednesday");
+        const today = moment();
+        const date = moment().utcOffset('-08:00').hour(13).minute(0).second(0).isoWeekday("Wednesday");
 
         // check if time is in the past
-        if (date.diff(moment()) > 0) {
+        if (today.diff(date) > 0) {
           // yes, it's in the past, lets add a week
           date.add(1, 'weeks');
         }
