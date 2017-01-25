@@ -58,8 +58,9 @@
   export default {
     props: ['manual'],
     mounted() {
-      const deadline = moment('20170118 13:00-08:00', 'YYYYMMDD hh:mm+Z').toDate();
-      this.initializeClock('clockdiv', deadline);
+      //const deadline = moment('20170118 13:00', 'YYYYMMDD hh:mm+Z').toDate();
+
+      this.initializeClock('clockdiv', this.getNextPurgeStream());
     },
     methods: {
       getTimeRemaining(endtime) {
@@ -76,6 +77,21 @@
           minutes,
           seconds,
         };
+      },
+
+      getNextPurgeStream() {
+        const dayINeed = 3; // for Wednesday
+        let date = moment();
+        // if we haven't yet passed the day of the week that I need:
+        if (date.isoWeekday() <== dayINeed) {
+          // then just give me this week's instance of that day
+          date = moment().isoWeekday(dayINeed);
+        } else {
+          // otherwise, give me next week's instance of that day
+          date = moment().add(1, 'weeks').isoWeekday(dayINeed);
+        }
+
+        return date.hour(13).minute(0).second(0).utcOffset('-08:00');
       },
 
       initializeClock(id, endtime) {
