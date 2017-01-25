@@ -86,11 +86,8 @@
 
         // check if time is in the past
         if (date.diff(moment()) > 0) {
-          console.log('is in past.', date);
           // yes, it's in the past, lets add a week
           date.add(1, 'weeks');
-        } else {
-          console.log('seems ok.', date);
         }
 
         return date;
