@@ -60,6 +60,8 @@
     mounted() {
       //const deadline = moment('20170118 13:00', 'YYYYMMDD hh:mm+Z').toDate();
 
+      console.log(this.getNextPurgeStream());
+
       this.initializeClock('clockdiv', this.getNextPurgeStream());
     },
     methods: {
@@ -80,10 +82,7 @@
       },
 
       getNextPurgeStream() {
-        let date = moment().isoWeekday("Wednesday");
-
-        // set exact time of the stream
-        date.hour(13).minute(0).second(0).utcOffset('-08:00');
+        const date = moment().hour(13).minute(0).second(0).utcOffset('+08:00').isoWeekday("Wednesday");
 
         // check if time is in the past
         if (date.diff(moment()) > 0) {
