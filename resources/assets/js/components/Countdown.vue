@@ -80,16 +80,18 @@
       },
 
       getNextPurgeStream() {
-        const dayINeed = 3; // for Wednesday
-        let date = moment().isoWeekday(dayINeed);
+        let date = moment().isoWeekday("Wednesday");
 
         // set exact time of the stream
         date.hour(13).minute(0).second(0).utcOffset('-08:00');
 
         // check if time is in the past
         if (date.diff(moment()) > 0) {
-            // yes, it's in the past, lets add a week
-            date.add(1, 'weeks');
+          console.log('is in past.', date);
+          // yes, it's in the past, lets add a week
+          date.add(1, 'weeks');
+        } else {
+          console.log('seems ok.', date);
         }
 
         return date;
