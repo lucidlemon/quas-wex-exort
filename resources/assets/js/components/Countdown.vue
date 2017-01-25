@@ -81,17 +81,18 @@
 
       getNextPurgeStream() {
         const dayINeed = 3; // for Wednesday
-        let date = moment();
-        // if we haven't yet passed the day of the week that I need:
-        if (date.isoWeekday() <== dayINeed) {
-          // then just give me this week's instance of that day
-          date = moment().isoWeekday(dayINeed);
-        } else {
-          // otherwise, give me next week's instance of that day
-          date = moment().add(1, 'weeks').isoWeekday(dayINeed);
+        let date = moment().isoWeekday(dayINeed);
+
+        // set exact time of the stream
+        date.hour(13).minute(0).second(0).utcOffset('-08:00');
+
+        // check if time is in the past
+        if (date.diff(moment()) > 0) {
+            // yes, it's in the past, lets add a week
+            date.add(1, 'weeks');
         }
 
-        return date.hour(13).minute(0).second(0).utcOffset('-08:00');
+        return date;
       },
 
       initializeClock(id, endtime) {
