@@ -66,7 +66,7 @@
     },
     methods: {
       getTimeRemaining(endtime) {
-        const total = endtime.diff(moment());
+        const total = moment().diff(endtime);
         const seconds = Math.floor((total / 1000) % 60);
         const minutes = Math.floor((total / 1000 / 60) % 60);
         const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
