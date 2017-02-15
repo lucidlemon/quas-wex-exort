@@ -112,9 +112,3 @@ Route::get('/logout', function (\Symfony\Component\HttpFoundation\Request $reque
     $request->session()->flush();
     return redirect('/');
 });
-
-
-Route::get('/test', function () {
-    Api::init(env('DOTA_API', 'apikey'), ['localhost', env('DB_USERNAME', 'username'), env('DB_PASSWORD', 'username'), env('DB_DATABASE', 'dbname'), '']);
-
-});

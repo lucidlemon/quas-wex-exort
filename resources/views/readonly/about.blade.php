@@ -21,6 +21,9 @@
       Future plans include some minigames, integration of some services (like more info on heroes), social media dashboards and such. In case you want to contribute, <a href="https://github.com/lucidlemon/quas-wex-exort" target="_blank">feel free to do so</a>.
     </p>
     <p>
+      The only thing that is guaranteed: No Ads. No Paywall. No Donations.
+    </p>
+    <p>
       The technology stack behind this is pretty easy: Laravel as a PHP Backend and API, Vue.js 2.0 for Frontend stuff, a full featured server as a platform, Github for VCS and Steam Login via OAuth to remove just another password to <strike>get leaked</strike> remember.
     </p>
 

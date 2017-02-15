@@ -90,16 +90,16 @@
                         </a>
                     </li>
                     @if(env('APP_DEBUG', false))
-                        {{--<li>--}}
-                            {{--<a href="{{ url('oneliner') }}">--}}
-                                {{--<img src="{{asset('assets/ic_games.svg')}}" />--}}
-                                {{--Mini Games--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
+                        <li>
+                            <a href="{{ url('games') }}">
+                                <img src="{{asset('assets/ic_games.svg')}}" />
+                                Mini Games
+                            </a>
+                        </li>
                         {{--<li>--}}
                             {{--<a href="{{ url('oneliner') }}">--}}
                                 {{--<img src="{{asset('assets/ic_social.svg')}}" />--}}
-                                {{--Social Media--}}
+                                {{--Reddit Posts--}}
                             {{--</a>--}}
                         {{--</li>--}}
                     @endif
