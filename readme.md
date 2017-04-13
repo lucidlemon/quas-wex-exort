@@ -19,3 +19,10 @@ now to make it working in your demo application:
 * `php artisan key:generate`
 * `php artisan passport:install` // may take some time
 * `php artisan migrate --seed`
+
+
+//vue": "^2.2.6",
+//"vue-material": "^0.7.1",
+//"vue-resource": "^1.0.3",
+//"vue-search-select": "^2.3.0",
+//"vue-select": "^2.2.0"
