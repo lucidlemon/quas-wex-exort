@@ -59,7 +59,11 @@
               <span v-if="guide.guide_type !== null">{{guide.guide_type.title}}</span>
               <span v-if="guide.morphable.title">· {{guide.morphable.title}}</span>
               <span v-if="guide.morphable.localized_name">· {{guide.morphable.localized_name}}</span>
-              <span v-if="patches[guide.patch_id].version">· {{patches[guide.patch_id].version}}</span>
+
+              <template v-if="patches[guide.patch_id]">
+                <span v-if="patches[guide.patch_id].version">· {{patches[guide.patch_id].version}}</span>
+              </template>
+
               <span v-if="guide.desc.length"> · {{guide.desc}}</span>
             </h5>
           </a>
@@ -88,6 +92,8 @@
         patches[patch.id] = patch;
       });
       this.patches = patches;
+
+      console.log(patches);
     },
     data() {
       return {

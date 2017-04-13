@@ -7,7 +7,7 @@
 import Vue from 'vue';
 
 require('./bootstrap');
-const attachFastClick = require('fastclick');
+// const attachFastClick = require('fastclick');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -27,6 +27,6 @@ export const app = new Vue({
   el: '#app',
 });
 
-attachFastClick(document.body);
+// attachFastClick(document.body);
 
 export default app;
