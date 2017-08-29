@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-sm-12">
         <h2 class="text-center secondary">A collection of the finest dota2 oneliners</h2>
-        <div v-if="user === null">
+        <div class="text-center" v-if="user === null">
           <p class="text-center">Got a good one? <a href="/login">Log In</a> to post your own</p>
         </div>
         <div v-else class="oneliner-form">
@@ -37,6 +37,12 @@
     </div>
   </div>
 </template>
+
+<style>
+  p{
+    max-width: 100%;
+  }
+</style>
 
 <script>
   export default {
