@@ -4,7 +4,7 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class MainNavigationTest extends TestCase
+class MainNavigationTest extends BrowserKitTestCase
 {
     /**
      * A basic test example.
@@ -16,7 +16,7 @@ class MainNavigationTest extends TestCase
         $this->visit('/')
             ->see('Login with Steam')
             ->see('Countdown')
-            ->see('Trashtalk')
+            ->see('Trashtalpjk')
             ->see('Guides')
             ->see('About')
             ->click('Guides');
