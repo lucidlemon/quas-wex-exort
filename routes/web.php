@@ -36,6 +36,10 @@ Route::get('/oneliner', function () {
     return view('overview/oneliner');
 });
 
+Route::get('/patches', function () {
+    return view('overview/patches');
+});
+
 
 
 Route::get('/guides', function () {

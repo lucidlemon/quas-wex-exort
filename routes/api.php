@@ -2,6 +2,7 @@
 
 use Dota2Api\Api;
 use Illuminate\Http\Request;
+use Telegram\Bot\Laravel\Facades\Telegram;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +58,43 @@ Route::post('oneliner', 'OneLinerController@store')->middleware('auth:api');
 
 Route::get('guide/{category}', 'GuideController@index');
 Route::post('guide', 'GuideController@store')->middleware('auth:api');
+
+Route::get('/patches', function (Request $request) {
+    $patches = \App\Patch::all()->sortBy('version');
+    return $patches;
+});
+
+Route::post('/patches', function (Request $request) {
+    if(\Illuminate\Support\Facades\Auth::user()->mod){
+        $patches = $request->input('patches');
+        foreach ($patches as $patch){
+            $patch['started_at'] = \Carbon\Carbon::parse($patch['started_at']);
+            $patch['ended_at'] = \Carbon\Carbon::parse($patch['ended_at']);
+
+            if (isset($patch['id'])){
+                // old
+                $db_patch = \App\Patch::whereId($patch['id'])->get()->first();
+                $db_patch->update($patch);
+                $db_patch->save();
+            } else {
+                // new
+                $db_patch = new \App\Patch();
+                $db_patch->fill($patch);
+                $db_patch->save();
+
+                if(!env('APP_DEBUG', false)) {
+                    Telegram::sendMessage([
+                        'chat_id' => env('TELEGRAM_GROUP_ID'),
+                        'text' => 'Patch added: ' . $patch['version']
+                    ]);
+                }
+            }
+        }
+
+        $patches = \App\Patch::all()->sortBy('version');
+        return $patches;
+    }
+})->middleware('auth:api');
 
 
 //Route::resource('/oneliner', 'OneLinerController');

@@ -38,6 +38,7 @@
     "vue-search-select": "^2.3.6",
     "vue-select": "^2.2.0",
     "vue-template-compiler": "2.1.8",
+    "vuejs-datepicker": "^0.9.11",
     "webpack": "^3.5.5"
   }
 }

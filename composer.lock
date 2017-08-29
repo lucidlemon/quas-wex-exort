@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "00b7538ab158fb944623e97fef614886",
+    "content-hash": "ba54ec7edcd9e7ff8943068d15bd868a",
     "packages": [
         {
             "name": "defuse/php-encryption",
@@ -404,19 +404,20 @@
         },
         {
             "name": "invisnik/laravel-steam-auth",
-            "version": "v2.3.4",
+            "version": "v3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/invisnik/laravel-steam-auth.git",
-                "reference": "0d9ec0ecdad1ef15a8b5f58924b604bc83232513"
+                "reference": "ecaebe9d8192e7dd30ce922f4da486870b736309"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/invisnik/laravel-steam-auth/zipball/0d9ec0ecdad1ef15a8b5f58924b604bc83232513",
-                "reference": "0d9ec0ecdad1ef15a8b5f58924b604bc83232513",
+                "url": "https://api.github.com/repos/invisnik/laravel-steam-auth/zipball/ecaebe9d8192e7dd30ce922f4da486870b736309",
+                "reference": "ecaebe9d8192e7dd30ce922f4da486870b736309",
                 "shasum": ""
             },
             "require": {
+                "ext-bcmath": "*",
                 "guzzlehttp/guzzle": "^6.2",
                 "illuminate/http": "5.*",
                 "illuminate/routing": "5.*",
@@ -427,6 +428,13 @@
                 "phpunit/phpunit": "~3.0"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Invisnik\\LaravelSteamAuth\\SteamServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Invisnik\\LaravelSteamAuth\\": "src"
@@ -448,7 +456,7 @@
                 "laravel",
                 "steam"
             ],
-            "time": "2017-05-09T07:59:05+00:00"
+            "time": "2017-08-27T14:09:26+00:00"
         },
         {
             "name": "irazasyed/telegram-bot-sdk",

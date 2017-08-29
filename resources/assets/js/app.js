@@ -5,6 +5,7 @@
  */
 
 import Vue from 'vue';
+import Datepicker from 'vuejs-datepicker';
 
 require('./bootstrap');
 // const attachFastClick = require('fastclick');
@@ -15,9 +16,12 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+Vue.component('datepicker', Datepicker);
+
 Vue.component('countdown', require('./components/Countdown.vue'));
 Vue.component('items', require('./components/Items.vue'));
 Vue.component('oneliners', require('./components/Oneliners.vue'));
+Vue.component('patches', require('./components/Patches.vue'));
 
 Vue.component('gameguidesoverview', require('./components/GameGuidesOverview.vue'));
 Vue.component('gameguidescreate', require('./components/GameGuidesCreate.vue'));
