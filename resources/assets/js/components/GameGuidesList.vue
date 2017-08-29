@@ -31,7 +31,7 @@
             <div class="guide-link" v-for="guide in parent.guides">
               <a :href="guide.url" target="_blank">
                 <h4>{{guide.title}}</h4>
-                <h5>
+                <h5 v-if="guideTypes[guide.guide_type_id]">
                   <span>{{guideTypes[guide.guide_type_id].title}}</span>
                   <span>· {{patches[guide.patch_id].version}} (started {{patches[guide.patch_id].start}})</span>
                   <span v-if="guide.desc.length"> · {{guide.desc}}</span>
