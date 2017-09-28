@@ -1,69 +1,74 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
-    "license": "MIT",
-    "type": "project",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/lucidlemon/dota2-api/"
-        }
-    ],
-    "require": {
-        "php": ">=7.0.0",
-        "laravel/framework": "5.4.*",
-        "kronusme/dota2-api": "dev-patch-1#ec59f12",
-        "invisnik/laravel-steam-auth": "3.*",
-        "laravel/passport": "^1.0",
-        "laravel-notification-channels/telegram": "^0.0.1",
-        "irazasyed/telegram-bot-sdk": "^2.1",
-        "watson/active": "^2.0"
-    },
-    "minimum-stability": "dev",
-    "require-dev": {
-        "fzaninotto/faker": "~1.4",
-        "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~5.7",
-        "symfony/css-selector": "3.1.*",
-        "symfony/dom-crawler": "3.1.*",
-        "laravel/browser-kit-testing": "1.*"
-    },
-    "autoload": {
-        "classmap": [
-            "database"
-        ],
-        "files": [
-            "app/helpers.php"
-        ],
-        "psr-4": {
-            "App\\": "app/",
-            "Tests\\": "tests/"
-        }
-    },
-    "autoload-dev": {
-      "psr-4": {
-        "Tests\\": "tests/"
-      }
-    },
-    "scripts": {
-        "post-root-package-install": [
-            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ],
-        "post-create-project-cmd": [
-            "php artisan key:generate"
-        ],
-        "post-install-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postInstall",
-            "php artisan optimize"
-        ],
-        "post-update-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "php artisan optimize"
-        ]
-    },
-    "config": {
-        "preferred-install": "dist",
-        "minimum-stability": "dev"
+  "name": "laravel/laravel",
+  "description": "The Laravel Framework.",
+  "keywords": ["framework", "laravel"],
+  "license": "MIT",
+  "type": "project",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/lucidlemon/dota2-api/"
     }
+  ],
+  "require": {
+    "php": ">=7.0.0",
+    "laravel/framework": "5.5.*",
+    "kronusme/dota2-api": "dev-patch-1#ec59f12",
+    "invisnik/laravel-steam-auth": "3.*",
+    "laravel/passport": "^1.0",
+    "laravel-notification-channels/telegram": "^0.0.1",
+    "irazasyed/telegram-bot-sdk": "^2.1",
+    "watson/active": "^2.0"
+  },
+  "minimum-stability": "dev",
+  "require-dev": {
+    "fzaninotto/faker": "~1.4",
+    "mockery/mockery": "0.9.*",
+    "phpunit/phpunit": "~6.0",
+    "symfony/css-selector": "3.1.*",
+    "symfony/dom-crawler": "3.1.*",
+    "laravel/browser-kit-testing": "1.*",
+    "filp/whoops": "~2.0"
+  },
+  "autoload": {
+    "classmap": [
+      "database"
+    ],
+    "files": [
+      "app/helpers.php"
+    ],
+    "psr-4": {
+      "App\\": "app/",
+      "Tests\\": "tests/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ],
+    "post-create-project-cmd": [
+      "php artisan key:generate"
+    ],
+    "post-install-cmd": [
+      "Illuminate\\Foundation\\ComposerScripts::postInstall",
+      "php artisan optimize"
+    ],
+    "post-update-cmd": [
+      "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+      "php artisan optimize"
+    ],
+    "post-autoload-dump": [
+      "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+      "@php artisan package:discover"
+    ]
+  },
+  "config": {
+    "preferred-install": "dist",
+    "minimum-stability": "dev"
+  }
 }
