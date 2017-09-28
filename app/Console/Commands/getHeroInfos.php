@@ -44,6 +44,6 @@ class getHeroInfos extends Command
 		$hero = Hero::whereLocalizedName($heroName)->get()->first();
 		$this->info('Found ' . $hero->name);
 
-		dd($hero->info);
+		dd($hero->infos);
 	}
 }

@@ -16,6 +16,7 @@ class Kernel extends ConsoleKernel
         Commands\apiItems::class,
         Commands\apiHeroes::class,
         Commands\getHeroInfos::class,
+        Commands\generateQuizQuestion::class,
     ];
 
     /**
