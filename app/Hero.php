@@ -24,6 +24,8 @@ class Hero extends Model
     public function getInfoAttribute(){
         $infosJson = json_decode($this->scripts);
 
+        return $infosJson;
+
         $infos = new \stdClass();
 
         $infos->heroId = intval($infosJson->HeroID);
@@ -41,8 +43,8 @@ class Hero extends Model
 	    $infos->attackRange = intval($infosJson->AttackRange);
 	    $infos->projectileSpeed = intval($infosJson->ProjectileSpeed);
 	    $infos->turnRate = floatval($infosJson->MovementTurnRate);
+	    $infos->nightVision = intval($infosJson->VisionNighttimeRange);
 
-	    $infos->capabilities = $infosJson->AttackCapabilities;
 	    $ranged = explode('_', $infosJson->AttackCapabilities);
 	    $infos->ranged = $ranged[3] === 'RANGED';
 

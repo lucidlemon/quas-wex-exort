@@ -14,6 +14,8 @@ class AddScriptsToHeroes extends Migration
     public function up()
     {
 	    Schema::table('heroes', function (Blueprint $table) {
+		    $table->text('talents')->nullable()->after('localized_name');
+		    $table->text('abilities')->nullable()->after('localized_name');
 		    $table->text('scripts')->nullable()->after('localized_name');
 	    });
     }
@@ -26,6 +28,8 @@ class AddScriptsToHeroes extends Migration
     public function down()
     {
 	    Schema::table('heroes', function (Blueprint $table) {
+		    $table->dropColumn('talents');
+		    $table->dropColumn('abilities');
 		    $table->dropColumn('scripts');
 	    });
     }
