@@ -19,11 +19,6 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
-Route::get('/user-yolo', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
-
-
 Route::get('/items', function (Request $request) {
 
     Api::init(env('DOTA_API', 'apikey'), ['localhost', env('DB_USERNAME', 'username'), env('DB_PASSWORD', 'username'), env('DB_DATABASE', 'username'), '']);
@@ -60,8 +55,7 @@ Route::get('guide/{category}', 'GuideController@index');
 Route::post('guide', 'GuideController@store')->middleware('auth:api');
 
 Route::get('/patches', function (Request $request) {
-    $patches = \App\Patch::all()->sortBy('version');
-    return $patches;
+    return \App\Patch::all()->sortBy('version');
 });
 
 Route::post('/patches', function (Request $request) {
@@ -90,10 +84,9 @@ Route::post('/patches', function (Request $request) {
                 }
             }
         }
-
-        $patches = \App\Patch::all()->sortBy('version');
-        return $patches;
     }
+
+    return \App\Patch::all()->sortBy('version');
 })->middleware('auth:api');
 
 
