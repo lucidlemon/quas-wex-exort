@@ -26,6 +26,8 @@ class CreateQuizTable extends Migration
 
             $table->boolean('relevant')->default(1);
             $table->string('type')->nullable();
+            $table->tinyInteger('difficulty')->unsigned()->default(128);
+            $table->bigInteger('difficultyCalculated')->default(0);
 
             $table->timestamps();
         });
