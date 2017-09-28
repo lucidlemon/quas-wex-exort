@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Hero;
+use App\Patch;
 use App\Quiz;
 use Illuminate\Console\Command;
 
@@ -52,10 +53,12 @@ class generateQuizQuestion extends Command
     public function createHeroStatQuestion($type)
     {
         $hero = Hero::inRandomOrder()->first();
+        $patch = Patch::orderByDesc('started_at')->first();
 
         $statType = array_random(['ms', 'armor', 'attackRange']);
         $quiz = new Quiz();
         $quiz->type = $type;
+        $quiz->patch_id = $patch->id;
 
         $images = [$hero->image];
         $answers = [];
@@ -147,10 +150,12 @@ class generateQuizQuestion extends Command
     {
         $hero1 = Hero::inRandomOrder()->first();
         $hero2 = Hero::inRandomOrder()->where('name', '<>', $hero1->name)->first();
+        $patch = Patch::orderByDesc('started_at')->first();
 
         $statType = array_random(['ms', 'armor', 'attackRange']);
         $quiz = new Quiz();
         $quiz->type = $type;
+        $quiz->patch_id = $patch->id;
 
         $images = [$hero1->image, $hero2->image];
         $answers = [];

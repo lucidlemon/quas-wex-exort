@@ -51,6 +51,9 @@ Route::post('oneliner', 'OneLinerController@store')->middleware('auth:api');
 //Route::delete($uri, $callback);
 //Route::options($uri, $callback);
 
+Route::get('quiz', 'QuizController@show');
+Route::get('quiz/{id}', 'QuizController@show');
+
 Route::get('guide/{category}', 'GuideController@index');
 Route::post('guide', 'GuideController@store')->middleware('auth:api');
 

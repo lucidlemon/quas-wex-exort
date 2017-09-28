@@ -18,6 +18,11 @@ class Quiz extends Model
         'difficultyCalculated'
     ];
 
+    protected $casts = [
+        'images' => 'array',
+        'answers' => 'array',
+    ];
+
     protected $table = 'quiz';
 
     public function patch()
