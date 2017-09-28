@@ -15,10 +15,14 @@ class QuizController extends Controller
      */
     public function show($id = false)
     {
-        if ($id) {
-            return Quiz::findOrFail($id);
-        }
+        // if ($id) {
+        //     return Quiz::findOrFail($id);
+        // }
+        
+        $quiz = Quiz::inRandomOrder()->first();
+        $quiz->answers = json_decode($quiz->answers);
+        $quiz->images = json_decode($quiz->images);
 
-        return Quiz::inRandomOrder()->first();
+        return $quiz;
     }
 }
