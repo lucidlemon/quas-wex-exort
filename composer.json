@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "php": ">=5.6.4",
+        "php": ">=7.0.0",
         "laravel/framework": "5.4.*",
         "kronusme/dota2-api": "dev-patch-1#ec59f12",
         "invisnik/laravel-steam-auth": "3.*",
@@ -42,10 +42,9 @@
         }
     },
     "autoload-dev": {
-        "classmap": [
-            "tests/TestCase.php",
-            "tests/BrowserKitTestCase.php"
-        ]
+      "psr-4": {
+        "Tests\\": "tests/"
+      }
     },
     "scripts": {
         "post-root-package-install": [
