@@ -21,7 +21,7 @@ class Hero extends Model
         return 'http://cdn.dota2.com/apps/dota2/images/heroes/'. str_replace('npc_dota_hero_', '', $this->name ) .'_full.png';
     }
 
-    public function getInfoAttribute(){
+    public function generateInfos(){
         $infosJson = json_decode($this->scripts);
 
         return $infosJson;

@@ -744,12 +744,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "9d0f23deed323710fa8b7c57b502f8c07b2b61ba"
+                "reference": "64894d378f9b5a6af31e4e0a715ec67972876860"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/9d0f23deed323710fa8b7c57b502f8c07b2b61ba",
-                "reference": "9d0f23deed323710fa8b7c57b502f8c07b2b61ba",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/64894d378f9b5a6af31e4e0a715ec67972876860",
+                "reference": "64894d378f9b5a6af31e4e0a715ec67972876860",
                 "shasum": ""
             },
             "require": {
@@ -868,7 +868,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-09-27T12:58:36+00:00"
+            "time": "2017-09-28T12:21:40+00:00"
         },
         {
             "name": "laravel/passport",
@@ -2197,12 +2197,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "08b5d100b0fb8f0b294cb81b2b5bdfd4d23fe824"
+                "reference": "a5ca8aa8263c6e113381fe5b06fe0ecf0d25f92b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/08b5d100b0fb8f0b294cb81b2b5bdfd4d23fe824",
-                "reference": "08b5d100b0fb8f0b294cb81b2b5bdfd4d23fe824",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/a5ca8aa8263c6e113381fe5b06fe0ecf0d25f92b",
+                "reference": "a5ca8aa8263c6e113381fe5b06fe0ecf0d25f92b",
                 "shasum": ""
             },
             "require": {
@@ -2274,7 +2274,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2017-09-26T14:46:55+00:00"
+            "time": "2017-09-28T13:03:46+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -3400,21 +3400,21 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "4.1.1",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "2d3d238c433cf69caeb4842e97a3223a116f94b2"
+                "reference": "48eb1f629d55621f03ca72195fe04d05d463b807"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/2d3d238c433cf69caeb4842e97a3223a116f94b2",
-                "reference": "2d3d238c433cf69caeb4842e97a3223a116f94b2",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/48eb1f629d55621f03ca72195fe04d05d463b807",
+                "reference": "48eb1f629d55621f03ca72195fe04d05d463b807",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.0",
-                "phpdocumentor/reflection-common": "^1.0@dev",
+                "phpdocumentor/reflection-common": "^1.0.0",
                 "phpdocumentor/type-resolver": "^0.4.0",
                 "webmozart/assert": "^1.0"
             },
@@ -3441,7 +3441,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2017-08-30T18:51:59+00:00"
+            "time": "2017-09-11T18:06:56+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -3809,12 +3809,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "18e5b1a0c3eef3e3688ffd91a2650c1bdc918ef7"
+                "reference": "489c3ac972fb915f3b05731f2ac904ff408e7a49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/18e5b1a0c3eef3e3688ffd91a2650c1bdc918ef7",
-                "reference": "18e5b1a0c3eef3e3688ffd91a2650c1bdc918ef7",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/489c3ac972fb915f3b05731f2ac904ff408e7a49",
+                "reference": "489c3ac972fb915f3b05731f2ac904ff408e7a49",
                 "shasum": ""
             },
             "require": {
@@ -3885,7 +3885,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-09-28T09:46:59+00:00"
+            "time": "2017-09-28T11:11:47+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
