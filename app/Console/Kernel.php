@@ -14,7 +14,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         Commands\apiItems::class,
-        Commands\apiHeroes::class
+        Commands\apiHeroes::class,
+        Commands\getHeroInfos::class,
     ];
 
     /**
@@ -26,7 +27,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('api:heroes')
-            ->everyFiveMinutes();
+            ->hourly();
 
         $schedule->command('api:items')
             ->everyFiveMinutes();
