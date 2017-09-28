@@ -22,6 +22,7 @@ Vue.component('countdown', require('./components/Countdown.vue'));
 Vue.component('items', require('./components/Items.vue'));
 Vue.component('oneliners', require('./components/Oneliners.vue'));
 Vue.component('patches', require('./components/Patches.vue'));
+Vue.component('quiz', require('./components/Quiz.vue'));
 
 Vue.component('gameguidesoverview', require('./components/GameGuidesOverview.vue'));
 Vue.component('gameguidescreate', require('./components/GameGuidesCreate.vue'));

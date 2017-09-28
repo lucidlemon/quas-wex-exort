@@ -40,6 +40,10 @@ Route::get('/patches', function () {
     return view('overview/patches');
 });
 
+Route::get('/quiz', function () {
+    return view('overview/quiz');
+});
+
 
 
 Route::get('/guides', function () {

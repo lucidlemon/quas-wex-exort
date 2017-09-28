@@ -32,6 +32,9 @@ class Kernel extends ConsoleKernel
 
         $schedule->command('api:items')
             ->everyFiveMinutes();
+
+        $schedule->command('quiz:generate')
+            ->everyFiveMinutes();
     }
 
     /**

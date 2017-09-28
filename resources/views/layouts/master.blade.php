@@ -89,9 +89,15 @@
                     Guides
                 </a>
             </li>
+            <li>
+                <a href="{{ url('quiz') }}">
+                    <img src="{{asset('assets/ic_games.svg')}}" />
+                    Mini Games
+                </a>
+            </li>
             @if(env('APP_DEBUG', false))
                 <li>
-                    <a href="{{ url('games') }}">
+                    <a href="{{ url('quiz') }}">
                         <img src="{{asset('assets/ic_games.svg')}}" />
                         Mini Games
                     </a>
