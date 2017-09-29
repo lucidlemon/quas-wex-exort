@@ -2,7 +2,7 @@
   <div class="container container-quiz">
     <div class="row">
       <div class="col-sm-12">
-        <h4 class="text-center secondary">Your MMR: {{mmr}}</h4>
+        <h4 class="text-center secondary">Your MMR: {{mmr}} · Streak: {{streak}} (Best: {{bestStreak}})</h4>
       </div>
     </div>
 
@@ -135,6 +135,8 @@
         answerTextSolution: '',
         mmr: window.serverData.quizMmr,
         timeoutId: null,
+        streak: 0,
+        bestStreak: 0,
       };
     },
     methods: {
@@ -170,8 +172,15 @@
 
         if (answer) {
             this.mmr += 25;
+            this.streak += 1;
         } else {
             this.mmr -= 25;
+
+            if (this.streak > this.bestStreak) {
+              this.bestStreak = this.streak;
+            }
+
+            this.streak = 0;
         }
 
         this.timeoutId = setTimeout(() => {
