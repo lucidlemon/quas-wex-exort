@@ -54,7 +54,7 @@ class generateQuizQuestion implements ShouldQueue
             'attackRange'
         ]);
 		$quiz = new Quiz();
-		$quiz->type = $type;
+        $quiz->type = $type . ':' . $statType;
 		$quiz->patch_id = $patch->id;
 
 		$images = [$hero->image];
@@ -185,7 +185,7 @@ class generateQuizQuestion implements ShouldQueue
             'intelligenceAtX'
         ]);
 		$quiz = new Quiz();
-		$quiz->type = $type;
+		$quiz->type = $type . ':' . $statType;
 		$quiz->patch_id = $patch->id;
 
 		$images = [];
