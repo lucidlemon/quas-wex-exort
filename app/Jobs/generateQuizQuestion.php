@@ -227,7 +227,7 @@ class generateQuizQuestion implements ShouldQueue
                 $resHero1 = $hero1->infos->ms;
                 $resHero2 = $hero2->infos->ms;
 
-				$solution = $hero1->localized_name . ':' . $resHero1 .' vs '. $hero2->localized_name . ':' . $resHero2;
+				$solution = $hero1->localized_name . ': ' . $resHero1 .' vs '. $hero2->localized_name . ': ' . $resHero2;
 
 				// generate true answer
 				$answers[] = (object)[
@@ -257,7 +257,7 @@ class generateQuizQuestion implements ShouldQueue
                 $resHero1 = $hero1->infos->armor;
                 $resHero2 = $hero2->infos->armor;
 
-                $solution = $hero1->localized_name . ':' . $resHero1 .' vs '. $hero2->localized_name . ':' . $resHero2;
+                $solution = $hero1->localized_name . ': ' . $resHero1 .' vs '. $hero2->localized_name . ': ' . $resHero2;
 
 				// generate true answer
 				$answers[] = (object)[
@@ -287,7 +287,7 @@ class generateQuizQuestion implements ShouldQueue
                 $resHero1 = $hero1->infos->attackRange;
                 $resHero2 = $hero2->infos->attackRange;
 
-                $solution = $hero1->localized_name . ':' . $resHero1 .' vs '. $hero2->localized_name . ':' . $resHero2;
+                $solution = $hero1->localized_name . ': ' . $resHero1 .' vs '. $hero2->localized_name . ': ' . $resHero2;
 
 				// generate true answer
 				$answers[] = (object)[
@@ -317,7 +317,7 @@ class generateQuizQuestion implements ShouldQueue
                 $resHero1 = $hero1->infos->attributeStrengthGain;
                 $resHero2 = $hero2->infos->attributeStrengthGain;
 
-                $solution = $hero1->localized_name . ':' . $resHero1 .' vs '. $hero2->localized_name . ':' . $resHero2;
+                $solution = $hero1->localized_name . ': ' . $resHero1 .' vs '. $hero2->localized_name . ': ' . $resHero2;
 
 				// generate true answer
 				$answers[] = (object)[
@@ -347,7 +347,7 @@ class generateQuizQuestion implements ShouldQueue
                 $resHero1 = $hero1->infos->attributeAgilityGain;
                 $resHero2 = $hero2->infos->attributeAgilityGain;
 
-                $solution = $hero1->localized_name . ':' . $resHero1 .' vs '. $hero2->localized_name . ':' . $resHero2;
+                $solution = $hero1->localized_name . ': ' . $resHero1 .' vs '. $hero2->localized_name . ': ' . $resHero2;
 
 				// generate true answer
 				$answers[] = (object)[
@@ -377,7 +377,7 @@ class generateQuizQuestion implements ShouldQueue
                 $resHero1 = $hero1->infos->attributeIntelligenceGain;
                 $resHero2 = $hero2->infos->attributeIntelligenceGain;
 
-                $solution = $hero1->localized_name . ':' . $resHero1 .' vs '. $hero2->localized_name . ':' . $resHero2;
+                $solution = $hero1->localized_name . ': ' . $resHero1 .' vs '. $hero2->localized_name . ': ' . $resHero2;
 
 				// generate true answer
 				$answers[] = (object)[
@@ -408,7 +408,7 @@ class generateQuizQuestion implements ShouldQueue
 				$resHero1 = $hero1->infos->attributeStrengthGain * $level + $hero1->infos->attributeStrengthBase;
 				$resHero2 = $hero2->infos->attributeStrengthGain * $level + $hero2->infos->attributeStrengthBase;
 
-                $solution = $hero1->localized_name . ':' . $resHero1 .' vs '. $hero2->localized_name . ':' . $resHero2;
+                $solution = $hero1->localized_name . ': ' . $resHero1 .' vs '. $hero2->localized_name . ': ' . $resHero2;
 
 				// generate true answer
 				$answers[] = (object)[
@@ -439,7 +439,7 @@ class generateQuizQuestion implements ShouldQueue
 				$resHero1 = $hero1->infos->attributeAgilityGain * $level + $hero1->infos->attributeAgilityBase;
 				$resHero2 = $hero2->infos->attributeAgilityGain * $level + $hero2->infos->attributeAgilityBase;
 
-                $solution = $hero1->localized_name . ':' . $resHero1 .' vs '. $hero2->localized_name . ':' . $resHero2;
+                $solution = $hero1->localized_name . ': ' . $resHero1 .' vs '. $hero2->localized_name . ': ' . $resHero2;
 
 				// generate true answer
 				$answers[] = (object)[
@@ -470,7 +470,7 @@ class generateQuizQuestion implements ShouldQueue
 				$resHero1 = $hero1->infos->attributeIntelligenceGain * $level + $hero1->infos->attributeIntelligenceBase;
 				$resHero2 = $hero2->infos->attributeIntelligenceGain * $level + $hero2->infos->attributeIntelligenceBase;
 
-                $solution = $hero1->localized_name . ':' . $resHero1 .' vs '. $hero2->localized_name . ':' . $resHero2;
+                $solution = $hero1->localized_name . ': ' . $resHero1 .' vs '. $hero2->localized_name . ': ' . $resHero2;
 
 				// generate true answer
 				$answers[] = (object)[
