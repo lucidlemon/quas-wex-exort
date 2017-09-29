@@ -12,7 +12,7 @@
   ],
   "require": {
     "php": ">=7.0.0",
-    "laravel/framework": "5.5.*",
+    "laravel/framework": "5.5.13",
     "kronusme/dota2-api": "dev-patch-1#ec59f12",
     "invisnik/laravel-steam-auth": "3.*",
     "laravel/passport": "^1.0",
