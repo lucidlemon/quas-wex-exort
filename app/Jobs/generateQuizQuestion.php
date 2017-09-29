@@ -47,7 +47,7 @@ class generateQuizQuestion implements ShouldQueue
 		$hero = Hero::inRandomOrder()->first();
 		$patch = Patch::orderByDesc('started_at')->first();
 
-		$statType = array_random(['ms', 'armor', 'attackRange']);
+		$statType = array_random(['ms', 'armor', 'armorBase', 'attackRange']);
 		$quiz = new Quiz();
 		$quiz->type = $type;
 		$quiz->patch_id = $patch->id;
@@ -83,6 +83,26 @@ class generateQuizQuestion implements ShouldQueue
 
 				break;
 			case 'armor':
+				$quiz->question = 'What is the starting <b>armor</b> of ' . $hero->localized_name . '?';
+
+				$answers[] = (object)[
+					'text' => intval($hero->infos->armor + $hero->infos->attributeAgilityBase * (1 / 7)),
+					'correct' => true,
+				];
+
+				$results = [$hero->infos->armor];
+
+				for ($i = 1; $i <= 3; $i++) {
+					$random = $this->createRandomResult(-10, 10, 1, $results);
+					$results[] = $random;
+					$answers[] = (object)[
+						'text' => $random,
+						'correct' => false,
+					];
+				}
+
+				break;
+			case 'armorBase':
 				$quiz->question = 'What is the base <b>armor</b> of ' . $hero->localized_name . '?';
 
 				$answers[] = (object)[
@@ -146,7 +166,7 @@ class generateQuizQuestion implements ShouldQueue
 		$hero2 = Hero::inRandomOrder()->where('name', '<>', $hero1->name)->first();
 		$patch = Patch::orderByDesc('started_at')->first();
 
-		$statType = array_random(['ms', 'armor', 'attackRange']);
+		$statType = array_random(['ms', 'armor', 'attackRange', 'agilityGain', 'strengthGain', 'intelligenceGain']);
 		$quiz = new Quiz();
 		$quiz->type = $type;
 		$quiz->patch_id = $patch->id;
@@ -228,6 +248,84 @@ class generateQuizQuestion implements ShouldQueue
 				$answers[] = (object)[
 					'text' => $hero2->localized_name,
 					'correct' => $hero1->infos->attackRange < $hero2->infos->attackRange,
+					'solution' => $solution,
+					'image' => $hero2->image,
+				];
+
+				break;
+			case 'strengthGain':
+				$quiz->question = 'Which hero has a better <b>strength gain</b>?';
+				$solution = $hero1->infos->attributeStrengthGain .' vs '. $hero2->infos->attributeStrengthGain;
+
+				// generate true answer
+				$answers[] = (object)[
+					'text' => $hero1->localized_name,
+					'correct' => $hero1->infos->attributeStrengthGain > $hero2->infos->attributeStrengthGain,
+					'solution' => $solution,
+					'image' => $hero1->image,
+				];
+
+				$answers[] = (object)[
+					'text' => 'both are the same',
+					'correct' => $hero1->infos->attributeStrengthGain == $hero2->infos->attributeStrengthGain,
+					'solution' => $solution,
+				];
+
+				$answers[] = (object)[
+					'text' => $hero2->localized_name,
+					'correct' => $hero1->infos->attributeStrengthGain < $hero2->infos->attributeStrengthGain,
+					'solution' => $solution,
+					'image' => $hero2->image,
+				];
+
+				break;
+			case 'agilityGain':
+				$quiz->question = 'Which hero has a better <b>agility gain</b>?';
+				$solution = $hero1->infos->attributeAgilityGain .' vs '. $hero2->infos->attributeAgilityGain;
+
+				// generate true answer
+				$answers[] = (object)[
+					'text' => $hero1->localized_name,
+					'correct' => $hero1->infos->attributeAgilityGain > $hero2->infos->attributeAgilityGain,
+					'solution' => $solution,
+					'image' => $hero1->image,
+				];
+
+				$answers[] = (object)[
+					'text' => 'both are the same',
+					'correct' => $hero1->infos->attributeAgilityGain == $hero2->infos->attributeAgilityGain,
+					'solution' => $solution,
+				];
+
+				$answers[] = (object)[
+					'text' => $hero2->localized_name,
+					'correct' => $hero1->infos->attributeAgilityGain < $hero2->infos->attributeAgilityGain,
+					'solution' => $solution,
+					'image' => $hero2->image,
+				];
+
+				break;
+			case 'intelligenceGain':
+				$quiz->question = 'Which hero has a better <b>intelligence gain</b>?';
+				$solution = $hero1->infos->attributeIntelligenceGain .' vs '. $hero2->infos->attributeIntelligenceGain;
+
+				// generate true answer
+				$answers[] = (object)[
+					'text' => $hero1->localized_name,
+					'correct' => $hero1->infos->attributeIntelligenceGain > $hero2->infos->attributeIntelligenceGain,
+					'solution' => $solution,
+					'image' => $hero1->image,
+				];
+
+				$answers[] = (object)[
+					'text' => 'both are the same',
+					'correct' => $hero1->infos->attributeIntelligenceGain == $hero2->infos->attributeIntelligenceGain,
+					'solution' => $solution,
+				];
+
+				$answers[] = (object)[
+					'text' => $hero2->localized_name,
+					'correct' => $hero1->infos->attributeIntelligenceGain < $hero2->infos->attributeIntelligenceGain,
 					'solution' => $solution,
 					'image' => $hero2->image,
 				];
