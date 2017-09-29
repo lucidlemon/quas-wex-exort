@@ -13,14 +13,13 @@
   "require": {
     "php": ">=7.0.0",
     "laravel/framework": "5.5.13",
-    "kronusme/dota2-api": "dev-patch-1#ec59f12",
+    "kronusme/dota2-api": "2.2.1",
     "invisnik/laravel-steam-auth": "3.*",
     "laravel/passport": "^1.0",
     "laravel-notification-channels/telegram": "^0.0.1",
     "irazasyed/telegram-bot-sdk": "^2.1",
     "watson/active": "^2.0"
   },
-  "minimum-stability": "dev",
   "require-dev": {
     "fzaninotto/faker": "~1.4",
     "mockery/mockery": "0.9.*",
