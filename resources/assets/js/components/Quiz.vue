@@ -11,13 +11,13 @@
 
     <div class="oneliner-line text-center" v-if="quiz">
       <div class="row">
-        <!--<div class="col-sm-12">-->
-          <!--<div class="images">-->
-            <!--<div class="image" v-for="image in quiz.images">-->
-              <!--<img :src="image">-->
-            <!--</div>-->
-          <!--</div>-->
-        <!--</div>-->
+        <div class="col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+          <div class="images">
+            <div class="image" v-for="image in quiz.images">
+              <img :src="image">
+            </div>
+          </div>
+        </div>
         <div class="col-sm-12">
           <h3 v-html="quiz.question"></h3>
         </div>
