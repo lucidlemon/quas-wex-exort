@@ -190,6 +190,7 @@ class generateQuizQuestion implements ShouldQueue
 					'text' => $hero1->localized_name,
 					'correct' => $hero1->infos->armor > $hero2->infos->armor,
 					'solution' => $solution,
+					'image' => $hero1->image,
 				];
 
 				$answers[] = (object)[
@@ -202,6 +203,7 @@ class generateQuizQuestion implements ShouldQueue
 					'text' => $hero2->localized_name,
 					'correct' => $hero1->infos->armor < $hero2->infos->armor,
 					'solution' => $solution,
+					'image' => $hero2->image,
 				];
 
 				break;
@@ -214,6 +216,7 @@ class generateQuizQuestion implements ShouldQueue
 					'text' => $hero1->localized_name,
 					'correct' => $hero1->infos->attackRange > $hero2->infos->attackRange,
 					'solution' => $solution,
+					'image' => $hero1->image,
 				];
 
 				$answers[] = (object)[
@@ -226,6 +229,7 @@ class generateQuizQuestion implements ShouldQueue
 					'text' => $hero2->localized_name,
 					'correct' => $hero1->infos->attackRange < $hero2->infos->attackRange,
 					'solution' => $solution,
+					'image' => $hero2->image,
 				];
 
 				break;
