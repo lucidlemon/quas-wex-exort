@@ -213,6 +213,13 @@ class generateQuizQuestion implements ShouldQueue
 		$images = [];
 		$answers = [];
 
+//        \Log::info('---');
+//		\Log::info('Hero1 ' . $hero1->localized_name);
+//        \Log::info('Hero2 ' . $hero2->localized_name);
+
+//        \Log::info('Hero1 info ' . gettype($hero1->infos));
+//        \Log::info('Hero2 info ' . gettype($hero2->infos));
+
 		switch ($statType) {
 			case 'ms':
 				$quiz->question = 'Which hero has a faster <b>movement speed</b>?';
@@ -399,7 +406,7 @@ class generateQuizQuestion implements ShouldQueue
 				$quiz->question = 'Which hero has more <b>strength at level '.$level.'</b>?';
 
 				$resHero1 = $hero1->infos->attributeStrengthGain * $level + $hero1->infos->attributeStrengthBase;
-				$resHero2 = $hero2->infos->attributeStrengthGain * $level + $hero1->infos->attributeStrengthBase;
+				$resHero2 = $hero2->infos->attributeStrengthGain * $level + $hero2->infos->attributeStrengthBase;
 
                 $solution = $hero1->localized_name . ':' . $resHero1 .' vs '. $hero2->localized_name . ':' . $resHero2;
 
@@ -430,7 +437,7 @@ class generateQuizQuestion implements ShouldQueue
 				$quiz->question = 'Which hero has more <b>agility at level '.$level.'</b>?';
 
 				$resHero1 = $hero1->infos->attributeAgilityGain * $level + $hero1->infos->attributeAgilityBase;
-				$resHero2 = $hero2->infos->attributeAgilityGain * $level + $hero1->infos->attributeAgilityBase;
+				$resHero2 = $hero2->infos->attributeAgilityGain * $level + $hero2->infos->attributeAgilityBase;
 
                 $solution = $hero1->localized_name . ':' . $resHero1 .' vs '. $hero2->localized_name . ':' . $resHero2;
 
@@ -461,7 +468,7 @@ class generateQuizQuestion implements ShouldQueue
 				$quiz->question = 'Which hero has more <b>intelligence at level '.$level.'</b>?';
 
 				$resHero1 = $hero1->infos->attributeIntelligenceGain * $level + $hero1->infos->attributeIntelligenceBase;
-				$resHero2 = $hero2->infos->attributeIntelligenceGain * $level + $hero1->infos->attributeIntelligenceBase;
+				$resHero2 = $hero2->infos->attributeIntelligenceGain * $level + $hero2->infos->attributeIntelligenceBase;
 
                 $solution = $hero1->localized_name . ':' . $resHero1 .' vs '. $hero2->localized_name . ':' . $resHero2;
 
