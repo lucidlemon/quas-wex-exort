@@ -47,7 +47,12 @@ class generateQuizQuestion implements ShouldQueue
 		$hero = Hero::inRandomOrder()->first();
 		$patch = Patch::orderByDesc('started_at')->first();
 
-		$statType = array_random(['ms', 'armor', 'armorBase', 'attackRange']);
+		$statType = array_random([
+		    'ms',
+            'armor',
+//            'armorBase',
+            'attackRange'
+        ]);
 		$quiz = new Quiz();
 		$quiz->type = $type;
 		$quiz->patch_id = $patch->id;
