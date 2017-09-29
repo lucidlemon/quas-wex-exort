@@ -134,7 +134,7 @@ class generateQuizQuestion extends Command
 
         if (count($answers)) {
             $quiz->images = json_encode($images);
-            $quiz->answers = json_encode($answers);
+            $quiz->answers = json_encode(shuffle($answers));
             $quiz->save();
 
             $this->info('Generated question: ' . $quiz->question);
