@@ -53,6 +53,7 @@ Route::post('oneliner', 'OneLinerController@store')->middleware('auth:api');
 
 Route::get('quiz', 'QuizController@show');
 Route::get('quiz/{id}', 'QuizController@show');
+Route::post('quiz', 'QuizController@storeResult');
 
 Route::get('guide/{category}', 'GuideController@index');
 Route::post('guide', 'GuideController@store')->middleware('auth:api');

@@ -37,4 +37,18 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\OneLiner', 'mod_id', 'id');
     }
+
+    public function quizAnswers()
+    {
+        return $this->hasMany('App\QuizAnswer', 'user_id', 'id');
+    }
+
+    public function getQuizMmrAttribute()
+    {
+        $mmr = 2000;
+        $mmr += $this->quizAnswers()->whereCorrect(true)->count() * 25;
+        $mmr -= $this->quizAnswers()->whereCorrect(false)->count() * 25;
+        return $mmr;
+    }
+
 }

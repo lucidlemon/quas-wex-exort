@@ -123,7 +123,7 @@
         correct: false,
         answerText: '',
         answerTextSolution: '',
-        mmr: 2000,
+        mmr: window.serverData.quizMmr,
       };
     },
     methods: {
@@ -150,6 +150,12 @@
         console.log(answer);
         this.answered = true;
         this.correct = answer;
+
+        this.$http.post(`${window.Laravel.apiUrl}/quiz`, {
+          question_id: this.quiz.id,
+          correct: answer,
+          session: window.serverData.quizSession,
+        });
 
         if (answer) {
             this.mmr += 25;

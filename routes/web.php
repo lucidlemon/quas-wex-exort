@@ -41,7 +41,22 @@ Route::get('/patches', function () {
 });
 
 Route::get('/quiz', function () {
-    return view('overview/quiz');
+    if(!session('quiz_session')){
+        $quizSession = str_random(64);
+        session(['quiz_session' => $quizSession]);
+    } else {
+        $quizSession = session('quiz_session');
+    }
+
+    if(\Auth::guest()){
+        $mmr = 2000;
+        $mmr += \App\QuizAnswer::whereSession($quizSession)->whereCorrect(true)->count() * 25;
+        $mmr -= \App\QuizAnswer::whereSession($quizSession)->whereCorrect(false)->count() * 25;
+    } else {
+        $mmr = \Auth::user()->quizMmr;
+    }
+
+    return view('overview/quiz')->with(['mmr' => $mmr, 'quizSession' => $quizSession]);
 });
 
 
