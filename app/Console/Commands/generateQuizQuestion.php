@@ -132,7 +132,7 @@ class generateQuizQuestion extends Command
                 break;
         }
 
-        shuffle($answers)
+        shuffle($answers);
 
         if (count($answers)) {
             $quiz->images = json_encode($images);
