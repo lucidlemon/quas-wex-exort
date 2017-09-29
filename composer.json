@@ -10,6 +10,11 @@
       "url": "https://github.com/lucidlemon/dota2-api/"
     }
   ],
+  "config": {
+    "platform": {
+      "php": "7.0.22"
+    }
+  },
   "require": {
     "php": ">=7.0.0",
     "laravel/framework": "5.5.13",
