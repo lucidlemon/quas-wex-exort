@@ -568,6 +568,62 @@ class generateQuizQuestion implements ShouldQueue
         }
     }
 
+    public function createItemCompareQuestion($type)
+    {
+        $item1 = Item::whereRecipe(0)->where('id', '<', 1000)->inRandomOrder()->first();
+        $item2 = Item::whereRecipe(0)->where('id', '<', 1000)->where('name', '<>', $item1->name)->inRandomOrder()->first();
+        $patch = Patch::orderByDesc('started_at')->first();
+
+        $statType = $this->getRandomWeightedElement([
+            'cost' => 40,
+        ]);
+        $quiz = new Quiz();
+        $quiz->type = $type . ':' . $statType;
+        $quiz->patch_id = $patch->id;
+
+        $images = [];
+        $answers = [];
+
+        switch ($statType) {
+            case 'cost':
+                $quiz->question = 'Which item costs more <b>gold</b>?';
+
+                $resItem1 = intval($item1->cost);
+                $resItem2 = intval($item2->cost);
+
+                $solution = $item1->localized_name . ': ' . $resItem1 .' vs '. $item2->localized_name . ': ' . $resItem2;
+
+                // generate true answer
+                $answers[] = (object)[
+                    'text' => $item1->localized_name,
+                    'correct' => $resItem1 > $resItem2,
+                    'solution' => $solution,
+                    'image' => $item1->image,
+                ];
+
+                $answers[] = (object)[
+                    'text' => 'both cost the same',
+                    'correct' => $resItem1 == $resItem2,
+                    'solution' => $solution,
+                ];
+
+                $answers[] = (object)[
+                    'text' => $item2->localized_name,
+                    'correct' => $resItem1 < $resItem2,
+                    'solution' => $solution,
+                    'image' => $item2->image,
+                ];
+
+                break;
+        }
+
+        if (count($answers)) {
+            $quiz->images = json_encode($images);
+            $quiz->answers = json_encode($answers);
+            $quiz->save();
+        }
+    }
+
 	/**
 	 * Execute the console command.
 	 *
@@ -577,6 +633,7 @@ class generateQuizQuestion implements ShouldQueue
 	{
 		$type = $this->getRandomWeightedElement([
             'item:stat' => 60,
+            'item:compare' => 80,
 		    'hero:compare' => 80,
             'hero:stat' => 30
         ]);
@@ -590,6 +647,9 @@ class generateQuizQuestion implements ShouldQueue
 				break;
             case 'item:stat':
                 $this->createItemStatQuestion($type);
+                break;
+            case 'item:compare':
+                $this->createItemCompareQuestion($type);
                 break;
 		}
 	}
