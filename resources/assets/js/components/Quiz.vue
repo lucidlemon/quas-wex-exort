@@ -28,7 +28,7 @@
           </div>
         </div>
         <div class="col-sm-12" v-else>
-          <div class="answers">
+          <div class="answers answers-{{quiz.answers.length}}">
             <div class="answer" v-for="answer in quiz.answers">
               <a v-on:click="answerQuiz(answer.correct)" class="button button-link button-full-width">
                 {{answer.text}}
