@@ -176,7 +176,7 @@
 
         this.timeoutId = setTimeout(() => {
            this.getQuizQuestion();
-        }, 3000);
+        }, 5000);
       },
       fastTrack() {
         if (this.timeoutId) {
