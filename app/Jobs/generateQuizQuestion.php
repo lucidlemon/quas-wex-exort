@@ -252,10 +252,10 @@ class generateQuizQuestion implements ShouldQueue
 
 				break;
 			case 'armor':
-				$quiz->question = 'Which hero has more <b>base armor</b>?';
+				$quiz->question = 'Which hero has more <b>armor at level 1</b>?';
 
-                $resHero1 = $hero1->infos->armor;
-                $resHero2 = $hero2->infos->armor;
+                $resHero1 = intval($hero1->infos->armor + $hero1->infos->attributeAgilityBase * (1 / 7));
+                $resHero2 = intval($hero2->infos->armor + $hero2->infos->attributeAgilityBase * (1 / 7));
 
                 $solution = $hero1->localized_name . ': ' . $resHero1 .' vs '. $hero2->localized_name . ': ' . $resHero2;
 
