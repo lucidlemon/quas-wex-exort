@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Quiz;
 use App\QuizAnswer;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class QuizController extends Controller
@@ -48,7 +49,7 @@ class QuizController extends Controller
         //     return Quiz::findOrFail($id);
         // }
 
-        $quiz = Quiz::inRandomOrder()->first();
+        $quiz = Quiz::where('created_at', '>', Carbon::now()->subDay())->inRandomOrder()->first();
         $quiz->answers = json_decode($quiz->answers);
         $quiz->images = json_decode($quiz->images);
 
