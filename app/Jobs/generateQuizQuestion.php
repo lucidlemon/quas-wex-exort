@@ -216,25 +216,29 @@ class generateQuizQuestion implements ShouldQueue
 		switch ($statType) {
 			case 'ms':
 				$quiz->question = 'Which hero has a faster <b>movement speed</b>?';
-				$solution = $hero1->infos->ms .' vs '. $hero2->infos->ms;
+
+                $resHero1 = $hero1->infos->ms;
+                $resHero2 = $hero2->infos->ms;
+
+				$solution = $hero1->localized_name . ':' . $resHero1 .' vs '. $hero2->localized_name . ':' . $resHero2;
 
 				// generate true answer
 				$answers[] = (object)[
 					'text' => $hero1->localized_name,
-					'correct' => $hero1->infos->ms > $hero2->infos->ms,
+					'correct' => $resHero1 > $resHero2,
 					'solution' => $solution,
                     'image' => $hero1->image,
 				];
 
 				$answers[] = (object)[
 					'text' => 'both are the same',
-					'correct' => $hero1->infos->ms == $hero2->infos->ms,
+					'correct' => $resHero1 == $resHero2,
 					'solution' => $solution,
 				];
 
 				$answers[] = (object)[
 					'text' => $hero2->localized_name,
-					'correct' => $hero1->infos->ms < $hero2->infos->ms,
+					'correct' => $resHero1 < $resHero2,
 					'solution' => $solution,
 					'image' => $hero2->image,
 				];
@@ -242,25 +246,29 @@ class generateQuizQuestion implements ShouldQueue
 				break;
 			case 'armor':
 				$quiz->question = 'Which hero has more <b>base armor</b>?';
-				$solution = $hero1->infos->armor .' vs '. $hero2->infos->armor;
+
+                $resHero1 = $hero1->infos->armor;
+                $resHero2 = $hero2->infos->armor;
+
+                $solution = $hero1->localized_name . ':' . $resHero1 .' vs '. $hero2->localized_name . ':' . $resHero2;
 
 				// generate true answer
 				$answers[] = (object)[
 					'text' => $hero1->localized_name,
-					'correct' => $hero1->infos->armor > $hero2->infos->armor,
+					'correct' => $resHero1 > $resHero2,
 					'solution' => $solution,
 					'image' => $hero1->image,
 				];
 
 				$answers[] = (object)[
 					'text' => 'both are the same',
-					'correct' => $hero1->infos->armor == $hero2->infos->armor,
+					'correct' => $resHero1 == $resHero2,
 					'solution' => $solution,
 				];
 
 				$answers[] = (object)[
 					'text' => $hero2->localized_name,
-					'correct' => $hero1->infos->armor < $hero2->infos->armor,
+					'correct' => $resHero1 < $resHero2,
 					'solution' => $solution,
 					'image' => $hero2->image,
 				];
@@ -268,25 +276,29 @@ class generateQuizQuestion implements ShouldQueue
 				break;
 			case 'attackRange':
 				$quiz->question = 'Which hero has a bigger <b>attack range</b>?';
-				$solution = $hero1->infos->attackRange .' vs '. $hero2->infos->attackRange;
+
+                $resHero1 = $hero1->infos->attackRange;
+                $resHero2 = $hero2->infos->attackRange;
+
+                $solution = $hero1->localized_name . ':' . $resHero1 .' vs '. $hero2->localized_name . ':' . $resHero2;
 
 				// generate true answer
 				$answers[] = (object)[
 					'text' => $hero1->localized_name,
-					'correct' => $hero1->infos->attackRange > $hero2->infos->attackRange,
+					'correct' => $resHero1 > $resHero2,
 					'solution' => $solution,
 					'image' => $hero1->image,
 				];
 
 				$answers[] = (object)[
 					'text' => 'both are the same',
-					'correct' => $hero1->infos->attackRange == $hero2->infos->attackRange,
+					'correct' => $resHero1 == $resHero2,
 					'solution' => $solution,
 				];
 
 				$answers[] = (object)[
 					'text' => $hero2->localized_name,
-					'correct' => $hero1->infos->attackRange < $hero2->infos->attackRange,
+					'correct' => $resHero1 < $resHero2,
 					'solution' => $solution,
 					'image' => $hero2->image,
 				];
@@ -294,25 +306,29 @@ class generateQuizQuestion implements ShouldQueue
 				break;
 			case 'strengthGain':
 				$quiz->question = 'Which hero has a better <b>strength gain</b>?';
-				$solution = $hero1->infos->attributeStrengthGain .' vs '. $hero2->infos->attributeStrengthGain;
+
+                $resHero1 = $hero1->infos->attributeStrengthGain;
+                $resHero2 = $hero2->infos->attributeStrengthGain;
+
+                $solution = $hero1->localized_name . ':' . $resHero1 .' vs '. $hero2->localized_name . ':' . $resHero2;
 
 				// generate true answer
 				$answers[] = (object)[
 					'text' => $hero1->localized_name,
-					'correct' => $hero1->infos->attributeStrengthGain > $hero2->infos->attributeStrengthGain,
+					'correct' => $resHero1 > $resHero2,
 					'solution' => $solution,
 					'image' => $hero1->image,
 				];
 
 				$answers[] = (object)[
 					'text' => 'both are the same',
-					'correct' => $hero1->infos->attributeStrengthGain == $hero2->infos->attributeStrengthGain,
+					'correct' => $resHero1 == $resHero2,
 					'solution' => $solution,
 				];
 
 				$answers[] = (object)[
 					'text' => $hero2->localized_name,
-					'correct' => $hero1->infos->attributeStrengthGain < $hero2->infos->attributeStrengthGain,
+					'correct' => $resHero1 < $resHero2,
 					'solution' => $solution,
 					'image' => $hero2->image,
 				];
@@ -320,25 +336,29 @@ class generateQuizQuestion implements ShouldQueue
 				break;
 			case 'agilityGain':
 				$quiz->question = 'Which hero has a better <b>agility gain</b>?';
-				$solution = $hero1->infos->attributeAgilityGain .' vs '. $hero2->infos->attributeAgilityGain;
+
+                $resHero1 = $hero1->infos->attributeAgilityGain;
+                $resHero2 = $hero2->infos->attributeAgilityGain;
+
+                $solution = $hero1->localized_name . ':' . $resHero1 .' vs '. $hero2->localized_name . ':' . $resHero2;
 
 				// generate true answer
 				$answers[] = (object)[
 					'text' => $hero1->localized_name,
-					'correct' => $hero1->infos->attributeAgilityGain > $hero2->infos->attributeAgilityGain,
+					'correct' => $resHero1 > $resHero2,
 					'solution' => $solution,
 					'image' => $hero1->image,
 				];
 
 				$answers[] = (object)[
 					'text' => 'both are the same',
-					'correct' => $hero1->infos->attributeAgilityGain == $hero2->infos->attributeAgilityGain,
+					'correct' => $resHero1 == $resHero2,
 					'solution' => $solution,
 				];
 
 				$answers[] = (object)[
 					'text' => $hero2->localized_name,
-					'correct' => $hero1->infos->attributeAgilityGain < $hero2->infos->attributeAgilityGain,
+					'correct' => $resHero1 < $resHero2,
 					'solution' => $solution,
 					'image' => $hero2->image,
 				];
@@ -346,25 +366,29 @@ class generateQuizQuestion implements ShouldQueue
 				break;
 			case 'intelligenceGain':
 				$quiz->question = 'Which hero has a better <b>intelligence gain</b>?';
-				$solution = $hero1->infos->attributeIntelligenceGain .' vs '. $hero2->infos->attributeIntelligenceGain;
+
+                $resHero1 = $hero1->infos->attributeIntelligenceGain;
+                $resHero2 = $hero2->infos->attributeIntelligenceGain;
+
+                $solution = $hero1->localized_name . ':' . $resHero1 .' vs '. $hero2->localized_name . ':' . $resHero2;
 
 				// generate true answer
 				$answers[] = (object)[
 					'text' => $hero1->localized_name,
-					'correct' => $hero1->infos->attributeIntelligenceGain > $hero2->infos->attributeIntelligenceGain,
+					'correct' => $resHero1 > $resHero2,
 					'solution' => $solution,
 					'image' => $hero1->image,
 				];
 
 				$answers[] = (object)[
 					'text' => 'both are the same',
-					'correct' => $hero1->infos->attributeIntelligenceGain == $hero2->infos->attributeIntelligenceGain,
+					'correct' => $resHero1 == $resHero2,
 					'solution' => $solution,
 				];
 
 				$answers[] = (object)[
 					'text' => $hero2->localized_name,
-					'correct' => $hero1->infos->attributeIntelligenceGain < $hero2->infos->attributeIntelligenceGain,
+					'correct' => $resHero1 < $resHero2,
 					'solution' => $solution,
 					'image' => $hero2->image,
 				];
@@ -377,7 +401,7 @@ class generateQuizQuestion implements ShouldQueue
 				$resHero1 = $hero1->infos->attributeStrengthGain * $level + $hero1->infos->attributeStrengthBase;
 				$resHero2 = $hero2->infos->attributeStrengthGain * $level + $hero1->infos->attributeStrengthBase;
 
-				$solution = $resHero1 .' vs '. $resHero2;
+                $solution = $hero1->localized_name . ':' . $resHero1 .' vs '. $hero2->localized_name . ':' . $resHero2;
 
 				// generate true answer
 				$answers[] = (object)[
@@ -408,7 +432,7 @@ class generateQuizQuestion implements ShouldQueue
 				$resHero1 = $hero1->infos->attributeAgilityGain * $level + $hero1->infos->attributeAgilityBase;
 				$resHero2 = $hero2->infos->attributeAgilityGain * $level + $hero1->infos->attributeAgilityBase;
 
-				$solution = $resHero1 .' vs '. $resHero2;
+                $solution = $hero1->localized_name . ':' . $resHero1 .' vs '. $hero2->localized_name . ':' . $resHero2;
 
 				// generate true answer
 				$answers[] = (object)[
@@ -439,7 +463,7 @@ class generateQuizQuestion implements ShouldQueue
 				$resHero1 = $hero1->infos->attributeIntelligenceGain * $level + $hero1->infos->attributeIntelligenceBase;
 				$resHero2 = $hero2->infos->attributeIntelligenceGain * $level + $hero1->infos->attributeIntelligenceBase;
 
-				$solution = $resHero1 .' vs '. $resHero2;
+                $solution = $hero1->localized_name . ':' . $resHero1 .' vs '. $hero2->localized_name . ':' . $resHero2;
 
 				// generate true answer
 				$answers[] = (object)[
