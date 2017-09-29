@@ -85,12 +85,14 @@ class generateQuizQuestion implements ShouldQueue
 			case 'armor':
 				$quiz->question = 'What is the starting <b>armor</b> of ' . $hero->localized_name . '?';
 
+				$correct = intval($hero->infos->armor + $hero->infos->attributeAgilityBase * (1 / 7));
+
 				$answers[] = (object)[
-					'text' => intval($hero->infos->armor + $hero->infos->attributeAgilityBase * (1 / 7)),
+					'text' => $correct,
 					'correct' => true,
 				];
 
-				$results = [$hero->infos->armor];
+				$results = [$correct];
 
 				for ($i = 1; $i <= 3; $i++) {
 					$random = $this->createRandomResult(-10, 10, 1, $results);
