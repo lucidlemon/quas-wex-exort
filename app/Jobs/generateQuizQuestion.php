@@ -37,6 +37,30 @@ class generateQuizQuestion implements ShouldQueue
 		return $number;
 	}
 
+    /**
+     * getRandomWeightedElement()
+     * Utility function for getting random values with weighting.
+     * Pass in an associative array, such as array('A'=>5, 'B'=>45, 'C'=>50)
+     * An array like this means that "A" has a 5% chance of being selected, "B" 45%, and "C" 50%.
+     * The return value is the array key, A, B, or C in this case.  Note that the values assigned
+     * do not have to be percentages.  The values are simply relative to each other.  If one value
+     * weight was 2, and the other weight of 1, the value with the weight of 2 has about a 66%
+     * chance of being selected.  Also note that weights should be integers.
+     *
+     * @param array $weightedValues
+     * @return int|string
+     */
+    public function getRandomWeightedElement(array $weightedValues) {
+        $rand = mt_rand(1, (int) array_sum($weightedValues));
+
+        foreach ($weightedValues as $key => $value) {
+            $rand -= $value;
+            if ($rand <= 0) {
+                return $key;
+            }
+        }
+    }
+
 	/**
 	 * Creates a question where you have to guess the value of a certain stat
 	 *
@@ -47,11 +71,11 @@ class generateQuizQuestion implements ShouldQueue
 		$hero = Hero::inRandomOrder()->first();
 		$patch = Patch::orderByDesc('started_at')->first();
 
-		$statType = array_random([
-		    'ms',
-            'armor',
+		$statType = $this->getRandomWeightedElement([
+		    'ms' => 60,
+            'armor' => 40,
 //            'armorBase',
-            'attackRange'
+            'attackRange' => 5
         ]);
 		$quiz = new Quiz();
         $quiz->type = $type . ':' . $statType;
@@ -171,16 +195,16 @@ class generateQuizQuestion implements ShouldQueue
 		$hero2 = Hero::inRandomOrder()->where('name', '<>', $hero1->name)->first();
 		$patch = Patch::orderByDesc('started_at')->first();
 
-		$statType = array_random([
-		    'ms',
-            'armor',
-            'attackRange',
-            'agilityGain',
-            'strengthGain',
-            'intelligenceGain',
-            'strengthAtX',
-            'agilityAtX',
-            'intelligenceAtX'
+		$statType = $this->getRandomWeightedElement([
+		    'ms' => 40,
+            'armor' => 30,
+            'attackRange' => 5,
+            'agilityGain' => 10,
+            'strengthGain' => 10,
+            'intelligenceGain' => 10,
+            'strengthAtX' => 20,
+            'agilityAtX' => 20,
+            'intelligenceAtX' => 20
         ]);
 		$quiz = new Quiz();
 		$quiz->type = $type . ':' . $statType;
@@ -455,7 +479,10 @@ class generateQuizQuestion implements ShouldQueue
 	 */
 	public function handle()
 	{
-		$type = array_random(['hero:compare', 'hero:stat']);
+		$type = $this->getRandomWeightedElement([
+		    'hero:compare' => 80,
+            'hero:stat' => 30
+        ]);
 
 		switch ($type) {
 			case 'hero:compare':
