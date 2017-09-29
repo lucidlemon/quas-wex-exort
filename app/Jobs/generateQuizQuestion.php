@@ -166,7 +166,17 @@ class generateQuizQuestion implements ShouldQueue
 		$hero2 = Hero::inRandomOrder()->where('name', '<>', $hero1->name)->first();
 		$patch = Patch::orderByDesc('started_at')->first();
 
-		$statType = array_random(['ms', 'armor', 'attackRange', 'agilityGain', 'strengthGain', 'intelligenceGain']);
+		$statType = array_random([
+		    'ms',
+            'armor',
+            'attackRange',
+            'agilityGain',
+            'strengthGain',
+            'intelligenceGain',
+            'strengthAtX',
+            'agilityAtX',
+            'intelligenceAtX'
+        ]);
 		$quiz = new Quiz();
 		$quiz->type = $type;
 		$quiz->patch_id = $patch->id;
@@ -326,6 +336,99 @@ class generateQuizQuestion implements ShouldQueue
 				$answers[] = (object)[
 					'text' => $hero2->localized_name,
 					'correct' => $hero1->infos->attributeIntelligenceGain < $hero2->infos->attributeIntelligenceGain,
+					'solution' => $solution,
+					'image' => $hero2->image,
+				];
+
+				break;
+			case 'strengthAtX':
+			    $level = random_int(1, 25);
+				$quiz->question = 'Which hero has more <b>strength at level '.$level.'</b>?';
+
+				$resHero1 = $hero1->infos->attributeStrengthGain * $level + $hero1->infos->attributeStrengthBase;
+				$resHero2 = $hero2->infos->attributeStrengthGain * $level + $hero1->infos->attributeStrengthBase;
+
+				$solution = $resHero1 .' vs '. $resHero2;
+
+				// generate true answer
+				$answers[] = (object)[
+					'text' => $hero1->localized_name,
+					'correct' => $resHero1 > $resHero2,
+					'solution' => $solution,
+					'image' => $hero1->image,
+				];
+
+				$answers[] = (object)[
+					'text' => 'both are the same',
+					'correct' => $resHero1 == $resHero2,
+					'solution' => $solution,
+				];
+
+				$answers[] = (object)[
+					'text' => $hero2->localized_name,
+					'correct' => $resHero1 < $resHero2,
+					'solution' => $solution,
+					'image' => $hero2->image,
+				];
+
+				break;
+			case 'agilityAtX':
+				$level = random_int(1, 25);
+				$quiz->question = 'Which hero has more <b>agility at level '.$level.'</b>?';
+
+				$resHero1 = $hero1->infos->attributeAgilityGain * $level + $hero1->infos->attributeAgilityBase;
+				$resHero2 = $hero2->infos->attributeAgilityGain * $level + $hero1->infos->attributeAgilityBase;
+
+				$solution = $resHero1 .' vs '. $resHero2;
+
+				// generate true answer
+				$answers[] = (object)[
+					'text' => $hero1->localized_name,
+					'correct' => $resHero1 > $resHero2,
+					'solution' => $solution,
+					'image' => $hero1->image,
+				];
+
+				$answers[] = (object)[
+					'text' => 'both are the same',
+					'correct' => $resHero1 == $resHero2,
+					'solution' => $solution,
+				];
+
+				$answers[] = (object)[
+					'text' => $hero2->localized_name,
+					'correct' => $resHero1 < $resHero2,
+					'solution' => $solution,
+					'image' => $hero2->image,
+				];
+
+				break;
+			case 'intelligenceAtX':
+				$level = random_int(1, 25);
+				$quiz->question = 'Which hero has more <b>intelligence at level '.$level.'</b>?';
+
+				$resHero1 = $hero1->infos->attributeIntelligenceGain * $level + $hero1->infos->attributeIntelligenceBase;
+				$resHero2 = $hero2->infos->attributeIntelligenceGain * $level + $hero1->infos->attributeIntelligenceBase;
+
+				$solution = $resHero1 .' vs '. $resHero2;
+
+				// generate true answer
+				$answers[] = (object)[
+					'text' => $hero1->localized_name,
+					'correct' => $resHero1 > $resHero2,
+					'solution' => $solution,
+					'image' => $hero1->image,
+				];
+
+				$answers[] = (object)[
+					'text' => 'both are the same',
+					'correct' => $resHero1 == $resHero2,
+					'solution' => $solution,
+				];
+
+				$answers[] = (object)[
+					'text' => $hero2->localized_name,
+					'correct' => $resHero1 < $resHero2,
 					'solution' => $solution,
 					'image' => $hero2->image,
 				];
