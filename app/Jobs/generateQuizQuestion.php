@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Hero;
+use App\Item;
 use App\Patch;
 use App\Quiz;
 use Illuminate\Bus\Queueable;
@@ -503,6 +504,70 @@ class generateQuizQuestion implements ShouldQueue
 		}
 	}
 
+    /**
+     * Creates a question where you have to guess the value of a certain stat
+     *
+     * @param $type
+     */
+    public function createItemStatQuestion($type)
+    {
+        $item = Item::whereRecipe(0)->where('id', '<', 1000)->inRandomOrder()->first();
+        $patch = Patch::orderByDesc('started_at')->first();
+
+        $statType = $this->getRandomWeightedElement([
+            'cost' => 60,
+        ]);
+
+        $quiz = new Quiz();
+        $quiz->type = $type . ':' . $statType;
+        $quiz->patch_id = $patch->id;
+
+        $images = [$item->image];
+        $answers = [];
+
+        switch ($statType) {
+            case 'cost':
+                $quiz->question = 'What is the <b>cost</b> of ' . $item->localized_name . '?';
+
+                $cost = intval($item->cost);
+                $maxCost = intval($cost * 1.4);
+
+                if($cost == null || $cost < 50){
+                    return;
+                }
+
+                if($maxCost < 200) {
+                    $maxCost = 300;
+                }
+
+                $answers[] = (object)[
+                    'text' => $cost,
+                    'correct' => true,
+                ];
+
+                $results = [$cost];
+
+                for ($i = 1; $i <= 3; $i++) {
+                    $randomCost = $this->createRandomResult(50, $maxCost, 10, $results);
+                    $results[] = $randomCost;
+                    $answers[] = (object)[
+                        'text' => $randomCost,
+                        'correct' => false,
+                    ];
+                }
+
+                break;
+        }
+
+        shuffle($answers);
+
+        if (count($answers)) {
+            $quiz->images = json_encode($images);
+            $quiz->answers = json_encode($answers);
+            $quiz->save();
+        }
+    }
+
 	/**
 	 * Execute the console command.
 	 *
@@ -511,6 +576,7 @@ class generateQuizQuestion implements ShouldQueue
 	public function handle()
 	{
 		$type = $this->getRandomWeightedElement([
+            'item:stat' => 60,
 		    'hero:compare' => 80,
             'hero:stat' => 30
         ]);
@@ -522,6 +588,9 @@ class generateQuizQuestion implements ShouldQueue
 			case 'hero:stat':
 				$this->createHeroStatQuestion($type);
 				break;
+            case 'item:stat':
+                $this->createItemStatQuestion($type);
+                break;
 		}
 	}
 }
