@@ -3,6 +3,9 @@
     <div class="row">
       <div class="col-sm-12">
         <h4 class="text-center secondary">Your MMR: {{mmr}} · Streak: {{streak}} (Best: {{bestStreak}})</h4>
+        <div class="text-center" v-if="user === null">
+          <p class="text-center"><small>Your MMR will get saved if you <a href="/login">Log In</a>!</small></p>
+        </div>
       </div>
     </div>
 
