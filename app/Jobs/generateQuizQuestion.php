@@ -100,7 +100,7 @@ class generateQuizQuestion implements ShouldQueue
 				$results = [$correct];
 
 				for ($i = 1; $i <= 3; $i++) {
-					$random = $this->createRandomResult(-10, 10, 1, $results);
+					$random = $this->createRandomResult(-2, 10, 1, $results);
 					$results[] = $random;
 					$answers[] = (object)[
 						'text' => $random,
@@ -120,7 +120,7 @@ class generateQuizQuestion implements ShouldQueue
 				$results = [$hero->infos->armor];
 
 				for ($i = 1; $i <= 3; $i++) {
-					$random = $this->createRandomResult(-10, 10, 1, $results);
+					$random = $this->createRandomResult(-2, 10, 1, $results);
 					$results[] = $random;
 					$answers[] = (object)[
 						'text' => $random,
@@ -157,8 +157,6 @@ class generateQuizQuestion implements ShouldQueue
 			$quiz->images = json_encode($images);
 			$quiz->answers = json_encode($answers);
 			$quiz->save();
-
-//			$this->info('Generated question: ' . $quiz->question);
 		}
 	}
 
@@ -447,8 +445,6 @@ class generateQuizQuestion implements ShouldQueue
 			$quiz->images = json_encode($images);
 			$quiz->answers = json_encode($answers);
 			$quiz->save();
-
-//			$this->info('Generated question: ' . $quiz->question);
 		}
 	}
 

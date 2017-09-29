@@ -20,7 +20,10 @@
         </div>
         <div class="col-sm-12" v-if="answered">
           <div class="answered">
-            <h2 v-if="correct">Correct!</h2>
+            <div v-if="correct">
+              <h2>Correct!</h2>
+              <p>{{answerTextSolution}}</p>
+            </div>
             <div v-else>
               <h2>Nope! {{answerText}}</h2>
               <p>{{answerTextSolution}}</p>
@@ -135,6 +138,9 @@
           if (typeof correct !== 'undefined'){
               this.answerText = correct.text;
               this.answerTextSolution = correct.solution;
+          } else {
+            this.answerText = '';
+            this.answerTextSolution = '';
           }
 
           this.answered = false;
