@@ -28,6 +28,10 @@
               <h2>Nope! {{answerText}}</h2>
               <p>{{answerTextSolution}}</p>
             </div>
+
+            <a v-on:click="fastTrack" class="button button-link">
+              Next Question
+            </a>
           </div>
         </div>
         <div class="col-sm-12" v-else>
@@ -48,6 +52,12 @@
 <style>
   p{
     max-width: 100%;
+  }
+
+  .answered{
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
   }
 
   .answers{
@@ -124,6 +134,7 @@
         answerText: '',
         answerTextSolution: '',
         mmr: window.serverData.quizMmr,
+        timeoutId: null,
       };
     },
     methods: {
@@ -163,9 +174,16 @@
             this.mmr -= 25;
         }
 
-        setTimeout(() => {
+        this.timeoutId = setTimeout(() => {
            this.getQuizQuestion();
         }, 3000);
+      },
+      fastTrack() {
+        if (this.timeoutId) {
+          clearTimeout(this.timeoutId);
+        }
+
+        this.getQuizQuestion();
       },
     },
   };
