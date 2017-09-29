@@ -148,6 +148,11 @@
                 </li>
             @endif
             <li class="text-only">
+                <a href="https://t.me/joinchat/BLwcJAsyWJfig7oNil-LSQ" target="_blank">
+                    Telegram Group
+                </a>
+            </li>
+            <li class="text-only">
                 <a href="/about">About</a>
             </li>
         </ul>
