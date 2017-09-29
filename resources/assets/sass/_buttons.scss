@@ -9,6 +9,9 @@
     @include fp(font-size, 10, 14);
     margin-top: 5px;
     margin-bottom: 5px;
+    @media (max-width: 767px) {
+      font-weight: 400;
+    }
     &:hover{
         color: #fff;
         text-decoration: none;
