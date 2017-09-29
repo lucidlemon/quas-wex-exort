@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "938ffacc061d8c1dca526ce3c462fdcf",
-    "content-hash": "69b4fff083d83b3e59bc8d904382d9a9",
+    "hash": "2bd2894de587d51d66c63c0bb739431e",
+    "content-hash": "704002093b2cffab8662d96416cc7c12",
     "packages": [
         {
             "name": "defuse/php-encryption",
@@ -741,16 +741,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "5.5.x-dev",
+            "version": "v5.5.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "407b7b085223604a82711fedb16e2ea50ac5e807"
+                "reference": "bfbe20d32ee9f98c89df852847827407a5127be4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/407b7b085223604a82711fedb16e2ea50ac5e807",
-                "reference": "407b7b085223604a82711fedb16e2ea50ac5e807",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/bfbe20d32ee9f98c89df852847827407a5127be4",
+                "reference": "bfbe20d32ee9f98c89df852847827407a5127be4",
                 "shasum": ""
             },
             "require": {
@@ -869,7 +869,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-09-28 18:41:13"
+            "time": "2017-09-24 19:09:38"
         },
         {
             "name": "laravel/passport",
