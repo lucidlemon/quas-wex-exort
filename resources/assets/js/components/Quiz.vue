@@ -2,7 +2,7 @@
   <div class="container container-quiz">
     <div class="row">
       <div class="col-sm-12">
-        <h2 class="text-center secondary">Test your knowledge</h2>
+        <h4 class="text-center secondary">Your MMR: {{mmr}}</h4>
       </div>
     </div>
 
@@ -28,9 +28,10 @@
           </div>
         </div>
         <div class="col-sm-12" v-else>
-          <div class="answers answers-{{quiz.answers.length}}">
+          <div :class="`answers answers-${quiz.answers.length}`">
             <div class="answer" v-for="answer in quiz.answers">
               <a v-on:click="answerQuiz(answer.correct)" class="button button-link button-full-width">
+                <img v-if="answer.image" :src="answer.image" alt="">
                 {{answer.text}}
               </a>
             </div>
@@ -51,11 +52,56 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+  }
+
+  .button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button img {
+    max-width: 120px;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  h3{
+    font-weight: 300;
+  }
+
+  h3 b{
+    font-weight: 700;
+  }
+
+  @media (max-width: 767px) {
+    .answers-3 .answer {
+      width: 100%;
+    }
+
+    .answers-4 .answer {
+      width: 50%;
+    }
+
+    .button img {
+      max-width: 30vw;
+    }
+
+    .button{
+      font-size: 13px;
+    }
+
+    h3{
+      font-size: 15px;
+    }
   }
 
   .answer{
     min-width: 120px;
-    margin: 10px;
+    padding: 5px 10px;
   }
 </style>
 
@@ -74,6 +120,7 @@
         correct: false,
         answerText: '',
         answerTextSolution: '',
+        mmr: 2000,
       };
     },
     methods: {
@@ -90,6 +137,7 @@
               this.answerTextSolution = correct.solution;
           }
 
+          this.answered = false;
         });
       },
       answerQuiz(answer) {
@@ -97,8 +145,13 @@
         this.answered = true;
         this.correct = answer;
 
+        if (answer) {
+            this.mmr += 25;
+        } else {
+            this.mmr -= 25;
+        }
+
         setTimeout(() => {
-           this.answered = false;
            this.getQuizQuestion();
         }, 3000);
       },
