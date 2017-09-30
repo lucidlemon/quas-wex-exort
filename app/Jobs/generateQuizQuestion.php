@@ -541,6 +541,13 @@ class generateQuizQuestion implements ShouldQueue
                     return;
                 }
 
+                if(in_array($item->name, [
+                    'item_cheese',
+                    'item_aegis',
+                ])){
+                    return;
+                }
+
                 if($maxCost < 200) {
                     $maxCost = 300;
                 }
