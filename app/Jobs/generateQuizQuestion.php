@@ -199,7 +199,7 @@ class generateQuizQuestion implements ShouldQueue
 		$statType = $this->getRandomWeightedElement([
 		    'ms' => 40,
             'armor' => 30,
-            'attackRange' => 5,
+            'attackRange' => 30,
             'agilityGain' => 10,
             'strengthGain' => 10,
             'intelligenceGain' => 10,
@@ -285,8 +285,13 @@ class generateQuizQuestion implements ShouldQueue
 			case 'attackRange':
 				$quiz->question = 'Which hero has a bigger <b>attack range</b>?';
 
-                $resHero1 = $hero1->infos->attackRange;
-                $resHero2 = $hero2->infos->attackRange;
+                $resHero1 = intval($hero1->infos->attackRange);
+                $resHero2 = intval($hero2->infos->attackRange);
+
+                if ($resHero1 < 160 || $resHero2 < 160) {
+                    // exclude melee heroes from questions
+                    return;
+                }
 
                 $solution = $hero1->localized_name . ': ' . $resHero1 .' vs '. $hero2->localized_name . ': ' . $resHero2;
 
