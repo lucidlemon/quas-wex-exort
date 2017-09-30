@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="350px" height="350px" viewBox="0 0 350 350" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="logo">
+            <!--<polygon id="bgbig" class="bgbig" stroke="#979797" fill="#FFFFFF" opacity="0.0199999996" points="243.25 55.421507 312 174.5 243.25 293.578493 105.75 293.578493 37 174.5 105.75 55.421507"></polygon>-->
+            <!--<polygon id="bgsmall" class="bgsmall" stroke="#979797" stroke-width="0.600000024" fill="#FFFFFF" opacity="0.0199999996" transform="translate(174.500000, 174.500000) rotate(30.000000) translate(-174.500000, -174.500000) " points="174.5 92 245.947096 133.25 245.947096 215.75 174.5 257 103.052904 215.75 103.052904 133.25"></polygon>-->
+            <polygon id="big" class="big" fill="#FAF20C" points="258 29.0192379 273 55 258 80.9807621 228 80.9807621 213 55 228 29.0192379"></polygon>
+            <polygon id="big" class="big" fill="#36EBFE" points="52 148.019238 67 174 52 199.980762 22 199.980762 7 174 22 148.019238"></polygon>
+            <polygon id="med" class="med" fill="#0AC2FE" points="38.5 115 46 127.990381 38.5 140.980762 23.5 140.980762 16 127.990381 23.5 115"></polygon>
+            <polygon id="med" class="med" fill="#EEA62C" points="293.5 58 301 70.9903811 293.5 83.9807621 278.5 83.9807621 271 70.9903811 278.5 58"></polygon>
+            <polygon id="med" class="med" fill="#D97DFA" points="215.5 310 223 322.990381 215.5 335.980762 200.5 335.980762 193 322.990381 200.5 310"></polygon>
+            <polygon id="med" class="med" fill="#BA44EC" points="204.25 287 208 293.5 204.25 300 196.75 300 193 293.5 196.75 287"></polygon>
+            <polygon id="sm" class="sm" fill="#BA44EC" points="191.25 333 195 339.5 191.25 346 183.75 346 180 339.5 183.75 333"></polygon>
+            <polygon id="med" class="med" fill="#0A47CF" points="63.25 128 67 134.5 63.25 141 55.75 141 52 134.5 55.75 128"></polygon>
+            <polygon id="sm" class="sm" fill="#0A47CF" points="29.25 98 33 104.5 29.25 111 21.75 111 18 104.5 21.75 98"></polygon>
+            <polygon id="tiny" class="tiny" fill="#153763" points="71 150 73 153.5 71 157 67 157 65 153.5 67 150"></polygon>
+            <polygon id="tiny" class="tiny" fill="#153763" points="17 111 19 114.5 17 118 13 118 11 114.5 13 111"></polygon>
+            <polygon id="xs" class="xs" fill="#0851B7" points="54 115 56 118.5 54 122 50 122 48 118.5 50 115"></polygon>
+            <polygon id="tiny" class="tiny" fill="#FAF20C" points="245 89 247 92.5 245 96 241 96 239 92.5 241 89"></polygon>
+            <polygon id="tiny" class="tiny" fill="#FAF20C" points="310 62 312 65.5 310 69 306 69 304 65.5 306 62"></polygon>
+            <polygon id="xs" class="xs" fill="#83230D" points="284 91 286 94.5 284 98 280 98 278 94.5 280 91"></polygon>
+            <polygon id="tiny" class="tiny" fill="#D06EF5" points="214 271 216 274.5 214 278 210 278 208 274.5 210 271"></polygon>
+            <polygon id="tiny" class="tiny" fill="#D06EF5" points="204 342 206 345.5 204 349 200 349 198 345.5 200 342"></polygon>
+            <polygon id="xs" class="xs" fill="#341239" points="191 303 193 306.5 191 310 187 310 185 306.5 187 303"></polygon>
+            <polygon id="med" class="med" fill="#CC3D03" points="268.25 86 272 92.5 268.25 99 260.75 99 257 92.5 260.75 86"></polygon>
+            <polygon id="sm" class="sm" fill="#CC3D03" points="313.25 74 317 80.5 313.25 87 305.75 87 302 80.5 305.75 74"></polygon>
+            <polygon id="big" class="big" fill="#DB89E9" points="258 267.019238 273 293 258 318.980762 228 318.980762 213 293 228 267.019238"></polygon>
+        </g>
+    </g>
+</svg>

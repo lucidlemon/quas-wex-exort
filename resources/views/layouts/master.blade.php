@@ -69,7 +69,10 @@
 </head>
 <body class="@yield('bodyclass')">
 <aside class="sidebar">
-    <a href="{{url('/')}}" class="logo"></a>
+    <a href="{{url('/')}}" class="logo">
+        {{--<img src="{{asset('assets/logo.svg')}}" alt="">--}}
+        {!! file_get_contents(public_path() . "/assets/logo.svg") !!}
+    </a>
     <nav class="main">
         <ul>
             <li>
