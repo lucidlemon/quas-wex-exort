@@ -603,6 +603,23 @@ class generateQuizQuestion implements ShouldQueue
                 $resItem1 = intval($item1->cost);
                 $resItem2 = intval($item2->cost);
 
+                if($resItem2 < 50 || $resItem2 < 50){
+                    return;
+                }
+
+                $excluded_items = [
+                    'item_cheese',
+                    'item_aegis',
+                ];
+
+                if(in_array($item1->name, $excluded_items)){
+                    return;
+                }
+
+                if(in_array($item2->name, $excluded_items)){
+                    return;
+                }
+
                 $solution = $item1->localized_name . ': ' . $resItem1 .' vs '. $item2->localized_name . ': ' . $resItem2;
 
                 // generate true answer
